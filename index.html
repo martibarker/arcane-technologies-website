@@ -1327,10 +1327,11 @@
     }
 
     .contact-char {
-      width: 200px;
+      width: 220px;
       margin-bottom: 1.5rem;
-      border-radius: 50%;
-      filter: drop-shadow(0 0 24px var(--purple-glow));
+      mix-blend-mode: multiply;
+      -webkit-mask-image: radial-gradient(ellipse 82% 88% at 50% 50%, black 45%, transparent 78%);
+      mask-image: radial-gradient(ellipse 82% 88% at 50% 50%, black 45%, transparent 78%);
     }
 
     .contact-heading {
