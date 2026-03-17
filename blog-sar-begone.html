@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SAR Begone! Automating Redactions with AI - Arcane Technologies Blog</title>
-  <meta name="description" content="How we used AI to automate the redaction process for Subject Access Requests, saving hours of manual work." />
+  <meta name="description" content="A true story about legal compliance, robot lawyers, and the surprisingly emotional experience of watching software do your filing. How we automated SAR redaction with AI." />
   <link rel="canonical" href="https://arcanetechnologies.co.uk/blog-sar-begone.html" />
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0f'/><rect width='32' height='32' rx='8' fill='%238b5cf6' fill-opacity='0.15'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='13' fill='%238b5cf6'>AT</text></svg>" />
@@ -163,6 +163,15 @@
       padding-left: 1rem;
     }
 
+    .post-body code {
+      font-family: ui-monospace, 'Cascadia Code', monospace;
+      font-size: 0.875em;
+      background: var(--purple-dim);
+      color: var(--purple);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+    }
+
     footer {
       text-align: center;
       padding: 2.5rem 1.5rem;
@@ -193,7 +202,103 @@
       <p class="post-meta">AI &middot; Automation &middot; Data Protection</p>
 
       <div class="post-body">
-        <p class="placeholder">Content coming soon. Check back shortly.</p>
+        <p><em>A true (but redacted) story about legal compliance, robot lawyers, and the surprisingly emotional experience of watching software do your filing.</em></p>
+
+        <p>There is a certain type of task that exists in every organisation. You know the one. It sits in a corner of the To Do list, technically urgent, legally significant, and deeply, profoundly tedious. Nobody wants to do it, everyone agrees it must be done, and the person who ends up doing it spends the next three weeks quietly resenting everything.</p>
+
+        <p>We are talking, of course, about Subject Access Requests.</p>
+
+        <p>For the uninitiated: a Subject Access Request (SAR) is a legal right that lets any individual ask an organisation to hand over all the personal data it holds on them. It sounds simple. It is not simple. It means trawling through years of emails, pulling out anything that mentions the person in question, carefully redacting anyone <em>else's</em> personal information from those same documents, and then packaging the whole lot up in a way that is both legally compliant and comprehensible to a human being.</p>
+
+        <p>It is, in short, the kind of job that makes a very strong case for tea.</p>
+
+        <h2>The Old Way</h2>
+
+        <p>Until recently, the standard approach to SAR redaction involved Adobe Acrobat, a very expensive subscription, and a member of the HR team who developed an increasingly complex relationship with the Ctrl+F shortcut.</p>
+
+        <p>The process went something like this. Export the emails. Open each one. Search for the relevant name. Find it. Redact it. Search for the next thing. Redact that. Check you haven't accidentally redacted a heading. Check you haven't missed a footer. Open the next email. Repeat. Repeat again. Keep repeating until either the task is complete or your wrists file their own formal complaint.</p>
+
+        <p>This is not a criticism of the people doing it. It is a criticism of the situation. Manual redaction of large email archives is genuinely, objectively, one of the most repetitive tasks a knowledge worker can be asked to perform. It is also one where the cost of a mistake is disproportionately high. Miss a phone number, leave in a colleague's home address, accidentally include someone's medical information, and suddenly you have a data breach on top of your SAR. The pressure is significant. The margin for human error, after hour four of staring at PDFs, is also significant.</p>
+
+        <p>And it costs a great deal of money. Adobe's enterprise licensing is not cheap. Neither is the staff time, billed at professional rates, to sit and do something a computer could, in principle, do faster, more consistently, and without ever needing a biscuit.</p>
+
+        <h2>The Problem With Emails</h2>
+
+        <p>Emails are wonderful and emails are terrible. They are how most of us conduct the vast majority of our working lives, and they therefore contain, in no particular order: important decisions, meeting scheduling that could have been a text message, a great deal of forwarded chain correspondence, the occasional accidental Reply All, and a frankly alarming quantity of personal information about people who have nothing to do with the subject of your SAR.</p>
+
+        <p>This is the central challenge. You cannot hand over an email that mentions your subject if it also contains someone else's home address, their salary, or their doctor's appointment. You have to redact it. You have to find it first. And you have to do all of this across, say, a few thousand emails.</p>
+
+        <p>A few thousand emails.</p>
+
+        <p>By hand.</p>
+
+        <p>This is where sensible people turn to automation.</p>
+
+        <h2>Enter Claude, and the Concept of a Project</h2>
+
+        <p>The new approach centres on Claude, an AI assistant made by Anthropic. But before we get into what Claude did, it is worth explaining how it was used, because the <em>how</em> matters as much as the <em>what</em>.</p>
+
+        <p>Claude was not simply asked questions in a chat window. It was set up as a working project: a persistent session with memory, context, and a shared workspace folder sitting on an actual computer. Think of it less like asking a search engine and more like bringing a very capable, very patient colleague up to speed on a specific piece of work, and then leaving them to get on with it while you make a coffee.</p>
+
+        <p>The shared workspace is the key bit. Claude could read files, write files, run code, check its own output, and save everything to a folder that the human could open and review at any point. There was no copy-pasting back and forth. No "here is the result, please now put it somewhere useful." The output just appeared, labelled, organised, in the right place. This is a genuinely different way of working with AI, and it takes a moment to adjust to, in the same way it takes a moment to accept that a slow cooker set going at eight in the morning will, without further intervention from you, have produced an actual meal by six in the evening.</p>
+
+        <h2>Enter the Pipeline</h2>
+
+        <p>What I built, over a rather intense series of sessions, was a full processing pipeline. It starts with a PST file (the format Microsoft Outlook uses to store emails, named, presumably, by someone who had given up on making things intuitive) and ends with a folder full of redacted PDFs, a detailed processing report, and enough CSV index files to keep a spreadsheet enthusiast happy for weeks.</p>
+
+        <p>The pipeline reads every single email. It extracts the text. It looks for names, phone numbers, email addresses and postcodes. It cross-references a known list of people who are <em>not</em> the subject of the request, and it blacks out their details wherever they appear. It handles email bodies, attachments, forwarded threads, and the peculiar formatting quirks that emerge when someone has copy-pasted something from a Word document into Outlook in 2019 and the line breaks have never quite recovered.</p>
+
+        <p>It also learned to be appropriately cautious about a two-letter combination that, in the right context, was indeed a person's initials, but in the wrong context would have blacked out part of the word "uncopyrightable." That is, incidentally, the longest word in common English usage where no letter appears more than once: fifteen letters, all different, a minor linguistic miracle. These are the subtle judgements that keep you humble.</p>
+
+        <h2>A Report Worth Reading</h2>
+
+        <p>The processing report itself became something of a project in its own right. Twelve sections. Tables of statistics. A detailed breakdown of every attachment type encountered, every category of redaction applied, every file that needed human review and why. The kind of document that says, clearly and in full sentences, "we did this thoroughly, we can account for every decision, and here is the evidence."</p>
+
+        <p>It also went through several rounds of correction. Turns out that when you have spent weeks staring at thousands of files, you occasionally remember a number wrong. Four CSV files. No, five. Three thousand and something attachments. No, more. The final version is right. The earlier versions are a good argument for always going back to look at the actual data rather than trusting your own memory of it.</p>
+
+        <h2>Packing It Up to Go: READMEs, Skills, and What on Earth Is an MD File</h2>
+
+        <p>Once the pipeline was working, the natural question arose: what if someone else needs to do this again? What if <em>you</em> need to do this again, in six months, having completely forgotten how any of it works?</p>
+
+        <p>This is a real problem with bespoke automation. You build something clever, it solves the problem, and then it sits in a folder on a server slowly becoming archaeology. Nobody touches it because nobody remembers how it works, and nobody wants to be the person who breaks it.</p>
+
+        <p>The answer, in this case, was documentation. Proper documentation. The kind that explains not just what the scripts do but why they make the decisions they make, in what order to run them, what can go wrong, and how to adapt them for a different subject.</p>
+
+        <p>This documentation lives in files with the extension <code>.md</code>, which stands for Markdown. If you have never encountered Markdown, it is essentially a very simple way of writing formatted text using only plain characters: a hash symbol makes a heading, asterisks make something <em>italic</em> or <strong>bold</strong>, a hyphen makes a bullet point. The file looks slightly odd if you open it in Notepad, and looks perfectly readable if you open it in almost anything else. GitHub likes it. Claude likes it. It has the considerable advantage of being future-proof, because plain text does not get corrupted, does not require a specific application to open, and will still be readable in twenty years when whatever word processor you are currently using has gone the way of WordPerfect.</p>
+
+        <p>We wrote a README (the traditional "please read this before you touch anything" document that software projects leave at their front door), a full pipeline guide, and a technical reference covering every function in every script. And then we went one step further and turned the whole thing into an installable <em>skill</em>.</p>
+
+        <p>A skill, in this context, is Claude's equivalent of a trained specialisation. It is a small package containing the key knowledge and instructions Claude needs to immediately understand a specific topic, rather than having to be explained from scratch each time. Install the skill, and Claude already knows what a PST file is in this context, what the output folders should look like, and which script to reach for when something has gone sideways. It is the difference between handing someone a filing cabinet and saying "good luck" versus sitting with them for an hour and walking them through the system.</p>
+
+        <p>The future self who picks this up in six months will be grateful. The future self always is, when past self has done the filing properly.</p>
+
+        <h2>One More Thing</h2>
+
+        <p>Right at the end, we pulled out all the email attachments, raw and unredacted, and sorted them into folders by sender. Six thousand, six hundred and ninety-six files. Images, spreadsheets, PDFs, old Word documents in formats that date back to an era when "save as" had fewer options. All organised, all labelled with the email sequence number and the date, all sitting neatly in their respective folders.</p>
+
+        <p>Two hundred and forty-something files were skipped on purpose. They had no file extension, which is the digital equivalent of a package with no label, and they were almost certainly the small transparent logos and signature graphics that Outlook embeds in every email whether you want it to or not. Nobody needs those.</p>
+
+        <h2>How Long Would This Have Taken the Old Way?</h2>
+
+        <p>This is the question people always want answered, and the honest answer is: longer than you have.</p>
+
+        <p>A SAR must be completed within one calendar month. That is the legal requirement, and it does not move. Two thousand, eight hundred and fifty emails at a conservative ten minutes each to open, read, search, redact, double-check and close is just under 475 hours of skilled staff time. The better part of twelve weeks, full-time, for one person. Fitted around everything else HR has to do, in calendar terms it would blow past the deadline without breaking a sweat, and bring a formal compliance failure with it.</p>
+
+        <p>Then there are the attachments. Six thousand, six hundred and ninety-six files to locate, review, and sort by hand. At even two minutes each, that is another 220 hours. Add the time spent writing the processing report, chasing down inconsistencies in the numbers, and organising the final output into something a solicitor can work with, and you are comfortably north of 700 hours of professional time.</p>
+
+        <p>The pipeline processed the same archive in a matter of hours, across several sessions of setup, checking, and refinement. The whole thing came in at roughly the cost of one month's Claude subscription, my wage and a whole box of Yorkshire Tea.</p>
+
+        <p>Seven hundred hours of skilled staff time, a legal deadline that does not negotiate, and a compliance risk that very much does have a price: all of it handled for approximately what you would spend on a single Adobe Acrobat licence renewal. The maths is not subtle.</p>
+
+        <h2>What We Actually Learned</h2>
+
+        <p>Automation does not remove the need for judgement. It removes the need to <em>apply</em> that judgement to the same problem six thousand times. You still have to decide what a redaction means. You still have to check the edge cases. You still have to read the output with human eyes and ask whether it makes sense.</p>
+
+        <p>The Adobe subscription hopefully gets cancelled at some point. But instead of spending that money on repetitive manual work, you spend a fraction of it once, building something that does the repetitive part for you, and then you spend the rest on people doing the things that actually require a person.</p>
+
+        <p>That feels like progress. And it was considerably kinder on everyone's wrists.</p>
+
+        <p><em>Total emails processed: 2,850. Total attachments extracted: 6,696. Cups of tea consumed during the project: untracked, but the estimate is substantial.</em></p>
       </div>
     </div>
   </main>
