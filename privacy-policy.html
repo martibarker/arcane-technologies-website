@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB" class="light-theme">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Arcane Technologies</title>
-  <meta name="description" content="Privacy Policy for Arcane Technologies. How we handle your data — plainly." />
+  <title>Privacy Policy - Arcane Technologies</title>
+  <meta name="description" content="Privacy Policy for Arcane Technologies. How we handle your data - plainly." />
   <meta name="robots" content="noindex, follow" />
   <link rel="canonical" href="https://arcanetechnologies.co.uk/privacy-policy.html" />
 
@@ -208,10 +208,7 @@
       <div class="nav-logo-badge">AT</div>
       <span>Arcane Technologies</span>
     </a>
-    <div style="display:flex;align-items:center;gap:0.75rem;">
-      <a href="./index.html" class="nav-back">← Back to site</a>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">☀️</button>
-    </div>
+    <a href="./index.html" class="nav-back">← Back to site</a>
   </nav>
 
   <main>
@@ -221,7 +218,7 @@
       <p class="legal-meta">Last updated: March 2026</p>
 
       <div class="legal-section">
-        <p>Arcane Technologies ("we", "us", "our") is an IT consultancy based in Cumbria, England. This policy explains what personal data we collect, why we collect it, and how we handle it. We'll keep it plain English — no legalese.</p>
+        <p>Arcane Technologies ("we", "us", "our") is an IT consultancy based in Cumbria, England. This policy explains what personal data we collect, why we collect it, and how we handle it. We'll keep it plain English; no legalese.</p>
       </div>
 
       <h2>Who we are</h2>
@@ -242,9 +239,9 @@
       <h2>Legal basis</h2>
       <p>Under UK GDPR, we process your data on the basis of:</p>
       <ul>
-        <li><strong>Legitimate interests</strong> — to respond to enquiries from people who contact us</li>
-        <li><strong>Contract</strong> — to deliver services where a working relationship exists</li>
-        <li><strong>Legal obligation</strong> — where we are required to retain records (e.g. for tax purposes)</li>
+        <li><strong>Legitimate interests:</strong> to respond to enquiries from people who contact us</li>
+        <li><strong>Contract:</strong> to deliver services where a working relationship exists</li>
+        <li><strong>Legal obligation:</strong> where we are required to retain records (e.g. for tax purposes)</li>
       </ul>
 
       <h2>How long we keep it</h2>
@@ -286,23 +283,6 @@
       if (!el.textContent.trim()) el.textContent = addr;
     });
 
-    const htmlEl = document.documentElement;
-    const themeToggle = document.getElementById('theme-toggle');
-
-    function applyTheme(theme) {
-      const isLight = theme === 'light';
-      htmlEl.classList.toggle('light-theme', isLight);
-      themeToggle.textContent = isLight ? '☀️' : '🌙';
-      themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
-    }
-
-    applyTheme(localStorage.getItem('at-theme') || 'light');
-
-    themeToggle.addEventListener('click', () => {
-      const next = htmlEl.classList.contains('light-theme') ? 'dark' : 'light';
-      applyTheme(next);
-      localStorage.setItem('at-theme', next);
-    });
 
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {

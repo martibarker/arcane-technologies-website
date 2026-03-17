@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="light-theme">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary meta -->
-  <title>Arcane Technologies — Expert IT. No Jargon. No Suits.</title>
+  <title>Arcane Technologies - Expert IT. No Jargon. No Suits.</title>
   <meta name="description" content="Arcane Technologies is the IT consultancy based in the heart of Cumbria. Expert IT support, setup and consultancy for businesses, schools and the third sector. Plain English. No suits." />
 
   <!-- Canonical -->
@@ -13,7 +13,7 @@
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Arcane Technologies — Expert IT. No Jargon. No Suits." />
+  <meta property="og:title"       content="Arcane Technologies - Expert IT. No Jargon. No Suits." />
   <meta property="og:description" content="IT support, setup and consultancy based in the heart of Cumbria. We speak human. Computers too." />
   <meta property="og:url"         content="https://arcanetechnologies.co.uk" />
   <meta property="og:locale"      content="en_GB" />
@@ -774,7 +774,7 @@
     /* ── Flip card ── */
     .card-wrapper {
       perspective: 1000px;
-      min-height: 320px;
+      min-height: 370px;
       transition: transform var(--transition);
       cursor: pointer;
     }
@@ -785,7 +785,7 @@
       position: relative;
       width: 100%;
       height: 100%;
-      min-height: 320px;
+      min-height: 370px;
       transform-style: preserve-3d;
       transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -839,7 +839,8 @@
       transform: rotateY(180deg);
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
+      padding: 1.5rem 1.75rem;
       background: var(--bg-card-back);
     }
 
@@ -851,14 +852,14 @@
       text-shadow: 0 0 12px var(--purple-glow);
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.6rem;
     }
 
     .card-back-text {
       font-size: 0.85rem;
       color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.6rem;
     }
 
     .price-list {
@@ -1326,9 +1327,9 @@
     }
 
     .contact-char {
-      width: 160px;
+      width: 200px;
       margin-bottom: 1.5rem;
-      mix-blend-mode: multiply;
+      border-radius: 50%;
       filter: drop-shadow(0 0 24px var(--purple-glow));
     }
 
@@ -1542,10 +1543,10 @@
     <ul class="nav-links" role="list">
       <li><a href="#services" data-section="services">Services</a></li>
       <li><a href="#about"    data-section="about">About</a></li>
+      <li><a href="./blog.html">Blog</a></li>
     </ul>
 
     <div style="display:flex;align-items:center;gap:0.5rem;">
-      <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">☀️</button>
       <a href="#contact" class="nav-cta">Let's Talk</a>
     </div>
   </nav>
@@ -1604,16 +1605,16 @@
       <div class="card-wrapper reveal"
            role="button" tabindex="0"
            aria-pressed="false"
-           aria-label="Setup service — press to reveal details">
+           aria-label="Setup service: press to reveal details">
         <div class="card-inner">
           <div class="card-front" aria-hidden="false">
             <div class="card-icon" aria-hidden="true">⚙️</div>
             <h3 class="card-title">Setup</h3>
-            <p class="card-desc">New business, new product — we've got you covered.</p>
+            <p class="card-desc">New business, new product: we've got you covered.</p>
             <span class="card-hint" aria-hidden="true">Flip for more</span>
           </div>
           <div class="card-back" aria-hidden="true">
-            <p class="card-back-title">Setup — Pricing</p>
+            <p class="card-back-title">Setup: Pricing</p>
             <p class="card-back-text">Everything configured, connected and ready to go.</p>
             <ul class="price-list">
               <li class="price-item">
@@ -1638,7 +1639,7 @@
       <div class="card-wrapper reveal reveal-delay-1"
            role="button" tabindex="0"
            aria-pressed="false"
-           aria-label="Support service — press to reveal details">
+           aria-label="Support service: press to reveal details">
         <div class="card-inner">
           <div class="card-front" aria-hidden="false">
             <div class="card-icon" aria-hidden="true">🔧</div>
@@ -1647,7 +1648,7 @@
             <span class="card-hint" aria-hidden="true">Flip for more</span>
           </div>
           <div class="card-back" aria-hidden="true">
-            <p class="card-back-title">Support — Pricing</p>
+            <p class="card-back-title">Support: Pricing</p>
             <p class="card-back-text">Responsive, plain-speaking support that actually fixes things.</p>
             <ul class="price-list">
               <li class="price-item">
@@ -1668,16 +1669,16 @@
       <div class="card-wrapper reveal reveal-delay-2"
            role="button" tabindex="0"
            aria-pressed="false"
-           aria-label="Consultancy service — press to reveal details">
+           aria-label="Consultancy service: press to reveal details">
         <div class="card-inner">
           <div class="card-front" aria-hidden="false">
             <div class="card-icon" aria-hidden="true">💬</div>
             <h3 class="card-title">Consultancy</h3>
-            <p class="card-desc">Let's have a brew and a chat.</p>
+            <p class="card-desc">Don't know where to start with AI? Suppliers letting you down? Let's have a brew and a chat.</p>
             <span class="card-hint" aria-hidden="true">Flip for more</span>
           </div>
           <div class="card-back" aria-hidden="true">
-            <p class="card-back-title">Consultancy — Pricing</p>
+            <p class="card-back-title">Consultancy: Pricing</p>
             <p class="card-back-text">Honest advice on what'll actually help. No fluff.</p>
             <ul class="price-list">
               <li class="price-item">
@@ -1702,7 +1703,7 @@
       <div class="card-wrapper reveal reveal-delay-3"
            role="button" tabindex="0"
            aria-pressed="false"
-           aria-label="Education service — press to reveal pricing">
+           aria-label="Education service: press to reveal pricing">
         <div class="card-inner">
           <div class="card-front" aria-hidden="false">
             <div class="card-icon" aria-hidden="true">🎓</div>
@@ -1711,7 +1712,7 @@
             <span class="card-hint" aria-hidden="true">Flip for pricing</span>
           </div>
           <div class="card-back" aria-hidden="true">
-            <p class="card-back-title">Education — Pricing</p>
+            <p class="card-back-title">Education: Pricing</p>
             <p class="card-back-text">Schools IT support, three ways.</p>
             <ul class="price-list">
               <li class="price-item">
@@ -1736,16 +1737,16 @@
       <div class="card-wrapper reveal reveal-delay-4"
            role="button" tabindex="0"
            aria-pressed="false"
-           aria-label="Web and hosting service — press to reveal details">
+           aria-label="Web and hosting service: press to reveal details">
         <div class="card-inner">
           <div class="card-front" aria-hidden="false">
             <div class="card-icon" aria-hidden="true">🌐</div>
             <h3 class="card-title">Web &amp; Hosting</h3>
-            <p class="card-desc">Sites built, hosted and kept running — without the agency markup.</p>
+            <p class="card-desc">Sites built, hosted and kept running - without the agency markup.</p>
             <span class="card-hint" aria-hidden="true">Flip for more</span>
           </div>
           <div class="card-back" aria-hidden="true">
-            <p class="card-back-title">Web &amp; Hosting — Pricing</p>
+            <p class="card-back-title">Web &amp; Hosting: Pricing</p>
             <ul class="price-list">
               <li class="price-item">
                 <span class="price-label">Website build</span>
@@ -1767,9 +1768,6 @@
 
     </div>
 
-    <p class="services-quote-below reveal">
-      "We speak <strong>human.</strong> Computers too."
-    </p>
   </section>
 
   <!-- ── DIVIDER: Services → About ────────────────────────────────── -->
@@ -1798,18 +1796,18 @@
           <p>
             Rooted in <strong>Cumbria</strong>, Arcane Technologies is the IT consultancy
             that doesn't hide behind jargon, helpdesk tickets, or a suit. We tell you
-            what's wrong, what it'll cost, and what we'd actually recommend — even if that
+            what's wrong, what it'll cost, and what we'd actually recommend, even if that
             means telling you to spend less.
           </p>
           <p>
             We've worked across the <strong>education sector, local government, civil
-            service, defence, and the third sector</strong> — in the UK, Germany, Africa,
+            service, defence, and the third sector</strong>, in the UK, Germany, Africa,
             and the Middle East.
           </p>
           <p>
             We've seen creaking infrastructure, decade-old servers holding entire
             organisations hostage, software that predates smartphones still somehow running
-            payroll — and more cursed printers than any human being should have to deal with.
+            payroll; and more cursed printers than any human being should have to deal with.
           </p>
           <p>
             The fix is always the same: <strong>honest advice, plain English, and actually
@@ -1866,10 +1864,10 @@
   <!-- ── CONTACT ───────────────────────────────────────────────────── -->
   <section id="contact" aria-labelledby="contact-heading">
     <div class="contact-inner">
-      <img src="./assets/char_full_3.png" alt="" class="contact-char reveal" aria-hidden="true" />
+      <video class="contact-char reveal" src="./assets/help.mp4" autoplay loop muted playsinline aria-hidden="true"></video>
       <h2 id="contact-heading" class="contact-heading reveal">Ready to talk?</h2>
       <p class="contact-sub reveal reveal-delay-1">
-        Drop us a line — no sales deck, no hold music, no suit.
+        Drop us a line - no hold music, we promise!
       </p>
       <a
         href="#"
@@ -1897,26 +1895,7 @@
       if (!el.textContent.trim()) el.textContent = addr;
     });
 
-    // ── Theme toggle ─────────────────────────────────────────────────
-    const themeToggle = document.getElementById('theme-toggle');
-    const htmlEl      = document.documentElement;
-
-    function applyTheme(theme) {
-      const isLight = theme === 'light';
-      htmlEl.classList.toggle('light-theme', isLight);
-      themeToggle.textContent = isLight ? '☀️' : '🌙';
-      themeToggle.setAttribute('aria-label',
-        isLight ? 'Switch to dark mode' : 'Switch to light mode');
-    }
-
-    // Apply saved preference immediately (before paint)
-    applyTheme(localStorage.getItem('at-theme') || 'light');
-
-    themeToggle.addEventListener('click', () => {
-      const next = htmlEl.classList.contains('light-theme') ? 'dark' : 'light';
-      applyTheme(next);
-      localStorage.setItem('at-theme', next);
-    });
+    const htmlEl = document.documentElement;
 
     // ── Scroll progress bar ──────────────────────────────────────────
     const scrollProgress = document.getElementById('scroll-progress');

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="light-theme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - Arcane Technologies</title>
+  <meta name="description" content="Thoughts, projects, and lessons from the field. Business IT, personal projects, and everything in between." />
+  <link rel="canonical" href="https://arcanetechnologies.co.uk/blog.html" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0f'/><rect width='32' height='32' rx='8' fill='%238b5cf6' fill-opacity='0.15'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='13' fill='%238b5cf6'>AT</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-base:         #0a0a0f;
+      --bg-card:         #111118;
+      --purple:          #8b5cf6;
+      --purple-dim:      rgba(139, 92, 246, 0.15);
+      --purple-glow:     rgba(139, 92, 246, 0.4);
+      --text-primary:    #f0eeff;
+      --text-muted:      #9997b8;
+      --border-subtle:   rgba(139, 92, 246, 0.12);
+      --border-hover:    rgba(139, 92, 246, 0.45);
+      --nav-scrolled-bg: rgba(10, 10, 15, 0.78);
+      --font-heading:    'Space Grotesk', sans-serif;
+      --font-body:       'Inter', sans-serif;
+      --transition:      0.22s ease;
+    }
+
+    html.light-theme {
+      --bg-base:         #f8f8ff;
+      --bg-card:         #ffffff;
+      --purple:          #6d28d9;
+      --purple-dim:      rgba(109, 40, 217, 0.08);
+      --purple-glow:     rgba(109, 40, 217, 0.25);
+      --text-primary:    #0a0a1a;
+      --text-muted:      #666677;
+      --border-subtle:   rgba(109, 40, 217, 0.18);
+      --border-hover:    rgba(109, 40, 217, 0.45);
+      --nav-scrolled-bg: rgba(248, 248, 255, 0.92);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+      min-height: 100vh;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .nav-logo-badge {
+      width: 32px; height: 32px;
+      background: var(--purple-dim);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--purple);
+    }
+
+    .nav-back {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-back:hover { color: var(--purple); }
+
+    /* ── Page content ── */
+    .blog-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 7rem 2rem 5rem;
+    }
+
+    .blog-label {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-intro {
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+      max-width: 520px;
+    }
+
+    /* ── Category ── */
+    .blog-category {
+      margin-bottom: 3rem;
+    }
+
+    .blog-category-title {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    /* ── Post card ── */
+    .post-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1rem;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+
+    .post-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 24px rgba(139, 92, 246, 0.15), 0 4px 16px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+
+    .post-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+      transition: color var(--transition);
+    }
+
+    .post-card:hover .post-card-title { color: var(--purple); }
+
+    .post-card-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .post-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      background: var(--purple-dim);
+      color: var(--purple);
+      margin-right: 0.5rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--purple); }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar" aria-label="Main navigation">
+    <a href="./index.html" class="nav-logo">
+      <div class="nav-logo-badge">AT</div>
+      <span>Arcane Technologies</span>
+    </a>
+    <a href="./index.html" class="nav-back">← Back to site</a>
+  </nav>
+
+  <main>
+    <div class="blog-wrap">
+      <p class="blog-label">Writing</p>
+      <h1>Blog</h1>
+      <p class="blog-intro">Thoughts and write-ups from the field: IT projects, automation experiments, and the odd personal build.</p>
+
+      <div class="blog-category">
+        <p class="blog-category-title">Business Projects</p>
+
+        <a href="./blog-sar-begone.html" class="post-card">
+          <div class="post-card-title">SAR Begone! Automating Redactions with AI</div>
+          <div class="post-card-meta">
+            <span class="post-tag">Business</span>
+            AI &middot; Automation &middot; Data Protection
+          </div>
+        </a>
+
+        <a href="./blog-digitising-clerk.html" class="post-card">
+          <div class="post-card-title">Digitising the Clerk - a lesson in efficiency and transcription</div>
+          <div class="post-card-meta">
+            <span class="post-tag">Business</span>
+            Automation &middot; Transcription &middot; Workflow
+          </div>
+        </a>
+      </div>
+
+      <div class="blog-category">
+        <p class="blog-category-title">Personal Projects</p>
+
+        <a href="./blog-martial-aids-hex.html" class="post-card">
+          <div class="post-card-title">Martial Aids - Hex Based Digital Campaign Tracker</div>
+          <div class="post-card-meta">
+            <span class="post-tag">Personal</span>
+            Web Development &middot; Warhammer Fantasy &middot; React
+          </div>
+        </a>
+
+        <a href="./blog-martial-aids-dnd.html" class="post-card">
+          <div class="post-card-title">Martial Aids - D&amp;D Virtual Spell Book</div>
+          <div class="post-card-meta">
+            <span class="post-tag">Personal</span>
+            Web Development &middot; D&amp;D &middot; Tools
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2026 Arcane Technologies. All rights reserved. &nbsp;&middot;&nbsp; <a href="./privacy-policy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="./terms.html">Terms &amp; Conditions</a></p>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
+</body>
+</html>
