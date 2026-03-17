@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /privacy-policy.html
+Disallow: /terms.html
+Disallow: /education-addendum.html
+
+Sitemap: https://arcanetechnologies.co.uk/sitemap.xml

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms &amp; Conditions — Arcane Technologies</title>
+  <meta name="description" content="Terms and Conditions for Arcane Technologies IT consultancy services." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://arcanetechnologies.co.uk/terms.html" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0f'/><rect width='32' height='32' rx='8' fill='%238b5cf6' fill-opacity='0.15'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='13' fill='%238b5cf6'>AT</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-base:         #0a0a0f;
+      --bg-section:      #111118;
+      --purple:          #8b5cf6;
+      --purple-dim:      rgba(139, 92, 246, 0.15);
+      --text-primary:    #f0eeff;
+      --text-muted:      #9997b8;
+      --border-subtle:   rgba(139, 92, 246, 0.12);
+      --nav-scrolled-bg: rgba(10, 10, 15, 0.78);
+      --font-heading:    'Space Grotesk', sans-serif;
+      --font-body:       'Inter', sans-serif;
+    }
+
+    html.light-theme {
+      --bg-base:         #f8f8ff;
+      --bg-section:      #eeeef8;
+      --purple:          #6d28d9;
+      --purple-dim:      rgba(109, 40, 217, 0.08);
+      --text-primary:    #0a0a1a;
+      --text-muted:      #666677;
+      --border-subtle:   rgba(109, 40, 217, 0.18);
+      --nav-scrolled-bg: rgba(248, 248, 255, 0.92);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+      min-height: 100vh;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .nav-logo-badge {
+      width: 32px; height: 32px;
+      background: var(--purple-dim);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--purple);
+    }
+
+    .nav-back {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-back:hover { color: var(--purple); }
+
+    .theme-toggle {
+      width: 34px; height: 34px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      background: var(--purple-dim);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .theme-toggle:hover { background: rgba(139,92,246,0.25); }
+
+    /* ── Content ── */
+    .legal-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 7rem 2rem 5rem;
+    }
+
+    .legal-label {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-meta {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 2.5rem 0 0.75rem;
+    }
+
+    p { margin-bottom: 1rem; color: var(--text-primary); }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 0.5rem 0 1rem 1.25rem;
+      color: var(--text-primary);
+    }
+
+    ul li { margin-bottom: 0.4rem; }
+
+    a {
+      color: var(--purple);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:hover { opacity: 0.8; }
+
+    .legal-section { margin-bottom: 0.5rem; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--purple); }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar" aria-label="Main navigation">
+    <a href="./index.html" class="nav-logo">
+      <div class="nav-logo-badge">AT</div>
+      <span>Arcane Technologies</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+      <a href="./index.html" class="nav-back">← Back to site</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">☀️</button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="legal-wrap">
+      <p class="legal-label">Legal</p>
+      <h1>Terms &amp; Conditions</h1>
+      <p class="legal-meta">Last updated: March 2026</p>
+
+      <h2>1. About these terms</h2>
+      <p>These terms govern any engagement between Arcane Technologies ("we", "us", "our"), an IT consultancy trading from Cumbria, England, and you ("the Client"). By instructing us to carry out work — whether by email, verbally, or by signing a quote — you agree to these terms in full.</p>
+      <p>If anything here isn't clear, ask before we start. We'd rather sort it upfront.</p>
+      <p>Contact: <a href="#" class="obf-email" data-u="contact" data-d="arcanetechnologies.co.uk"></a></p>
+
+      <h2>2. Our relationship</h2>
+      <p>We are an independent contractor, not an employee, worker, or partner of the Client. Nothing in these terms creates any employment, agency, or partnership relationship. We are responsible for our own tax and National Insurance obligations.</p>
+      <p>We have no authority to enter into contracts or commitments on your behalf unless expressly agreed in writing.</p>
+
+      <h2>3. Services</h2>
+      <p>We provide IT support, setup, consultancy, and related services as agreed on a per-engagement basis. The scope of each engagement will be confirmed in writing — email is sufficient — before work begins.</p>
+      <p>We reserve the right to decline any work that falls outside our expertise, conflicts with our values, or would require us to act unlawfully.</p>
+      <p>Descriptions of services on our website are for illustrative purposes only and do not form part of any contract.</p>
+
+      <h2>4. Quotes and scope</h2>
+      <p>Quotes are valid for 30 days from the date issued and cover only the work explicitly described.</p>
+      <p>If the scope changes — because we discover something unexpected, or you request additional work — we will notify you before proceeding and agree a revised price in writing. We will not carry out out-of-scope work without your authorisation.</p>
+      <p>Hourly and day rates apply where work is ongoing or a fixed price is not agreed. The applicable rate will always be confirmed before work starts.</p>
+
+      <h2>5. Your obligations</h2>
+      <p>We do our best work when we have clear access and clear communication. You agree to:</p>
+      <ul>
+        <li>Provide accurate and complete information about your systems, infrastructure, and requirements</li>
+        <li>Ensure appropriate, verified backups exist before we carry out any significant changes — we will remind you, but responsibility for backups rests with you</li>
+        <li>Give us timely access to systems, accounts, credentials, or premises needed to carry out the work</li>
+        <li>Respond to queries within a reasonable timeframe — delays on your side may affect delivery timescales and we accept no liability for resulting delays</li>
+        <li>Ensure that any third-party software, licences, or services you ask us to work with are properly licensed and that you have authority to grant us access</li>
+        <li>Nominate a named contact who has authority to approve work and sign off changes</li>
+      </ul>
+
+      <h2>6. Right to remedy</h2>
+      <p>If you believe we have failed to perform any part of our services to a reasonable standard, you must notify us in writing before engaging any third party to rectify the issue. We will be given a reasonable opportunity to remedy any deficiency at our own cost before any claim for damages arises. This clause does not affect your statutory rights.</p>
+
+      <h2>7. Payment</h2>
+      <p>Invoices are due within 14 days of issue unless otherwise agreed in writing. For projects over £500, we may require a deposit of up to 50% before work begins — this will be confirmed in the quote.</p>
+      <p>Late payments will accrue statutory interest at 8% over the Bank of England base rate under the Late Payment of Commercial Debts (Interest) Act 1998, calculated from the due date. We also reserve the right to claim reasonable debt recovery costs under that Act.</p>
+      <p>We reserve the right to suspend work on any engagement where an invoice is more than 14 days overdue.</p>
+
+      <h2>8. Cancellation</h2>
+      <p>Either party may cancel a scheduled engagement with reasonable notice. For half-day or full-day engagements, we require at least 48 hours' notice. For ongoing retainers, one calendar month's written notice applies unless otherwise agreed.</p>
+      <p>Work already completed or materials already ordered will be invoiced at the agreed rate. Where a deposit has been paid and we have already incurred costs or allocated time, we reserve the right to retain a portion of the deposit proportionate to work done.</p>
+      <p>If we cancel an engagement due to circumstances beyond our control, we will refund any deposit paid for work not yet carried out.</p>
+
+      <h2>9. Liability</h2>
+      <p><strong>9.1 Liability cap.</strong> Our total liability to you for any and all claims arising out of or in connection with an engagement — whether in contract, tort, negligence, breach of statutory duty, or otherwise — shall not exceed the total fees paid by you to us in the twelve months immediately preceding the event giving rise to the claim, or £500, whichever is the greater.</p>
+      <p><strong>9.2 Excluded losses.</strong> To the fullest extent permitted by law, we are not liable for any indirect, consequential, special, or incidental loss of any kind, including but not limited to: loss of profits, loss of revenue, loss of anticipated savings, loss of business, loss of data, loss of goodwill, wasted expenditure, or damage to reputation — howsoever caused and whether or not we had been advised of the possibility of such losses.</p>
+      <p><strong>9.3 Data loss.</strong> You are solely responsible for maintaining adequate, verified backups of all data. We will always recommend backups before undertaking significant work. We are not liable for any loss, corruption, or inaccessibility of data where adequate backups were not in place at the time work commenced, regardless of the cause.</p>
+      <p><strong>9.4 Third-party systems.</strong> We are not liable for the failure, unavailability, or behaviour of any third-party systems, platforms, software, or services — including but not limited to Microsoft, Google, cloud providers, or internet service providers — even where we have recommended or configured those systems.</p>
+      <p><strong>9.5 Security incidents.</strong> We are not liable for any security breach, ransomware, malware, phishing, or cyber incident occurring on your systems, except where directly and solely caused by our own gross negligence or wilful misconduct. Responsibility for ongoing security posture — including patching, access management, and user training — rests with you unless we have been explicitly engaged to manage it.</p>
+      <p><strong>9.6 Non-excludable liabilities.</strong> Nothing in these terms limits or excludes our liability for death or personal injury caused by our negligence, fraud or fraudulent misrepresentation, or any other liability that cannot lawfully be excluded or limited under English law.</p>
+
+      <h2>10. Notification of claims</h2>
+      <p>You must notify us in writing of any actual or potential claim as soon as reasonably practicable and in any event within 30 days of becoming aware of the circumstances giving rise to it. Failure to notify within this period may prejudice our ability to investigate and may reduce or extinguish your right to claim.</p>
+      <p>No action or proceedings may be brought against us more than 12 months after you became aware, or reasonably ought to have become aware, of the circumstances giving rise to the claim.</p>
+
+      <h2>11. Confidentiality</h2>
+      <p>Both parties agree to keep the other's confidential information strictly confidential and not to disclose it to any third party without prior written consent, except where required by law or by a regulatory authority.</p>
+      <p>We will not disclose details of your systems, infrastructure, data, or business operations to third parties. Where we engage subcontractors, they are bound by equivalent confidentiality obligations and we remain responsible for their conduct.</p>
+      <p>These confidentiality obligations survive termination of any engagement for a period of three years.</p>
+
+      <h2>12. Data protection</h2>
+      <p>Where we access, process, or handle personal data on your behalf in the course of providing services, we do so as a data processor acting on your instructions. You remain the data controller and are responsible for ensuring your use of our services complies with UK GDPR and the Data Protection Act 2018.</p>
+      <p>We will process personal data only as necessary to carry out the agreed services, and will not retain it beyond the period required to do so. We will notify you without undue delay if we become aware of any actual or suspected data breach involving personal data we have processed on your behalf.</p>
+      <p>Where a formal Data Processing Agreement is required — for example for school or public sector clients — we will provide one on request.</p>
+
+      <h2>13. Intellectual property</h2>
+      <p>Any documentation, scripts, configurations, or materials created specifically for you as part of a paid engagement become your property upon receipt of full payment. We retain all rights in any general tools, templates, methodologies, or pre-existing materials we bring to an engagement — you receive a non-exclusive licence to use these solely for the purposes of the engagement.</p>
+      <p>We assert no rights over your existing systems, data, or infrastructure.</p>
+
+      <h2>14. Independent contractor status</h2>
+      <p>We are an independent contractor. Nothing in these terms shall be construed as creating an employment, worker, or agency relationship. We are responsible for our own tax affairs including income tax and National Insurance. You have no obligation to provide us with employee benefits, holiday pay, or statutory entitlements.</p>
+
+      <h2>15. Force majeure</h2>
+      <p>Neither party shall be in breach of these terms, nor liable for any failure or delay in performing their obligations, where such failure or delay results from circumstances beyond their reasonable control. This includes, without limitation: illness or incapacity, power or network failure, cyberattacks on infrastructure outside our control, acts of God, government action, or the failure of third-party suppliers or platforms.</p>
+      <p>Where a force majeure event continues for more than 14 days, either party may terminate the affected engagement on written notice. Any fees for work already completed will remain payable.</p>
+
+      <h2>16. Warranties and representations</h2>
+      <p>We warrant that we will perform services with reasonable skill and care, in accordance with good industry practice. We make no warranty that any particular outcome will be achieved, that systems will be error-free, or that any issue will be resolved in a single visit or engagement — IT systems are complex and outcomes depend on factors outside our control.</p>
+      <p>We disclaim all warranties not expressly stated here, to the fullest extent permitted by law.</p>
+
+      <h2>17. Entire agreement</h2>
+      <p>These terms, together with any written quote or engagement confirmation, constitute the entire agreement between the parties in relation to each engagement. They supersede all prior discussions, representations, or agreements. Each party confirms it has not relied on any statement not set out in these terms.</p>
+      <p>No variation to these terms is effective unless agreed in writing by both parties.</p>
+
+      <h2>18. Severance</h2>
+      <p>If any provision of these terms is found to be unenforceable or invalid by a court of competent jurisdiction, that provision will be modified to the minimum extent necessary to make it enforceable, or severed if modification is not possible. The remaining provisions will continue in full force.</p>
+
+      <h2>19. Dispute resolution</h2>
+      <p>In the event of a dispute, both parties agree to attempt to resolve the matter informally in the first instance by written notice to the other party. If the dispute is not resolved within 14 days of that notice, either party may refer it to mediation before commencing legal proceedings. Nothing in this clause prevents either party from seeking urgent injunctive relief from a court.</p>
+
+      <h2>20. Governing law</h2>
+      <p>These terms are governed by the law of England and Wales. The parties submit to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+      <h2>Schedules</h2>
+      <p><a href="./education-addendum.html">Schedule 1 — Education &amp; School Sector Addendum</a></p>
+
+      <h2>21. Changes to these terms</h2>
+      <p>We may update these terms from time to time. The version in force at the time of an engagement is the version that applies to that engagement. Current terms are always available at <a href="https://arcanetechnologies.co.uk/terms.html">arcanetechnologies.co.uk</a>.</p>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2026 Arcane Technologies. All rights reserved. &nbsp;·&nbsp; Cumbria, England &nbsp;·&nbsp; <a href="./privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="./terms.html">Terms &amp; Conditions</a></p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.obf-email').forEach(function(el) {
+      var addr = el.dataset.u + '@' + el.dataset.d;
+      el.href = 'mailto:' + addr;
+      if (!el.textContent.trim()) el.textContent = addr;
+    });
+
+    const htmlEl = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+
+    function applyTheme(theme) {
+      const isLight = theme === 'light';
+      htmlEl.classList.toggle('light-theme', isLight);
+      themeToggle.textContent = isLight ? '☀️' : '🌙';
+      themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+    }
+
+    applyTheme(localStorage.getItem('at-theme') || 'light');
+
+    themeToggle.addEventListener('click', () => {
+      const next = htmlEl.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(next);
+      localStorage.setItem('at-theme', next);
+    });
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
+</body>
+</html>

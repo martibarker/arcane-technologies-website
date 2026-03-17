@@ -1,0 +1,2 @@
+# www → apex canonical redirect
+https://www.arcanetechnologies.co.uk/* https://arcanetechnologies.co.uk/:splat 301

@@ -1,0 +1,18 @@
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  X-XSS-Protection: 1; mode=block
+
+/downloads.html
+  X-Robots-Tag: noindex, nofollow
+
+/privacy-policy.html
+  X-Robots-Tag: noindex
+
+/terms.html
+  X-Robots-Tag: noindex
+
+/education-addendum.html
+  X-Robots-Tag: noindex

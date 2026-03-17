@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Downloads — Arcane Technologies</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0f'/><rect width='32' height='32' rx='8' fill='%238b5cf6' fill-opacity='0.15'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='13' fill='%238b5cf6'>AT</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-base:         #0a0a0f;
+      --bg-card:         #1a1a2e;
+      --purple:          #8b5cf6;
+      --purple-dim:      rgba(139, 92, 246, 0.15);
+      --purple-glow:     rgba(139, 92, 246, 0.4);
+      --text-primary:    #f0eeff;
+      --text-muted:      #9997b8;
+      --border-subtle:   rgba(139, 92, 246, 0.12);
+      --nav-scrolled-bg: rgba(10, 10, 15, 0.78);
+      --font-heading:    'Space Grotesk', sans-serif;
+      --font-body:       'Inter', sans-serif;
+    }
+
+    html.light-theme {
+      --bg-base:         #f8f8ff;
+      --bg-card:         #ffffff;
+      --purple:          #6d28d9;
+      --purple-dim:      rgba(109, 40, 217, 0.08);
+      --purple-glow:     rgba(109, 40, 217, 0.25);
+      --text-primary:    #0a0a1a;
+      --text-muted:      #666677;
+      --border-subtle:   rgba(109, 40, 217, 0.18);
+      --nav-scrolled-bg: rgba(248, 248, 255, 0.92);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+      min-height: 100vh;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .nav-logo-badge {
+      width: 32px; height: 32px;
+      background: var(--purple-dim);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700;
+      color: var(--purple);
+    }
+
+    .theme-toggle {
+      width: 34px; height: 34px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      background: var(--purple-dim);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .theme-toggle:hover { background: rgba(139,92,246,0.25); }
+
+    /* ── Page ── */
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 7rem 2rem 5rem;
+    }
+
+    .page-label {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-sub {
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    /* ── Cards ── */
+    .dl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .dl-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .dl-card:hover {
+      border-color: rgba(139, 92, 246, 0.4);
+      box-shadow: 0 0 24px rgba(139, 92, 246, 0.1);
+    }
+
+    .dl-card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+
+    .dl-card h2 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .dl-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.65rem 1.25rem;
+      background: linear-gradient(135deg, var(--purple) 0%, #6d28d9 100%);
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .dl-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.45);
+    }
+
+    .dl-btn.secondary {
+      background: var(--purple-dim);
+      color: var(--purple);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .dl-btn.secondary:hover {
+      border-color: rgba(139, 92, 246, 0.5);
+      box-shadow: 0 0 16px rgba(139, 92, 246, 0.2);
+    }
+
+    /* ── Notice ── */
+    .dl-notice {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--purple); }
+
+    @media (max-width: 600px) {
+      .page-wrap { padding: 6rem 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar" aria-label="Main navigation">
+    <a href="./index.html" class="nav-logo">
+      <div class="nav-logo-badge">AT</div>
+      <span>Arcane Technologies</span>
+    </a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">☀️</button>
+  </nav>
+
+  <main>
+    <div class="page-wrap">
+      <p class="page-label">Client Area</p>
+      <h1>Downloads &amp; Resources</h1>
+      <p class="page-sub">Everything you need to get set up or share files with us. If something isn't working or you're not sure what to download, just get in touch.</p>
+
+      <div class="dl-grid">
+
+        <div class="dl-card">
+          <div class="dl-card-icon">🖥️</div>
+          <h2>Remote Support Agent</h2>
+          <p>Install the Arcane Technologies remote support agent so we can securely connect to your device when you need us. Takes about two minutes.</p>
+          <a href="#" class="dl-btn" id="agent-download">
+            ↓ Download Agent
+          </a>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-card-icon">📁</div>
+          <h2>Send Us Files</h2>
+          <p>Need to share documents, logs, or other files with us? Use our secure file drop — hosted on ProtonDrive, end-to-end encrypted.</p>
+          <a href="#" class="dl-btn secondary" id="proton-link" target="_blank" rel="noopener">
+            ↗ Open File Drop
+          </a>
+        </div>
+
+      </div>
+
+      <p class="dl-notice">This page is for Arcane Technologies clients only. If you've arrived here by mistake, <a href="./index.html">head back to the main site</a>. Downloads are provided as-is and intended for use on systems managed by Arcane Technologies.</p>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2026 Arcane Technologies &nbsp;·&nbsp; <a href="./privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="./terms.html">Terms &amp; Conditions</a></p>
+  </footer>
+
+  <script>
+    // ── Theme ────────────────────────────────────────────────────────
+    const htmlEl = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+
+    function applyTheme(theme) {
+      const isLight = theme === 'light';
+      htmlEl.classList.toggle('light-theme', isLight);
+      themeToggle.textContent = isLight ? '☀️' : '🌙';
+      themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+    }
+
+    applyTheme(localStorage.getItem('at-theme') || 'light');
+
+    themeToggle.addEventListener('click', () => {
+      const next = htmlEl.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(next);
+      localStorage.setItem('at-theme', next);
+    });
+
+    // ── Nav scroll ───────────────────────────────────────────────────
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ── Links — set your real URLs here ─────────────────────────────
+    // Replace the href values below with your actual Action1 agent URL
+    // and your ProtonDrive shared folder link.
+    document.getElementById('agent-download').href = '#'; // TODO: Action1 agent URL
+    document.getElementById('proton-link').href    = '#'; // TODO: ProtonDrive share link
+  </script>
+</body>
+</html>
