@@ -43,4 +43,11 @@
     <priority>0.5</priority>
   </url>
 
+  <url>
+    <loc>https://arcanetechnologies.co.uk/blog-digitising-clerk.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>

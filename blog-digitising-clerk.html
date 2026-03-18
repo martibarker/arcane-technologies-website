@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digitising the Clerk - a lesson in efficiency and transcription - Arcane Technologies Blog</title>
-  <meta name="description" content="What happens when you try to digitise a manual workflow that's been running for decades? A lot. Here's what we learned." />
+  <title>From Dictaphone to Done - Arcane Technologies Blog</title>
+  <meta name="description" content="How we taught an AI to take the minutes — and why it's better at it than any of us ever were. A practical guide for governance clerks, board secretaries, and anyone who's stayed up until midnight on a Tuesday." />
   <link rel="canonical" href="https://arcanetechnologies.co.uk/blog-digitising-clerk.html" />
 
   <link rel="icon" type="image/png" href="./assets/logo-rounded.png" />
@@ -144,16 +144,64 @@
       border-bottom: 1px solid var(--border-subtle);
     }
 
+    .post-body h2 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 2.5rem 0 0.75rem;
+    }
+
     .post-body p {
       margin-bottom: 1.25rem;
       color: var(--text-primary);
     }
 
-    .post-body p.placeholder {
+    .post-body ul {
+      margin: 0 0 1.25rem 1.5rem;
+    }
+
+    .post-body li {
+      margin-bottom: 0.4rem;
+      color: var(--text-primary);
+    }
+
+    .post-body strong {
+      font-weight: 600;
+    }
+
+    .post-body em {
+      font-style: italic;
+    }
+
+    .post-body .aside {
+      border-left: 3px solid var(--purple);
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: var(--purple-dim);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .post-body .aside p { margin-bottom: 0.5rem; }
+    .post-body .aside p:last-child { margin-bottom: 0; }
+
+    .post-body .post-footer-note {
+      font-size: 0.85rem;
       color: var(--text-muted);
       font-style: italic;
-      border-left: 3px solid var(--border-subtle);
-      padding-left: 1rem;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .post-body code {
+      font-family: ui-monospace, 'Cascadia Code', monospace;
+      font-size: 0.875em;
+      background: var(--purple-dim);
+      color: var(--purple);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
     }
 
     footer {
@@ -185,13 +233,103 @@
 
   <main>
     <div class="post-wrap">
-      <p class="post-breadcrumb"><a href="./blog.html">Blog</a> &rsaquo; Business Projects</p>
-      <span class="post-tag">Business</span>
-      <h1>Digitising the Clerk - a lesson in efficiency and transcription</h1>
-      <p class="post-meta">Automation &middot; Transcription &middot; Workflow</p>
+      <p class="post-breadcrumb"><a href="./blog.html">Blog</a> &rsaquo; Workflow &amp; Automation</p>
+      <span class="post-tag">Automation</span>
+      <h1>From Dictaphone to Done: How We Taught an AI to Take the Minutes</h1>
+      <p class="post-meta">AI &middot; Transcription &middot; Governance &middot; Workflow</p>
 
       <div class="post-body">
-        <p class="placeholder">Content coming soon. Check back shortly.</p>
+
+        <p><em>A practical guide for anyone who has ever arrived home still carrying nine hours of other people's decisions.</em></p>
+
+        <p>There is a particular kind of person who volunteers to take the minutes at a governance meeting. They are patient. They are conscientious. They have very neat handwriting. And by about item four on the agenda, when the chair is mid-sentence about something structural and someone else has just interjected about a subcommittee and the note-taker is writing "strategic review framework" for the fourteenth time, they are quietly wondering whether they made some terrible choices earlier in life.</p>
+
+        <p>We did not abandon that person. We merely gave them a rather extraordinary assistant.</p>
+
+        <h2>Who Is This Actually For?</h2>
+
+        <p>More people than you might think. The company secretary who produces board minutes for a housing association. The clerk to a school governing body, racing to capture a safeguarding update, a budget variance report, and a heated exchange about the car park before the headteacher has to leave at 7pm. The PA to a senior leadership team in an NHS trust. The governance officer for a large charity. The administrator for a professional regulatory body whose meetings run from nine until five and whose members speak in acronyms.</p>
+
+        <p>Anyone, in short, who is responsible for producing an accurate, formal record of a meeting they were also required to attend, follow, and occasionally participate in. Which is, when you think about it, a slightly absurd job description. And yet here we all are.</p>
+
+        <h2>Step One: Get the Thing Recorded</h2>
+
+        <p>It started, as many good ideas do, with a small piece of hardware that nobody fully understood.</p>
+
+        <p>The <strong>Plaud Note</strong> is a credit-card-sized voice recorder that attaches to the back of your phone. It records meetings, conversations, and anything involving humans talking at length about complicated things. It does this quietly, unobtrusively, and without requiring anyone to remember to press a button on a laptop, argue with Bluetooth, or explain to a visiting presenter why there is a ring light pointing at their face.</p>
+
+        <p>For a meeting that runs from nine in the morning to five in the afternoon, around a table in a room that gets warm by mid-morning, this turns out to be rather useful. One small device. One long recording. Done.</p>
+
+        <p>The school governors clerk who used to write longhand through a three-hour evening meeting, and then stay up until midnight turning those notes into a draft, now walks out with an audio record of the entire thing and a much more manageable evening ahead of them.</p>
+
+        <h2>Step Two: Turn Speech Into Text</h2>
+
+        <p>Here is where it gets interesting.</p>
+
+        <p>Plaud uses <strong>OpenAI's Whisper</strong> model to transcribe the audio. Whisper is a speech recognition system of genuinely remarkable capability. It handles accents, handles interruptions, handles the particular way that senior professionals tend to speak in formal settings: that measured, considered cadence that is simultaneously very clear and very hard to follow if you don't already know what they're talking about.</p>
+
+        <p>The transcription happens in the cloud, which is fast and convenient. But it is worth noting — particularly for anyone working in environments where data handling matters, which is most of us — the ability to transcribe sensitive meetings without cloud dependency is genuinely significant. The open-source version of Whisper can be run on a reasonably modern laptop. For healthcare bodies, legal firms, schools processing anything touching on safeguarding: the ability to keep audio files entirely on local hardware, with no data leaving the building, is not a trivial point.</p>
+
+        <p>A local Whisper installation means the audio stays where it started: in the room.</p>
+
+        <p>The output either way is a long, glorious, slightly chaotic wall of text. Every digression is in there. Every "as I mentioned earlier." Every moment where two people spoke at once and the model produced something philosophically interesting but syntactically impossible. This is fine. This is raw material. The next step is where it becomes useful.</p>
+
+        <h2>Step Three: A Note on Safeguarding Calls</h2>
+
+        <p>Before we get to the minutes themselves, a specific and important use case deserves its own section.</p>
+
+        <p>Anyone working in a role that involves safeguarding — whether in a school, a charity, a sports club, or a social care setting — knows the particular anxiety of the post-disclosure phone call. Someone has told you something serious. You are trying to listen carefully, respond appropriately, and simultaneously produce a written record that is accurate, timestamped, and defensible. These are competing demands. Something usually suffers.</p>
+
+        <p>The Plaud device, or any equivalent recorder used with informed consent, changes this. A safeguarding lead receiving a concern by phone can record the call, with the caller's knowledge as required, and have an accurate verbatim transcript within minutes. Not a reconstruction from memory made forty-five minutes later. Not notes written on whatever paper was to hand. A timestamped, word-for-word record.</p>
+
+        <p>For a designated safeguarding lead in a school, this matters enormously. A parent calls to report a concern about a child. The conversation is nuanced, the details are specific, and the exact words used may become significant later. A Plaud transcript of that call, reviewed and annotated immediately afterwards, is a far stronger record than anything a stressed professional can reliably reconstruct from memory after the next three things have happened.</p>
+
+        <p>The same applies to the internal conversation between a safeguarding lead and a headteacher following an incident. To the welfare call made to a vulnerable adult. To the referral conversation with a local authority duty social worker. These are all conversations where accuracy is not a nicety: it is a professional and sometimes legal requirement.</p>
+
+        <div class="aside">
+          <p><strong>A note of caution:</strong> recording phone calls requires consent from all parties in most jurisdictions, and any records produced must be handled in accordance with applicable data protection legislation. This is not an obstacle to the approach; it is simply a design requirement. The transcript is then a formal record, stored accordingly — not a casual note. Used properly, this approach strengthens safeguarding practice. Used carelessly, it creates its own risks. Know your organisation's policy. If there isn't one, this is a good moment to write one.</p>
+        </div>
+
+        <h2>Step Four: Hand It to Claude</h2>
+
+        <p>Back to the minutes.</p>
+
+        <p>The transcript — whether from a full-day board meeting, a two-hour governors' meeting, or an afternoon senior leadership team session — goes into a <strong>Claude Project</strong>. This is a persistent AI workspace that holds, across every conversation, the reference materials the model needs to do the job properly.</p>
+
+        <p>For a school governors clerk, that means: previous approved minutes, the clerk's house style guide, the standard action log format, the standing items that appear every meeting. For a company secretary, it means prior board minutes, committee terms of reference, the organisation's particular conventions around attributing contributions and recording resolutions.</p>
+
+        <p>The system prompt — the standing instructions given to the AI — tells Claude to read all of that before writing a single word. It is instructed to match the style it finds in the examples: to use the same heading structure, the same level of formality, the same conventions around actions and decisions, the same way of handling agenda items that weren't reached.</p>
+
+        <p>It is told, in short, to behave like a professional meeting secretary who has done their homework.</p>
+
+        <p>The transcript goes in. The agenda goes in. The instruction is given. And out comes a draft that, on first reading, is formatted correctly, attributed appropriately, and calibrated to roughly the right length. It also produces a <strong>Decisions Log</strong>: a clean, separately formatted record of every formal and informal decision taken in the meeting, numbered sequentially, suitable for governance audit purposes.</p>
+
+        <p>For the governors clerk, this means the resolution about the new SEND policy, the approval of the financial report, the decision to defer the estates item until the next full governing body meeting: all captured clearly, in one place, without having to be extracted from four pages of prose after the fact.</p>
+
+        <h2>Step Five: The Human Bit (This Part Still Matters)</h2>
+
+        <p>The minutes Claude produces are a first draft, not a final product. A competent human still reads them. Checks that sensitive content has been handled correctly. Verifies that nothing has been attributed wrongly. Confirms that the tone reflects the gravity — or occasional levity — of what actually happened in the room.</p>
+
+        <p>The AI is, in this arrangement, a very fast, very attentive colleague who has done all the structural heavy lifting and is waiting to be told what they got wrong. Usually it's not much. Sometimes it's nothing. Occasionally a sentence needs rewriting because the register is slightly off, or a nuance has been flattened. That is fine. That is editing. It takes twenty minutes rather than two hours.</p>
+
+        <p>The governors clerk who used to stay up until midnight on a Tuesday can now review a clean draft over a cup of tea instead. That is not nothing. That is, for many people in these roles, genuinely life-changing in a small but meaningful way.</p>
+
+        <h2>The Sharing Problem, Solved</h2>
+
+        <p>The mechanism that makes all of this work consistently — rather than requiring the whole setup to be rebuilt from scratch each time — is the persistent project. Previous minutes live there. Style guides live there. Standing instructions live there. Any authorised team member can open a new conversation, upload a new transcript, and receive minutes that conform to exactly the same conventions as the last six sets, because the model has the same reference materials available every time.</p>
+
+        <p>There is no institutional knowledge trapped in one person's head that evaporates when they leave. There is no stylistic drift as different people take turns at the wheel. There is no three-month gap in the archive because the regular clerk was ill. There is just a project. And in the project, there is a rather capable AI that has read everything and is ready to start again.</p>
+
+        <h2>A Realistic Summary</h2>
+
+        <p>To be clear about what this is and is not: this is not AI making decisions, exercising judgement, or replacing the humans who do the actual governance work. The headteacher still needs to handle the difficult staffing matter. The board still needs to wrestle with the financial position. The safeguarding lead still needs to make the referral. Those things require human beings, and they always will.</p>
+
+        <p>But the accurate, well-formatted, consistently structured, properly attributed record of all of that?</p>
+
+        <p>That, it turns out, we can usefully delegate.</p>
+
+        <p class="post-footer-note">Suitable for: board secretaries, company secretaries, governance clerks, school governors clerks, charity administrators, NHS trust governance teams, professional body secretariats, and anyone who has ever written "action: TBC" in a set of minutes and then lost the Post-it.</p>
+
       </div>
     </div>
   </main>
