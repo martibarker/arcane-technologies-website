@@ -78,8 +78,8 @@
   </script>
 
   <!-- Favicon — inline SVG data URI -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0f'/><rect width='32' height='32' rx='8' fill='%238b5cf6' fill-opacity='0.15'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='13' fill='%238b5cf6'>AT</text></svg>" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.svg" />
+  <link rel="icon" type="image/jpeg" href="./assets/logo.jpeg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/logo.jpeg" />
   <link rel="manifest" href="./site.webmanifest" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1376,6 +1376,84 @@
       transform: translateY(-4px) scale(1.02);
       box-shadow: 0 0 56px rgba(139, 92, 246, 0.65), 0 10px 30px rgba(0,0,0,0.4);
       animation: none;
+    }
+
+    /* ─── CONTACT FORM ──────────────────────────────────────────── */
+    .contact-form {
+      text-align: left;
+      margin-top: 2.5rem;
+      width: 100%;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .form-row label {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .form-row input,
+    .form-row textarea {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      width: 100%;
+      resize: vertical;
+    }
+
+    .form-row input::placeholder,
+    .form-row textarea::placeholder {
+      color: rgba(153, 151, 184, 0.45);
+    }
+
+    .form-row input:focus,
+    .form-row textarea:focus {
+      outline: none;
+      border-color: rgba(139, 92, 246, 0.5);
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+    }
+
+    .form-row textarea { min-height: 120px; }
+
+    .form-submit {
+      width: 100%;
+      padding: 0.9rem 2rem;
+      background: linear-gradient(135deg, var(--purple) 0%, #6d28d9 100%);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition),
+                  opacity var(--transition);
+      box-shadow: 0 0 24px rgba(139, 92, 246, 0.35);
+      letter-spacing: 0.02em;
+    }
+
+    .form-submit:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 0 40px rgba(139, 92, 246, 0.55);
+    }
+
+    .form-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
     }
 
     /* ─── FOOTER ────────────────────────────────────────────────── */

@@ -4,14 +4,14 @@
   "description": "Expert IT. No Jargon. No Suits.",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#0a0a0f",
+  "background_color": "#ffffff",
   "theme_color": "#8b5cf6",
   "icons": [
     {
-      "src": "/assets/apple-touch-icon.svg",
+      "src": "/assets/logo.jpeg",
       "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "type": "image/jpeg",
+      "purpose": "any"
     }
   ]
 }
