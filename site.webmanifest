@@ -1,0 +1,17 @@
+{
+  "name": "Arcane Technologies",
+  "short_name": "Arcane",
+  "description": "Expert IT. No Jargon. No Suits.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0a0a0f",
+  "theme_color": "#8b5cf6",
+  "icons": [
+    {
+      "src": "/assets/apple-touch-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

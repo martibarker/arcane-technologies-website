@@ -3,5 +3,6 @@ Allow: /
 Disallow: /privacy-policy.html
 Disallow: /terms.html
 Disallow: /education-addendum.html
+Disallow: /downloads.html
 
 Sitemap: https://arcanetechnologies.co.uk/sitemap.xml

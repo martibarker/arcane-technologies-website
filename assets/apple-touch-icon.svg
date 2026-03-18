@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <rect width="180" height="180" rx="40" fill="#0a0a0f"/>
+  <rect width="180" height="180" rx="40" fill="#8b5cf6" fill-opacity="0.15"/>
+  <!-- Purple glow ring -->
+  <rect x="10" y="10" width="160" height="160" rx="32" fill="none" stroke="#8b5cf6" stroke-opacity="0.2" stroke-width="1"/>
+  <!-- AT monogram -->
+  <text x="90" y="108"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-weight="700"
+    font-size="72"
+    fill="#8b5cf6"
+    letter-spacing="-2">AT</text>
+</svg>
