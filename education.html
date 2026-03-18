@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="light-theme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary meta -->
+  <title>Education IT Pricing — Arcane Technologies</title>
+  <meta name="description" content="Dedicated IT support and consultancy for schools, academies and MATs. Transparent tiered pricing — KCSiE-aware, GDPR-compliant, built around how schools work." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://arcanetechnologies.co.uk/education.html" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Education IT Pricing — Arcane Technologies" />
+  <meta property="og:description" content="Dedicated IT support for schools and academies. Tiered pricing, KCSiE-aware, GDPR-compliant." />
+  <meta property="og:url"         content="https://arcanetechnologies.co.uk/education.html" />
+  <meta property="og:locale"      content="en_GB" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Education IT Pricing — Arcane Technologies",
+    "url": "https://arcanetechnologies.co.uk/education.html",
+    "description": "Dedicated IT support for schools, academies and MATs. Transparent tiered pricing, KCSiE-aware and GDPR-compliant.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://arcanetechnologies.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://arcanetechnologies.co.uk/pricing.html" },
+        { "@type": "ListItem", "position": 3, "name": "Education IT", "item": "https://arcanetechnologies.co.uk/education.html" }
+      ]
+    },
+    "mainEntity": {
+      "@type": "ProfessionalService",
+      "name": "Arcane Technologies",
+      "url": "https://arcanetechnologies.co.uk",
+      "knowsAbout": ["education IT", "school IT support", "KCSiE", "GDPR", "safeguarding technology", "MAT IT", "academy IT"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Education IT Support Tiers",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Core Education IT Support",
+            "itemOffered": { "@type": "Service", "name": "Core School IT Support", "description": "Remote IT support for schools with up to 75 devices. Next business day SLA, device monitoring, software updates." },
+            "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "price": "250", "unitText": "MON", "valueAddedTaxIncluded": false }
+          },
+          {
+            "@type": "Offer",
+            "name": "Assured Education IT Support",
+            "itemOffered": { "@type": "Service", "name": "Assured School IT Support", "description": "Priority IT support with on-site visits and KCSiE compliance checks for schools with up to 150 devices." },
+            "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "price": "375", "unitText": "MON", "valueAddedTaxIncluded": false }
+          },
+          {
+            "@type": "Offer",
+            "name": "On-site Education IT Support",
+            "itemOffered": { "@type": "Service", "name": "On-site School IT Support", "description": "Fully managed on-site IT for larger schools and MATs. Agreed schedule, dedicated point of contact, unlimited devices." }
+          }
+        ]
+      }
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0f'/><rect width='32' height='32' rx='8' fill='%238b5cf6' fill-opacity='0.15'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='13' fill='%238b5cf6'>AT</text></svg>" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.svg" />
+  <link rel="manifest" href="./site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Custom Properties ─────────────────────────────────────── */
+    :root {
+      --bg-base:           #0a0a0f;
+      --bg-section:        #111118;
+      --bg-card:           #1a1a2e;
+      --purple:            #8b5cf6;
+      --purple-dim:        rgba(139, 92, 246, 0.15);
+      --purple-glow:       rgba(139, 92, 246, 0.4);
+      --blue:              #3b82f6;
+      --green:             #34d399;
+      --text-primary:      #f0eeff;
+      --text-muted:        #9997b8;
+      --border-subtle:     rgba(139, 92, 246, 0.12);
+      --border-hover:      rgba(139, 92, 246, 0.4);
+      --nav-scrolled-bg:   rgba(10, 10, 15, 0.78);
+      --font-heading:      'Space Grotesk', sans-serif;
+      --font-body:         'Inter', sans-serif;
+      --transition:        0.2s ease;
+    }
+
+    html.light-theme {
+      --bg-base:           #f8f8ff;
+      --bg-section:        #eeeef8;
+      --bg-card:           #ffffff;
+      --purple:            #6d28d9;
+      --purple-dim:        rgba(109, 40, 217, 0.08);
+      --purple-glow:       rgba(109, 40, 217, 0.25);
+      --blue:              #2563eb;
+      --green:             #059669;
+      --text-primary:      #0a0a1a;
+      --text-muted:        #666677;
+      --border-subtle:     rgba(109, 40, 217, 0.18);
+      --border-hover:      rgba(109, 40, 217, 0.5);
+      --nav-scrolled-bg:   rgba(248, 248, 255, 0.92);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ─── NAV ────────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 2rem;
+      transition: background var(--transition), backdrop-filter var(--transition);
+    }
+
+    nav.scrolled {
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-badge {
+      width: 32px; height: 32px;
+      background: var(--purple-dim);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: var(--purple);
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-family: var(--font-heading);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    .nav-cta {
+      background: var(--purple-dim);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      color: var(--purple);
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    .nav-cta:hover {
+      background: rgba(139, 92, 246, 0.25);
+      box-shadow: 0 0 16px rgba(139, 92, 246, 0.25);
+    }
+
+    /* ─── PAGE HERO ──────────────────────────────────────────────── */
+    .page-hero {
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      background: var(--bg-base);
+    }
+
+    .section-label {
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--purple);
+      text-shadow: 0 0 10px var(--purple-glow);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .page-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ─── TIER SECTION ───────────────────────────────────────────── */
+    .tier-section {
+      background: var(--bg-section);
+      padding: 5rem 2.5rem 6rem;
+    }
+
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .tier-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .tier-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--purple), transparent);
+    }
+
+    .tier-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 32px rgba(139, 92, 246, 0.18), 0 8px 32px rgba(0,0,0,0.35);
+    }
+
+    .tier-card--featured {
+      border-color: rgba(139, 92, 246, 0.35);
+    }
+
+    .tier-badge {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--purple);
+      background: var(--purple-dim);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+    }
+
+    .tier-name {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .tier-price {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--purple);
+      text-shadow: 0 0 16px rgba(139, 92, 246, 0.35);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.25rem;
+    }
+
+    .tier-price span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-shadow: none;
+    }
+
+    .tier-price--contact {
+      font-size: 1.4rem;
+      color: var(--blue);
+      text-shadow: 0 0 16px rgba(59, 130, 246, 0.3);
+    }
+
+    .tier-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .tier-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      flex: 1;
+      margin-bottom: 1.75rem;
+    }
+
+    .tier-feature {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .tier-feature::before {
+      content: '✓';
+      color: var(--green);
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .tier-cta {
+      display: block;
+      text-align: center;
+      background: var(--purple-dim);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      color: var(--purple);
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.7rem 1.25rem;
+      border-radius: 10px;
+      transition: background var(--transition), box-shadow var(--transition);
+      margin-top: auto;
+    }
+
+    .tier-cta:hover {
+      background: rgba(139, 92, 246, 0.25);
+      box-shadow: 0 0 16px rgba(139, 92, 246, 0.25);
+    }
+
+    .vat-note {
+      max-width: 1100px;
+      margin: 1.75rem auto 0;
+      font-size: 0.78rem;
+      color: rgba(153, 151, 184, 0.5);
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+
+    /* ─── COMPLIANCE SECTION ─────────────────────────────────────── */
+    .compliance-section {
+      background: var(--bg-base);
+      padding: 5rem 2.5rem;
+    }
+
+    .compliance-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .compliance-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .compliance-header h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
+    }
+
+    .compliance-header p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .compliance-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .compliance-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 1.75rem 1.5rem;
+    }
+
+    .compliance-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .compliance-item h3 {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .compliance-item p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ─── LEGAL LINKS SECTION ────────────────────────────────────── */
+    .legal-section {
+      background: var(--bg-section);
+      padding: 4rem 2.5rem 5rem;
+    }
+
+    .legal-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .legal-header {
+      margin-bottom: 2rem;
+    }
+
+    .legal-header h2 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .legal-header p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .legal-docs {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .legal-doc-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      text-decoration: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .legal-doc-link:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.12);
+    }
+
+    .legal-doc-body {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .legal-doc-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .legal-doc-text h3 {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .legal-doc-text p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .legal-doc-arrow {
+      font-size: 1rem;
+      color: var(--purple);
+      flex-shrink: 0;
+    }
+
+    /* ─── CONTACT STRIP ──────────────────────────────────────────── */
+    .contact-strip {
+      background: var(--bg-base);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .contact-strip h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-strip p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-strip a.btn {
+      display: inline-block;
+      background: var(--purple-dim);
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      color: var(--purple);
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.8rem 2rem;
+      border-radius: 10px;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    .contact-strip a.btn:hover {
+      background: rgba(139, 92, 246, 0.25);
+      box-shadow: 0 0 24px rgba(139, 92, 246, 0.3);
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────── */
+    footer {
+      background: var(--bg-base);
+      border-top: 1px solid var(--border-subtle);
+      padding: 1.75rem 2rem;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-copy a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .footer-copy a:hover { color: var(--text-primary); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .tier-grid        { grid-template-columns: 1fr; max-width: 480px; }
+      .compliance-grid  { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .tier-section     { padding: 4rem 1.25rem 5rem; }
+      .compliance-section, .legal-section { padding: 4rem 1.25rem; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-logo-text { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ───────────────────────────────────────────────────────── -->
+  <nav id="navbar" aria-label="Main navigation">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-badge">AT</div>
+      <span class="nav-logo-text">Arcane Technologies</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="./#services">Services</a></li>
+      <li><a href="./#about">About</a></li>
+      <li><a href="./pricing.html" class="active">Pricing</a></li>
+      <li><a href="./blog.html">Blog</a></li>
+    </ul>
+
+    <div style="display:flex;align-items:center;gap:0.5rem;">
+      <a href="./#contact" class="nav-cta">Let's Talk</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+  <!-- ── PAGE HERO ─────────────────────────────────────────────────── -->
+  <section class="page-hero" aria-label="Education IT introduction">
+    <span class="section-label">Schools &amp; Education</span>
+    <h1 class="page-title">IT support built for schools</h1>
+    <p class="page-sub">Three tiers. Transparent pricing. No surprises mid-term. KCSiE-aware, GDPR-compliant, and written in plain English.</p>
+  </section>
+
+  <!-- ── TIER CARDS ────────────────────────────────────────────────── -->
+  <section class="tier-section" aria-labelledby="tiers-heading">
+    <h2 id="tiers-heading" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Education support tiers</h2>
+
+    <div class="tier-grid">
+
+      <!-- Core -->
+      <div class="tier-card">
+        <span class="tier-badge">Core</span>
+        <h3 class="tier-name">Core</h3>
+        <div class="tier-price">£250 <span>/ month</span></div>
+        <p class="tier-desc">Essential remote support for smaller schools. Keeps you running without the overhead of a full-time tech.</p>
+        <ul class="tier-features">
+          <li class="tier-feature">Remote support via email &amp; ticket</li>
+          <li class="tier-feature">Next business day response SLA</li>
+          <li class="tier-feature">Device health monitoring</li>
+          <li class="tier-feature">Software &amp; security update management</li>
+          <li class="tier-feature">Annual infrastructure review</li>
+          <li class="tier-feature">Up to 75 devices</li>
+        </ul>
+        <a href="./#contact" class="tier-cta obf-email" data-u="contact" data-d="arcanetechnologies.co.uk" aria-label="Email Arcane Technologies about Core tier"></a>
+      </div>
+
+      <!-- Assured -->
+      <div class="tier-card tier-card--featured">
+        <span class="tier-badge">Most popular</span>
+        <h3 class="tier-name">Assured</h3>
+        <div class="tier-price">£375 <span>/ month</span></div>
+        <p class="tier-desc">Priority support with regular on-site visits and safeguarding compliance built in.</p>
+        <ul class="tier-features">
+          <li class="tier-feature">Everything in Core</li>
+          <li class="tier-feature">4-hour response SLA (term time)</li>
+          <li class="tier-feature">Half-day on-site visit per term</li>
+          <li class="tier-feature">KCSiE compliance checks</li>
+          <li class="tier-feature">Annual safeguarding technology review</li>
+          <li class="tier-feature">GDPR data-flow audit (annual)</li>
+          <li class="tier-feature">Up to 150 devices</li>
+        </ul>
+        <a href="./#contact" class="tier-cta obf-email" data-u="contact" data-d="arcanetechnologies.co.uk" aria-label="Email Arcane Technologies about Assured tier"></a>
+      </div>
+
+      <!-- On-site -->
+      <div class="tier-card">
+        <span class="tier-badge">On-site</span>
+        <h3 class="tier-name">On-site</h3>
+        <div class="tier-price tier-price--contact">Contact us</div>
+        <p class="tier-desc">Fully managed on-site IT for larger schools and MATs. Agreed schedule, dedicated point of contact.</p>
+        <ul class="tier-features">
+          <li class="tier-feature">Everything in Assured</li>
+          <li class="tier-feature">Regular on-site days (agreed schedule)</li>
+          <li class="tier-feature">Full infrastructure management</li>
+          <li class="tier-feature">MIS &amp; network administration</li>
+          <li class="tier-feature">Staff IT induction &amp; training</li>
+          <li class="tier-feature">Dedicated named point of contact</li>
+          <li class="tier-feature">Unlimited devices</li>
+        </ul>
+        <a href="./#contact" class="tier-cta obf-email" data-u="contact" data-d="arcanetechnologies.co.uk" aria-label="Email Arcane Technologies about On-site tier"></a>
+      </div>
+
+    </div><!-- /.tier-grid -->
+
+    <p class="vat-note">All prices exclude VAT. Prices are per school / site. MAT pricing available on request. Correct as of March 2026.</p>
+
+  </section>
+
+  <!-- ── COMPLIANCE ─────────────────────────────────────────────────── -->
+  <section class="compliance-section" aria-labelledby="compliance-heading">
+    <div class="compliance-inner">
+      <div class="compliance-header">
+        <span class="section-label">Built for education</span>
+        <h2 id="compliance-heading">Compliance &amp; safeguarding</h2>
+        <p>We understand the unique responsibilities schools carry. Our work is underpinned by education-sector standards.</p>
+      </div>
+
+      <div class="compliance-grid">
+        <div class="compliance-item">
+          <span class="compliance-icon" aria-hidden="true">🛡️</span>
+          <h3>KCSiE-aware</h3>
+          <p>All work considers Keeping Children Safe in Education guidance. Technology configurations support - not undermine - safeguarding duties.</p>
+        </div>
+        <div class="compliance-item">
+          <span class="compliance-icon" aria-hidden="true">🔒</span>
+          <h3>GDPR-compliant</h3>
+          <p>We hold and process school data in accordance with UK GDPR and the Data Protection Act 2018. A Data Processing Agreement is in place for all clients.</p>
+        </div>
+        <div class="compliance-item">
+          <span class="compliance-icon" aria-hidden="true">📋</span>
+          <h3>Education-specific terms</h3>
+          <p>Our standard terms are extended by a dedicated Education &amp; School Sector Addendum covering DBS, safeguarding, data handling and specific school duties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LEGAL DOCUMENTS ────────────────────────────────────────────── -->
+  <section class="legal-section" aria-labelledby="legal-heading">
+    <div class="legal-inner">
+      <div class="legal-header">
+        <span class="section-label">Legal &amp; compliance</span>
+        <h2 id="legal-heading">School-specific documentation</h2>
+        <p>All documentation provided before any engagement begins. No surprises.</p>
+      </div>
+
+      <div class="legal-docs">
+
+        <a href="./education-addendum.html" class="legal-doc-link">
+          <div class="legal-doc-body">
+            <span class="legal-doc-icon" aria-hidden="true">📄</span>
+            <div class="legal-doc-text">
+              <h3>Schedule 1 - Education &amp; School Sector Addendum</h3>
+              <p>Additional terms specific to school and education clients. Covers DBS requirements, safeguarding responsibilities, KCSIE compliance, data handling and termination provisions.</p>
+            </div>
+          </div>
+          <span class="legal-doc-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="./privacy-policy.html" class="legal-doc-link">
+          <div class="legal-doc-body">
+            <span class="legal-doc-icon" aria-hidden="true">🔐</span>
+            <div class="legal-doc-text">
+              <h3>Privacy Policy</h3>
+              <p>How we collect, use and protect personal data - including data processed on behalf of schools as a data processor under UK GDPR.</p>
+            </div>
+          </div>
+          <span class="legal-doc-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="./terms.html" class="legal-doc-link">
+          <div class="legal-doc-body">
+            <span class="legal-doc-icon" aria-hidden="true">📑</span>
+            <div class="legal-doc-text">
+              <h3>Standard Terms &amp; Conditions</h3>
+              <p>Our general terms of service. The Education Addendum (Schedule 1 above) applies in addition to these for school clients.</p>
+            </div>
+          </div>
+          <span class="legal-doc-arrow" aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT STRIP ──────────────────────────────────────────────── -->
+  <section class="contact-strip" aria-label="Contact">
+    <h2>Ready to talk schools IT?</h2>
+    <p>Start with a free discovery call - no obligation, no sales deck.</p>
+    <a href="./#contact" class="btn obf-email" data-u="contact" data-d="arcanetechnologies.co.uk" aria-label="Email Arcane Technologies"></a>
+  </section>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────── -->
+  <footer role="contentinfo">
+    <p class="footer-copy">&copy; 2026 Arcane Technologies. All rights reserved. &nbsp;·&nbsp; Cumbria, England &nbsp;·&nbsp; <a href="./privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="./terms.html">Terms &amp; Conditions</a></p>
+  </footer>
+
+  <!-- ── JS ────────────────────────────────────────────────────────── -->
+  <script>
+    // Email obfuscation
+    document.querySelectorAll('.obf-email').forEach(function(el) {
+      var addr = el.dataset.u + '@' + el.dataset.d;
+      el.href = 'mailto:' + addr;
+      if (!el.textContent.trim()) el.textContent = addr;
+    });
+
+    // Nav scroll class
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_CF_TOKEN"}'></script>
+
+</body>
+</html>

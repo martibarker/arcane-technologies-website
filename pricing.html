@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="light-theme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary meta -->
+  <title>Pricing - Arcane Technologies</title>
+  <meta name="description" content="Transparent IT pricing for businesses and the third sector. Setup, support, consultancy and web hosting — no hidden costs, no jargon." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://arcanetechnologies.co.uk/pricing.html" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Pricing - Arcane Technologies" />
+  <meta property="og:description" content="Transparent IT pricing for businesses and the third sector. No hidden costs, no jargon." />
+  <meta property="og:url"         content="https://arcanetechnologies.co.uk/pricing.html" />
+  <meta property="og:locale"      content="en_GB" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Pricing - Arcane Technologies",
+    "url": "https://arcanetechnologies.co.uk/pricing.html",
+    "description": "Transparent IT pricing for businesses and the third sector. Setup, support, consultancy and web hosting.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://arcanetechnologies.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://arcanetechnologies.co.uk/pricing.html" }
+      ]
+    },
+    "mainEntity": {
+      "@type": "ProfessionalService",
+      "name": "Arcane Technologies",
+      "url": "https://arcanetechnologies.co.uk",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IT Services Pricing",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "IT Setup", "description": "Domain, device and tenancy setup, hardware installation." },
+            "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "price": "350", "valueAddedTaxIncluded": false }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Ad-hoc IT Support", "description": "Remote or on-site IT support, no contracts." },
+            "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "price": "90", "unitText": "HOUR", "valueAddedTaxIncluded": false }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "IT Support Retainer", "description": "Monthly retainer for up to 200 devices. Priority response included." },
+            "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "price": "300", "unitText": "MON", "valueAddedTaxIncluded": false }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Discovery Call", "description": "30-minute IT consultancy discovery call." },
+            "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "price": "0", "valueAddedTaxIncluded": true }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Website Build", "description": "Custom mobile-first website design and build." },
+            "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "minPrice": "500", "valueAddedTaxIncluded": false }
+          }
+        ]
+      }
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0f'/><rect width='32' height='32' rx='8' fill='%238b5cf6' fill-opacity='0.15'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='13' fill='%238b5cf6'>AT</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Custom Properties ─────────────────────────────────────── */
+    :root {
+      --bg-base:           #0a0a0f;
+      --bg-section:        #111118;
+      --bg-card:           #1a1a2e;
+      --purple:            #8b5cf6;
+      --purple-dim:        rgba(139, 92, 246, 0.15);
+      --purple-glow:       rgba(139, 92, 246, 0.4);
+      --blue:              #3b82f6;
+      --green:             #34d399;
+      --text-primary:      #f0eeff;
+      --text-muted:        #9997b8;
+      --border-subtle:     rgba(139, 92, 246, 0.12);
+      --border-hover:      rgba(139, 92, 246, 0.4);
+      --nav-scrolled-bg:   rgba(10, 10, 15, 0.78);
+      --font-heading:      'Space Grotesk', sans-serif;
+      --font-body:         'Inter', sans-serif;
+      --transition:        0.2s ease;
+    }
+
+    html.light-theme {
+      --bg-base:           #f8f8ff;
+      --bg-section:        #eeeef8;
+      --bg-card:           #ffffff;
+      --purple:            #6d28d9;
+      --purple-dim:        rgba(109, 40, 217, 0.08);
+      --purple-glow:       rgba(109, 40, 217, 0.25);
+      --blue:              #2563eb;
+      --green:             #059669;
+      --text-primary:      #0a0a1a;
+      --text-muted:        #666677;
+      --border-subtle:     rgba(109, 40, 217, 0.18);
+      --border-hover:      rgba(109, 40, 217, 0.5);
+      --nav-scrolled-bg:   rgba(248, 248, 255, 0.92);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ─── NAV ────────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 2rem;
+      transition: background var(--transition), backdrop-filter var(--transition);
+    }
+
+    nav.scrolled {
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-badge {
+      width: 32px; height: 32px;
+      background: var(--purple-dim);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: var(--purple);
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-family: var(--font-heading);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    .nav-cta {
+      background: var(--purple-dim);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      color: var(--purple);
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    .nav-cta:hover {
+      background: rgba(139, 92, 246, 0.25);
+      box-shadow: 0 0 16px rgba(139, 92, 246, 0.25);
+    }
+
+    /* ─── PAGE HERO ──────────────────────────────────────────────── */
+    .page-hero {
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      background: var(--bg-base);
+    }
+
+    .section-label {
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--purple);
+      text-shadow: 0 0 10px var(--purple-glow);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .page-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ─── PRICING GRID ───────────────────────────────────────────── */
+    .pricing-section {
+      background: var(--bg-section);
+      padding: 5rem 2.5rem 6rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--purple), transparent);
+    }
+
+    .pricing-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 32px rgba(139, 92, 246, 0.18), 0 8px 32px rgba(0,0,0,0.35);
+    }
+
+    .pricing-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-card-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--purple-dim);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .pricing-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .pricing-tagline {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+      padding-left: calc(40px + 0.85rem);
+    }
+
+    .pricing-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .pricing-row:first-child { border-top: 1px solid var(--border-subtle); }
+
+    .pricing-row-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .pricing-row-label {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+    }
+
+    .pricing-row-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      max-width: 380px;
+    }
+
+    .pricing-row-value {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--purple);
+      text-shadow: 0 0 10px rgba(139, 92, 246, 0.35);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .pricing-row-value--free {
+      color: var(--green);
+      text-shadow: 0 0 10px rgba(52, 211, 153, 0.3);
+    }
+
+    .pricing-row-value--contact {
+      color: var(--blue);
+      text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    }
+
+    .pricing-small {
+      font-size: 0.73rem;
+      color: rgba(153, 151, 184, 0.55);
+      line-height: 1.5;
+      letter-spacing: 0.01em;
+    }
+
+    /* ─── EDUCATION CALLOUT ──────────────────────────────────────── */
+    .edu-callout {
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      background: var(--bg-card);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 16px;
+      padding: 2.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .edu-callout::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--purple), transparent);
+    }
+
+    .edu-callout:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 32px rgba(139, 92, 246, 0.18), 0 8px 32px rgba(0,0,0,0.35);
+    }
+
+    .edu-callout-body {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .edu-callout-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--purple-dim);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .edu-callout-text h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    .edu-callout-text p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    .edu-callout-cta {
+      background: var(--purple-dim);
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      color: var(--purple);
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.65rem 1.4rem;
+      border-radius: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    .edu-callout-cta:hover {
+      background: rgba(139, 92, 246, 0.25);
+      box-shadow: 0 0 16px rgba(139, 92, 246, 0.25);
+    }
+
+    /* ─── VAT NOTE ───────────────────────────────────────────────── */
+    .vat-note {
+      max-width: 1100px;
+      margin: 1.75rem auto 0;
+      font-size: 0.78rem;
+      color: rgba(153, 151, 184, 0.5);
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+
+    /* ─── CONTACT STRIP ──────────────────────────────────────────── */
+    .contact-strip {
+      background: var(--bg-base);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .contact-strip h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-strip p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-strip a.btn {
+      display: inline-block;
+      background: var(--purple-dim);
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      color: var(--purple);
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.8rem 2rem;
+      border-radius: 10px;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    .contact-strip a.btn:hover {
+      background: rgba(139, 92, 246, 0.25);
+      box-shadow: 0 0 24px rgba(139, 92, 246, 0.3);
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────── */
+    footer {
+      background: var(--bg-base);
+      border-top: 1px solid var(--border-subtle);
+      padding: 1.75rem 2rem;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-copy a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .footer-copy a:hover { color: var(--text-primary); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .pricing-section { padding: 4rem 1.25rem 5rem; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-row-sub { max-width: 100%; }
+      .edu-callout {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .edu-callout-cta { align-self: flex-start; }
+      .nav-logo-text { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ───────────────────────────────────────────────────────── -->
+  <nav id="navbar" aria-label="Main navigation">
+    <a href="./" class="nav-logo">
+      <div class="nav-logo-badge">AT</div>
+      <span class="nav-logo-text">Arcane Technologies</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="./#services">Services</a></li>
+      <li><a href="./#about">About</a></li>
+      <li><a href="./blog.html">Blog</a></li>
+      <li><a href="./pricing.html" class="active">Pricing</a></li>
+    </ul>
+
+    <div style="display:flex;align-items:center;gap:0.5rem;">
+      <a href="./#contact" class="nav-cta">Let's Talk</a>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HERO ─────────────────────────────────────────────────── -->
+  <main id="main-content">
+  <section class="page-hero" aria-label="Pricing introduction">
+    <span class="section-label">No surprises</span>
+    <h1 class="page-title">Transparent pricing</h1>
+    <p class="page-sub">Straightforward rates for businesses, charities and the third sector. Fixed-fee quotes always available on request.</p>
+  </section>
+
+  <!-- ── PRICING CARDS ─────────────────────────────────────────────── -->
+  <section class="pricing-section" aria-label="Service pricing">
+
+    <div class="pricing-grid">
+
+      <!-- Setup -->
+      <div class="pricing-card">
+        <div class="pricing-card-header">
+          <div class="pricing-card-icon" aria-hidden="true">⚙️</div>
+          <h2 class="pricing-card-title">Setup</h2>
+        </div>
+        <p class="pricing-tagline">New business, new kit, new office — we handle the lot.</p>
+        <div class="pricing-rows">
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <span class="pricing-row-label">Domain, device &amp; tenancy setup</span>
+              <span class="pricing-row-sub">M365 / Google Workspace, domain config, user accounts</span>
+            </div>
+            <span class="pricing-row-value">£350</span>
+          </div>
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <span class="pricing-row-label">Hardware install day rate</span>
+              <span class="pricing-row-sub">On-site deployment, cabling, switch/router config</span>
+            </div>
+            <span class="pricing-row-value">£500 / day</span>
+          </div>
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <span class="pricing-row-label">Larger deployments</span>
+              <span class="pricing-row-sub">Multi-site rollouts, server infrastructure, bulk device imaging</span>
+            </div>
+            <span class="pricing-row-value pricing-row-value--contact">POA</span>
+          </div>
+        </div>
+        <p class="pricing-small">All prices + VAT. Fixed-fee quotes available on request.</p>
+      </div>
+
+      <!-- Support -->
+      <div class="pricing-card">
+        <div class="pricing-card-header">
+          <div class="pricing-card-icon" aria-hidden="true">🔧</div>
+          <h2 class="pricing-card-title">Support</h2>
+        </div>
+        <p class="pricing-tagline">Responsive, plain-speaking support that actually fixes things.</p>
+        <div class="pricing-rows">
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <span class="pricing-row-label">Ad-hoc support</span>
+              <span class="pricing-row-sub">Remote or on-site, billed per hour. No contracts.</span>
+            </div>
+            <span class="pricing-row-value">from £90 / hr</span>
+          </div>
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <span class="pricing-row-label">Monthly retainer</span>
+              <span class="pricing-row-sub">Up to 200 devices. Priority response included.</span>
+            </div>
+            <span class="pricing-row-value">£300 / mo</span>
+          </div>
+        </div>
+        <p class="pricing-small">All prices + VAT. No call centres, no scripts.</p>
+      </div>
+
+      <!-- Consultancy -->
+      <div class="pricing-card">
+        <div class="pricing-card-header">
+          <div class="pricing-card-icon" aria-hidden="true">💬</div>
+          <h2 class="pricing-card-title">Consultancy</h2>
+        </div>
+        <p class="pricing-tagline">Honest advice on what'll actually help your organisation. No fluff.</p>
+        <div class="pricing-rows">
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <span class="pricing-row-label">Discovery call</span>
+              <span class="pricing-row-sub">30-minute intro call - no obligation, no sales pitch.</span>
+            </div>
+            <span class="pricing-row-value pricing-row-value--free">Free</span>
+          </div>
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <span class="pricing-row-label">Half-day session</span>
+              <span class="pricing-row-sub">Infrastructure audit or technology review. Written summary included.</span>
+            </div>
+            <span class="pricing-row-value">from £350</span>
+          </div>
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <span class="pricing-row-label">Full-day strategy</span>
+              <span class="pricing-row-sub">Deep-dive with roadmap and written recommendations.</span>
+            </div>
+            <span class="pricing-row-value">from £700</span>
+          </div>
+        </div>
+        <p class="pricing-small">All prices + VAT.</p>
+      </div>
+
+      <!-- Web & Hosting -->
+      <div class="pricing-card">
+        <div class="pricing-card-header">
+          <div class="pricing-card-icon" aria-hidden="true">🌐</div>
+          <h2 class="pricing-card-title">Web &amp; Hosting</h2>
+        </div>
+        <p class="pricing-tagline">Sites built, hosted and kept running - without the agency markup.</p>
+        <div class="pricing-rows">
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <span class="pricing-row-label">Website build</span>
+              <span class="pricing-row-sub">Custom design, mobile-first, fast and accessible.</span>
+            </div>
+            <span class="pricing-row-value">from £500</span>
+          </div>
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <span class="pricing-row-label">Hosting &amp; domain management</span>
+              <span class="pricing-row-sub">Managed hosting, SSL, DNS. Includes annual domain renewal.</span>
+            </div>
+            <span class="pricing-row-value">from £30 / mo</span>
+          </div>
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <span class="pricing-row-label">Ongoing maintenance</span>
+              <span class="pricing-row-sub">Content updates, security patches, performance monitoring.</span>
+            </div>
+            <span class="pricing-row-value pricing-row-value--contact">POA</span>
+          </div>
+        </div>
+        <p class="pricing-small">All prices + VAT. Fixed-fee quotes available on request.</p>
+      </div>
+
+    </div><!-- /.pricing-grid -->
+
+    <!-- Education callout -->
+    <div class="edu-callout">
+      <div class="edu-callout-body">
+        <div class="edu-callout-icon" aria-hidden="true">🎓</div>
+        <div class="edu-callout-text">
+          <h3>School &amp; Education pricing</h3>
+          <p>Dedicated tiered pricing for schools, academies and MATs - KCSiE-aware, GDPR-compliant, and built around how schools actually work.</p>
+        </div>
+      </div>
+      <a href="./education.html" class="edu-callout-cta">View education pricing →</a>
+    </div>
+
+    <p class="vat-note">All prices exclude VAT. Fixed-fee quotes available on request. Prices correct as of March 2026.</p>
+
+  </section>
+
+  <!-- ── CONTACT STRIP ──────────────────────────────────────────────── -->
+  <section class="contact-strip" aria-label="Contact">
+    <h2>Not sure what you need?</h2>
+    <p>Start with a free discovery call - no obligation, no sales deck.</p>
+    <a href="./#contact" class="btn">Get in touch</a>
+  </section>
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────── -->
+  <footer role="contentinfo">
+    <p class="footer-copy">&copy; 2026 Arcane Technologies. All rights reserved. &nbsp;·&nbsp; Cumbria, England &nbsp;·&nbsp; <a href="./privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="./terms.html">Terms &amp; Conditions</a></p>
+  </footer>
+
+  <!-- ── JS ────────────────────────────────────────────────────────── -->
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
