@@ -186,6 +186,26 @@
     .post-body .aside p { margin-bottom: 0.5rem; }
     .post-body .aside p:last-child { margin-bottom: 0; }
 
+    .post-body .post-cta {
+      display: inline-block;
+      margin: 2rem 0 1.5rem;
+      padding: 0.7rem 1.4rem;
+      background: var(--purple-dim);
+      border: 1px solid var(--purple);
+      color: var(--purple);
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .post-body .post-cta:hover {
+      background: var(--purple);
+      color: #fff;
+    }
+
     .post-body .post-footer-note {
       font-size: 0.85rem;
       color: var(--text-muted);
@@ -327,6 +347,8 @@
         <p>But the accurate, well-formatted, consistently structured, properly attributed record of all of that?</p>
 
         <p>That, it turns out, we can usefully delegate.</p>
+
+        <a href="./index.html#contact" class="post-cta">Interested in this for your business? Contact us now &rsaquo;</a>
 
         <p class="post-footer-note">Suitable for: board secretaries, company secretaries, governance clerks, school governors clerks, charity administrators, NHS trust governance teams, professional body secretariats, and anyone who has ever written "action: TBC" in a set of minutes and then lost the Post-it.</p>
 
