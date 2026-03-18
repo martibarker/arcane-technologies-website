@@ -850,7 +850,15 @@
       font-size: 0.85rem;
       color: var(--text-muted);
       line-height: 1.5;
-      margin-bottom: 0.6rem;
+      margin-bottom: auto;
+    }
+
+    .card-cta {
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--purple);
+      letter-spacing: 0.03em;
     }
 
     .price-list {
@@ -1674,184 +1682,100 @@
 
       <!-- Setup -->
       <div class="card-wrapper reveal"
-           role="button" tabindex="0"
-           aria-pressed="false"
-           aria-label="Setup service: press to reveal details">
+           role="link" tabindex="0"
+           aria-label="Setup service — click for pricing"
+           data-href="./pricing.html">
         <div class="card-inner">
           <div class="card-front" aria-hidden="false">
             <div class="card-icon" aria-hidden="true">⚙️</div>
             <h3 class="card-title">Setup</h3>
             <p class="card-desc">New business, new product: we've got you covered.</p>
-            <span class="card-hint" aria-hidden="true">Flip for more</span>
+            <span class="card-hint" aria-hidden="true">Click for pricing</span>
           </div>
           <div class="card-back" aria-hidden="true">
             <p class="card-back-title">Setup</p>
-            <p class="card-back-text">Everything configured, connected and ready to go from day one.</p>
-            <ul class="price-list">
-              <li class="price-item price-item--block">
-                <div class="price-item-inner">
-                  <span class="price-label">Domains, email &amp; tenancy</span>
-                </div>
-                <span class="price-sublabel">M365 / Google Workspace, DNS, user accounts</span>
-              </li>
-              <li class="price-item price-item--block">
-                <div class="price-item-inner">
-                  <span class="price-label">On-site hardware installation</span>
-                </div>
-                <span class="price-sublabel">Switches, device imaging &amp; deployment</span>
-              </li>
-              <li class="price-item price-item--block">
-                <div class="price-item-inner">
-                  <span class="price-label">Multi-site &amp; larger rollouts</span>
-                </div>
-                <span class="price-sublabel">Fixed-fee quotes available</span>
-              </li>
-            </ul>
-            <p class="price-note">All prices + VAT. Fixed-fee quotes available on request.</p>
-            <a href="./pricing.html" class="price-note" style="color:var(--purple);text-decoration:none;">View full pricing →</a>
+            <p class="card-back-text">Everything configured, connected and ready to go from day one. Domains, email, hardware, devices — however big or small the rollout.</p>
+            <p class="card-cta">See full pricing →</p>
           </div>
         </div>
       </div>
 
       <!-- Support -->
       <div class="card-wrapper reveal reveal-delay-1"
-           role="button" tabindex="0"
-           aria-pressed="false"
-           aria-label="Support service: press to reveal details">
+           role="link" tabindex="0"
+           aria-label="Support service — click for pricing"
+           data-href="./pricing.html">
         <div class="card-inner">
           <div class="card-front" aria-hidden="false">
             <div class="card-icon" aria-hidden="true">🔧</div>
             <h3 class="card-title">Support</h3>
             <p class="card-desc">Sick of turning it off and on again?</p>
-            <span class="card-hint" aria-hidden="true">Flip for more</span>
+            <span class="card-hint" aria-hidden="true">Click for pricing</span>
           </div>
           <div class="card-back" aria-hidden="true">
             <p class="card-back-title">Support</p>
-            <p class="card-back-text">Responsive, plain-speaking support that actually fixes things.</p>
-            <ul class="price-list">
-              <li class="price-item">
-                <span class="price-label">Ad-hoc support</span>
-                <span class="price-value">from £90 / hr</span>
-              </li>
-              <li class="price-item">
-                <span class="price-label">Monthly retainer (≤200 devices)</span>
-                <span class="price-value">£300 / mo</span>
-              </li>
-              <li class="price-item">
-                <span class="price-label">Update &amp; Security Monitoring</span>
-                <span class="price-value">£2 / device / mo</span>
-              </li>
-              <li class="price-item">
-                <span class="price-label">Small Business Special (≤5 devices)</span>
-                <span class="price-value">£100 / mo</span>
-              </li>
-            </ul>
-            <p class="price-note">All prices + VAT. Priority response included with retainer.</p>
-            <a href="./pricing.html" class="price-note" style="color:var(--purple);text-decoration:none;">View full pricing →</a>
+            <p class="card-back-text">Responsive, plain-speaking support that actually fixes things. Ad-hoc, retainer, or fully managed — no call centres, no scripts.</p>
+            <p class="card-cta">See full pricing →</p>
           </div>
         </div>
       </div>
 
       <!-- Consultancy -->
       <div class="card-wrapper reveal reveal-delay-2"
-           role="button" tabindex="0"
-           aria-pressed="false"
-           aria-label="Consultancy service: press to reveal details">
+           role="link" tabindex="0"
+           aria-label="Consultancy service — click for pricing"
+           data-href="./pricing.html">
         <div class="card-inner">
           <div class="card-front" aria-hidden="false">
             <div class="card-icon" aria-hidden="true">💬</div>
             <h3 class="card-title">Consultancy</h3>
             <p class="card-desc">Don't know where to start with AI? Suppliers letting you down? Let's have a brew and a chat.</p>
-            <span class="card-hint" aria-hidden="true">Flip for more</span>
+            <span class="card-hint" aria-hidden="true">Click for pricing</span>
           </div>
           <div class="card-back" aria-hidden="true">
             <p class="card-back-title">Consultancy</p>
-            <p class="card-back-text">Honest advice on what'll actually help. No fluff.</p>
-            <ul class="price-list">
-              <li class="price-item">
-                <span class="price-label">Discovery call</span>
-                <span class="price-value">Free</span>
-              </li>
-              <li class="price-item">
-                <span class="price-label">Half-day session</span>
-                <span class="price-value">from £350</span>
-              </li>
-              <li class="price-item">
-                <span class="price-label">IT Audit</span>
-                <span class="price-value">from £700</span>
-              </li>
-            </ul>
-            <p class="price-note">All prices + VAT. Written recommendations included.</p>
-            <a href="./pricing.html" class="price-note" style="color:var(--purple);text-decoration:none;">View full pricing →</a>
+            <p class="card-back-text">Honest advice on what'll actually help. Discovery call is free — no obligation, no sales pitch.</p>
+            <p class="card-cta">See full pricing →</p>
           </div>
         </div>
       </div>
 
       <!-- Education -->
       <div class="card-wrapper reveal reveal-delay-3"
-           role="button" tabindex="0"
-           aria-pressed="false"
-           aria-label="Education service: press to reveal pricing">
+           role="link" tabindex="0"
+           aria-label="Education service — click for pricing"
+           data-href="./education.html">
         <div class="card-inner">
           <div class="card-front" aria-hidden="false">
             <div class="card-icon" aria-hidden="true">🎓</div>
             <h3 class="card-title">Education</h3>
             <p class="card-desc">Dedicated IT support built around how schools actually work.</p>
-            <span class="card-hint" aria-hidden="true">Flip for pricing</span>
+            <span class="card-hint" aria-hidden="true">Click for pricing</span>
           </div>
           <div class="card-back" aria-hidden="true">
             <p class="card-back-title">Education</p>
-            <p class="card-back-text">Schools IT support, three ways.</p>
-            <ul class="price-list">
-              <li class="price-item">
-                <span class="price-label">Core</span>
-                <span class="price-value">£250 / mo</span>
-              </li>
-              <li class="price-item">
-                <span class="price-label">Assured</span>
-                <span class="price-value">£375 / mo</span>
-              </li>
-              <li class="price-item">
-                <span class="price-label">On-site</span>
-                <span class="price-value" style="color:var(--blue);">Contact us</span>
-              </li>
-            </ul>
-            <p class="price-note">Full tier inclusions on request. All prices + VAT.</p>
-            <a href="./education.html" class="price-note" style="color:var(--purple);text-decoration:none;">View full pricing →</a>
+            <p class="card-back-text">KCSiE-aware IT support on a monthly retainer. Transparent tiers, no surprises.</p>
+            <p class="card-cta">See full pricing →</p>
           </div>
         </div>
       </div>
 
       <!-- Web & Hosting -->
       <div class="card-wrapper reveal reveal-delay-4"
-           role="button" tabindex="0"
-           aria-pressed="false"
-           aria-label="Web and hosting service: press to reveal details">
+           role="link" tabindex="0"
+           aria-label="Web and hosting service — click for pricing"
+           data-href="./pricing.html">
         <div class="card-inner">
           <div class="card-front" aria-hidden="false">
             <div class="card-icon" aria-hidden="true">🌐</div>
             <h3 class="card-title">Web &amp; Hosting</h3>
             <p class="card-desc">Sites built, hosted and kept running - without the agency markup.</p>
-            <span class="card-hint" aria-hidden="true">Flip for more</span>
+            <span class="card-hint" aria-hidden="true">Click for pricing</span>
           </div>
           <div class="card-back" aria-hidden="true">
             <p class="card-back-title">Web &amp; Hosting</p>
-            <ul class="price-list">
-              <li class="price-item">
-                <span class="price-label">Website build</span>
-                <span class="price-value">from £500</span>
-              </li>
-              <li class="price-item">
-                <span class="price-label">Hosting &amp; domain</span>
-                <span class="price-value">from £30 / mo</span>
-              </li>
-              <li class="price-item">
-                <span class="price-label">Ongoing maintenance</span>
-                <span class="price-value">POA</span>
-              </li>
-            </ul>
-            <p class="price-note">All prices + VAT. Fixed-fee quotes available on request.</p>
-            <a href="./pricing.html" class="price-note" style="color:var(--purple);text-decoration:none;">View full pricing →</a>
+            <p class="card-back-text">Custom builds, managed hosting, SSL and domain renewal — all handled. No agency rates, no hidden fees.</p>
+            <p class="card-cta">See full pricing →</p>
           </div>
         </div>
       </div>
@@ -2056,31 +1980,16 @@
 
     revealEls.forEach(el => revealObserver.observe(el));
 
-    // ── Card flip: touch + keyboard ──────────────────────────────────
-    function flipCard(card) {
-      const isFlipped = card.classList.toggle('flipped');
-      card.setAttribute('aria-pressed', isFlipped);
-      card.setAttribute('aria-label',
-        isFlipped
-          ? card.getAttribute('aria-label').replace('press to reveal details', 'press to close')
-          : card.getAttribute('aria-label').replace('press to close', 'press to reveal details')
-      );
-      // Toggle aria-hidden on faces
-      card.querySelector('.card-front').setAttribute('aria-hidden', isFlipped);
-      card.querySelector('.card-back').setAttribute('aria-hidden', !isFlipped);
-    }
-
+    // ── Card navigation ───────────────────────────────────────────────
     document.querySelectorAll('.card-wrapper').forEach(card => {
-      // Touch / mouse click (touch devices only flip via click)
+      const href = card.dataset.href;
       card.addEventListener('click', () => {
-        if (window.matchMedia('(hover: none)').matches) flipCard(card);
+        if (href) window.location.href = href;
       });
-
-      // Keyboard: Enter or Space
       card.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          flipCard(card);
+          if (href) window.location.href = href;
         }
       });
     });
