@@ -1,8 +1,17 @@
 User-agent: *
 Allow: /
-Disallow: /privacy-policy.html
-Disallow: /terms.html
-Disallow: /education-addendum.html
 Disallow: /downloads.html
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
 
 Sitemap: https://arcanetechnologies.co.uk/sitemap.xml

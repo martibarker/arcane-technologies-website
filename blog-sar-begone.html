@@ -5,8 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SAR Begone! Automating Redactions with AI - Arcane Technologies Blog</title>
   <meta name="description" content="A true story about legal compliance, robot lawyers, and the surprisingly emotional experience of watching software do your filing. How we automated SAR redaction with AI." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://arcanetechnologies.co.uk/blog-sar-begone.html" />
-
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="SAR Begone! Automating Redactions with AI" />
+  <meta property="og:description" content="How we automated Subject Access Request redactions with AI — cutting hours of manual work down to minutes." />
+  <meta property="og:url" content="https://arcanetechnologies.co.uk/blog-sar-begone.html" />
+  <meta property="og:image" content="https://arcanetechnologies.co.uk/assets/logo-rounded.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "SAR Begone! Automating Redactions with AI",
+    "description": "How we automated Subject Access Request redactions with AI — cutting hours of manual work down to minutes.",
+    "url": "https://arcanetechnologies.co.uk/blog-sar-begone.html",
+    "author": { "@type": "Organization", "name": "Arcane Technologies" },
+    "publisher": { "@type": "Organization", "name": "Arcane Technologies", "url": "https://arcanetechnologies.co.uk" },
+    "datePublished": "2026-01-01",
+    "image": "https://arcanetechnologies.co.uk/assets/logo-rounded.png",
+    "keywords": ["AI", "automation", "data protection", "SAR", "GDPR"]
+  }
+  </script>
   <link rel="icon" type="image/png" href="./assets/logo-rounded.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -144,16 +163,30 @@
       border-bottom: 1px solid var(--border-subtle);
     }
 
+    .post-body {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+    }
+
     .post-body h2 {
       font-family: var(--font-heading);
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin: 2.5rem 0 0.75rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 3rem 0 0.75rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-primary);
     }
 
     .post-body p {
       margin-bottom: 1.25rem;
       color: var(--text-primary);
+    }
+
+    .post-body p.lead {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      line-height: 1.7;
     }
 
     .post-body p.placeholder {
@@ -162,6 +195,43 @@
       border-left: 3px solid var(--border-subtle);
       padding-left: 1rem;
     }
+
+    .post-body blockquote {
+      margin: 2rem 0;
+      padding: 1.25rem 1.5rem;
+      background: var(--purple-dim);
+      border-left: 4px solid var(--purple);
+      border-radius: 0 10px 10px 0;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text-primary);
+    }
+
+    .post-body ul, .post-body ol {
+      margin: 0 0 1.25rem 1.5rem;
+    }
+
+    .post-body li {
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .post-body strong {
+      font-weight: 600;
+    }
+
+    .post-body .aside {
+      border-left: 3px solid var(--purple);
+      padding: 0.9rem 1.25rem;
+      margin: 1.75rem 0;
+      background: var(--purple-dim);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .post-body .aside p { margin-bottom: 0.5rem; }
+    .post-body .aside p:last-child { margin-bottom: 0; }
 
     .post-body code {
       font-family: ui-monospace, 'Cascadia Code', monospace;
@@ -194,7 +264,6 @@
     <div style="display:flex;align-items:center;gap:1rem;">
       <a href="./#services" class="nav-back">Services</a>
       <a href="./#about" class="nav-back">About</a>
-      <a href="./pricing.html" class="nav-back">Pricing</a>
       <a href="./blog.html" class="nav-back" style="color:var(--purple);">Blog</a>
     </div>
   </nav>
@@ -204,10 +273,10 @@
       <p class="post-breadcrumb"><a href="./blog.html">Blog</a> &rsaquo; Business Projects</p>
       <span class="post-tag">Business</span>
       <h1>SAR Begone! Automating Redactions with AI</h1>
-      <p class="post-meta">AI &middot; Automation &middot; Data Protection</p>
+      <p class="post-meta">AI &middot; Automation &middot; Data Protection &middot; <strong>6 min read</strong></p>
 
       <div class="post-body">
-        <p><em>A true (but redacted) story about legal compliance, robot lawyers, and the surprisingly emotional experience of watching software do your filing.</em></p>
+        <p class="lead">A true (but redacted) story about legal compliance, robot lawyers, and the surprisingly emotional experience of watching software do your filing.</p>
 
         <p>There is a certain type of task that exists in every organisation. You know the one. It sits in a corner of the To Do list, technically urgent, legally significant, and deeply, profoundly tedious. Nobody wants to do it, everyone agrees it must be done, and the person who ends up doing it spends the next three weeks quietly resenting everything.</p>
 

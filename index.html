@@ -5,19 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary meta -->
-  <title>Arcane Technologies - The arcane art of actually fixing IT</title>
-  <meta name="description" content="Arcane Technologies is the IT consultancy based in the heart of Cumbria. Expert IT support, setup and consultancy for businesses, schools and the third sector. Plain English. No suits." />
+  <title>Arcane Technologies | IT Support, Penrith &amp; Cumbria</title>
+  <meta name="description" content="IT support, web design and consultancy based in Penrith, Cumbria. Honest advice, plain English — for businesses, schools and the third sector." />
+  <meta name="robots" content="index, follow" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://arcanetechnologies.co.uk" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Arcane Technologies - The arcane art of actually fixing IT" />
-  <meta property="og:description" content="IT support, setup and consultancy based in the heart of Cumbria. We speak human. Computers too." />
+  <meta property="og:title"       content="Arcane Technologies | IT Support, Penrith &amp; Cumbria" />
+  <meta property="og:description" content="IT support, web design and consultancy based in Penrith, Cumbria. Honest advice, plain English — for businesses, schools and the third sector." />
   <meta property="og:url"         content="https://arcanetechnologies.co.uk" />
   <meta property="og:locale"      content="en_GB" />
-  <!-- og:image — add once logo is ready -->
+  <meta property="og:image"       content="https://arcanetechnologies.co.uk/assets/logo-rounded.png" />
 
   <!-- LocalBusiness structured data -->
   <script type="application/ld+json">
@@ -25,16 +26,18 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Arcane Technologies",
-    "description": "IT consultancy based in Cumbria offering expert IT support, setup and consultancy for businesses, schools and the third sector. Plain English. No suits.",
+    "description": "IT support, web design and consultancy based in Penrith, Cumbria. Honest advice, plain English — for businesses, schools and the third sector.",
     "url": "https://arcanetechnologies.co.uk",
     "email": "contact@arcanetechnologies.co.uk",
     "address": {
       "@type": "PostalAddress",
+      "addressLocality": "Penrith",
+      "postalCode": "CA11",
       "addressRegion": "Cumbria",
       "addressCountry": "GB"
     },
-    "areaServed": ["GB", "DE"],
-    "knowsAbout": ["IT support", "IT consultancy", "infrastructure", "education technology", "third sector IT", "cyber security", "cloud services"],
+    "areaServed": ["Penrith", "Cumbria", "Eden Valley", "Lake District", "Carlisle", "Kendal", "GB"],
+    "knowsAbout": ["IT support", "IT consultancy", "web design", "ecommerce", "networking", "WiFi", "education technology", "third sector IT", "cyber security", "cloud services"],
     "slogan": "The arcane art of actually fixing IT",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -44,24 +47,32 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "IT Setup",
-            "description": "Hardware procurement, network configuration, device setup and infrastructure installation for businesses and schools."
+            "name": "SME IT Support",
+            "description": "Day-to-day IT support for growing businesses. Remote and on-site, no call centres."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "IT Support",
-            "description": "Reactive and ongoing IT support for businesses, schools and the third sector. No call centres, no scripts."
+            "name": "Web Design & Ecommerce",
+            "description": "Custom websites and online stores. Built fast, hosted reliably, no agency rates."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "IT Consultancy",
-            "description": "Strategic IT consultancy, discovery calls, infrastructure audits and technology roadmaps."
+            "name": "Non-profit & Charities IT",
+            "description": "IT support for the third sector. Tight budgets, high standards, mission-critical systems."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Networking, WiFi & Broadband",
+            "description": "Network audits, installs and upgrades across offices and multi-site organisations."
           }
         },
         {
@@ -69,11 +80,61 @@
           "itemOffered": {
             "@type": "Service",
             "name": "Education IT",
-            "description": "Specialist IT support and consultancy for schools, academies and multi-academy trusts. KCSiE-aware, GDPR-compliant."
+            "description": "KCSiE-aware IT support for schools and academies. Monthly retainer, no surprises."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "IT Consultancy",
+            "description": "Honest advice on AI, cloud, and supplier challenges. Discovery call is free."
           }
         }
       ]
     }
+  }
+  </script>
+
+  <!-- FAQ schema — helps AI assistants surface correct answers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What IT services do you offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer SME IT support, web design and ecommerce, IT support for non-profits and charities, networking and WiFi, education IT for schools, and IT consultancy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you support schools and education?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We provide KCSiE-aware IT support built around how schools actually work — on a monthly retainer with no surprise costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where are you based?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We are based in Penrith, Cumbria, and support clients across the Lake District, Eden Valley, Carlisle, Kendal, and beyond."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get a quote?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the contact form at arcanetechnologies.co.uk or email contact@arcanetechnologies.co.uk. The initial discovery call is free."
+        }
+      }
+    ]
   }
   </script>
 
@@ -624,10 +685,59 @@
       to   { opacity: 1; transform: scaleX(-1); }
     }
 
+    /* ─── ETHOS STRIP ───────────────────────────────────────────── */
+    .ethos-strip {
+      background: var(--bg-section);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 2rem 2.5rem;
+    }
+
+    .ethos-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .ethos-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .ethos-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .ethos-text {
+      font-family: var(--font-heading);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .ethos-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ethos-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ─── SERVICES ──────────────────────────────────────────────── */
     #services {
       padding: 6rem 2.5rem;
-      background: var(--bg-section);
+      background: var(--bg-base);
     }
 
     .services-quote {
@@ -693,6 +803,99 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+
+    /* ── Service tiles (new static layout) ── */
+    .service-tiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      .service-tiles { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 500px) {
+      .service-tiles { grid-template-columns: 1fr; }
+    }
+
+    .service-tile {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-tile::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--purple), transparent);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .service-tile:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 28px rgba(139, 92, 246, 0.18), 0 6px 20px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+
+    .service-tile:hover::before { opacity: 1; }
+
+    .service-tile-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--purple-dim);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-tile-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .service-tile-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .service-tile-arrow {
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--purple);
+      letter-spacing: 0.02em;
+      transition: gap var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .service-tile:hover .service-tile-arrow { gap: 0.5rem; }
 
     /* Education tier table */
     .edu-back {
@@ -1690,7 +1893,6 @@
     <ul class="nav-links" role="list">
       <li><a href="#services" data-section="services">Services</a></li>
       <li><a href="#about"    data-section="about">About</a></li>
-      <li><a href="./pricing.html">Pricing</a></li>
       <li><a href="./blog.html">Blog</a></li>
     </ul>
 
@@ -1706,7 +1908,6 @@
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
     <a href="#services" class="mobile-menu-link">Services</a>
     <a href="#about"    class="mobile-menu-link">About</a>
-    <a href="./pricing.html" class="mobile-menu-link">Pricing</a>
     <a href="./blog.html"    class="mobile-menu-link">Blog</a>
     <a href="#contact"  class="mobile-menu-link mobile-menu-cta">Let's Talk</a>
   </div>
@@ -1737,19 +1938,26 @@
     </div>
   </section>
 
-  <!-- ── DIVIDER: Hero → Services ─────────────────────────────────── -->
-  <div class="wipe-divider" aria-hidden="true">
-    <div class="shimmer-line"></div>
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="wg1" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%"   stop-color="#111118" />
-          <stop offset="45%"  stop-color="#1a1020" />
-          <stop offset="100%" stop-color="#111118" />
-        </linearGradient>
-      </defs>
-      <path class="wave-path" d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="url(#wg1)" />
-    </svg>
+  <!-- ── ETHOS STRIP ─────────────────────────────────────────────── -->
+  <div class="ethos-strip" aria-hidden="true">
+    <div class="ethos-inner">
+      <div class="ethos-item">
+        <span class="ethos-icon">🧑‍💻</span>
+        <span class="ethos-text">Real people. No call centres.</span>
+      </div>
+      <div class="ethos-item">
+        <span class="ethos-icon">🗣️</span>
+        <span class="ethos-text">Plain English. Always.</span>
+      </div>
+      <div class="ethos-item">
+        <span class="ethos-icon">🔍</span>
+        <span class="ethos-text">Honest about what you actually need.</span>
+      </div>
+      <div class="ethos-item">
+        <span class="ethos-icon">🌍</span>
+        <span class="ethos-text">Cumbrian roots. Global experience.</span>
+      </div>
+    </div>
   </div>
 
   <!-- ── SERVICES ──────────────────────────────────────────────────── -->
@@ -1759,107 +1967,49 @@
       "IT support that doesn't make you <strong>feel stupid.</strong>"
     </p>
 
-    <div class="cards">
+    <div class="service-tiles">
 
-      <!-- Setup -->
-      <div class="card-wrapper reveal"
-           role="link" tabindex="0"
-           aria-label="Setup service — click for pricing"
-           data-href="./pricing.html">
-        <div class="card-inner">
-          <div class="card-front" aria-hidden="false">
-            <div class="card-icon" aria-hidden="true">⚙️</div>
-            <h3 class="card-title">Setup</h3>
-            <p class="card-desc">New business, new product: we've got you covered.</p>
-            <span class="card-hint" aria-hidden="true">Click for pricing</span>
-          </div>
-          <div class="card-back" aria-hidden="true">
-            <p class="card-back-title">Setup</p>
-            <p class="card-back-text">Everything configured, connected and ready to go from day one. Domains, email, hardware, devices — however big or small the rollout.</p>
-            <p class="card-cta">See full pricing →</p>
-          </div>
-        </div>
-      </div>
+      <a href="./sme-support.html" class="service-tile reveal">
+        <div class="service-tile-icon" aria-hidden="true">🔧</div>
+        <h3 class="service-tile-title">SME IT Support</h3>
+        <p class="service-tile-desc">Day-to-day IT for growing businesses. Remote help when you need it, on-site when you don't.</p>
+        <span class="service-tile-arrow">Find out more <span aria-hidden="true">→</span></span>
+      </a>
 
-      <!-- Support -->
-      <div class="card-wrapper reveal reveal-delay-1"
-           role="link" tabindex="0"
-           aria-label="Support service — click for pricing"
-           data-href="./pricing.html">
-        <div class="card-inner">
-          <div class="card-front" aria-hidden="false">
-            <div class="card-icon" aria-hidden="true">🔧</div>
-            <h3 class="card-title">Support</h3>
-            <p class="card-desc">Sick of turning it off and on again?</p>
-            <span class="card-hint" aria-hidden="true">Click for pricing</span>
-          </div>
-          <div class="card-back" aria-hidden="true">
-            <p class="card-back-title">Support</p>
-            <p class="card-back-text">Responsive, plain-speaking support that actually fixes things. Ad-hoc, retainer, or fully managed — no call centres, no scripts.</p>
-            <p class="card-cta">See full pricing →</p>
-          </div>
-        </div>
-      </div>
+      <a href="./web-design.html" class="service-tile reveal reveal-delay-1">
+        <div class="service-tile-icon" aria-hidden="true">🌐</div>
+        <h3 class="service-tile-title">Web Design &amp; Ecommerce</h3>
+        <p class="service-tile-desc">Custom websites and online stores that actually work. Built fast, hosted reliably, no agency rates.</p>
+        <span class="service-tile-arrow">Find out more <span aria-hidden="true">→</span></span>
+      </a>
 
-      <!-- Consultancy -->
-      <div class="card-wrapper reveal reveal-delay-2"
-           role="link" tabindex="0"
-           aria-label="Consultancy service — click for pricing"
-           data-href="./pricing.html">
-        <div class="card-inner">
-          <div class="card-front" aria-hidden="false">
-            <div class="card-icon" aria-hidden="true">💬</div>
-            <h3 class="card-title">Consultancy</h3>
-            <p class="card-desc">Don't know where to start with AI? Suppliers letting you down? Let's have a brew and a chat.</p>
-            <span class="card-hint" aria-hidden="true">Click for pricing</span>
-          </div>
-          <div class="card-back" aria-hidden="true">
-            <p class="card-back-title">Consultancy</p>
-            <p class="card-back-text">Honest advice on what'll actually help. Discovery call is free — no obligation, no sales pitch.</p>
-            <p class="card-cta">See full pricing →</p>
-          </div>
-        </div>
-      </div>
+      <a href="./non-profit.html" class="service-tile reveal reveal-delay-2">
+        <div class="service-tile-icon" aria-hidden="true">🤝</div>
+        <h3 class="service-tile-title">Non-profit &amp; Charities</h3>
+        <p class="service-tile-desc">IT support that understands the third sector — tight budgets, high standards, and mission-critical systems.</p>
+        <span class="service-tile-arrow">Find out more <span aria-hidden="true">→</span></span>
+      </a>
 
-      <!-- Education -->
-      <div class="card-wrapper reveal reveal-delay-3"
-           role="link" tabindex="0"
-           aria-label="Education service — click for pricing"
-           data-href="./education.html">
-        <div class="card-inner">
-          <div class="card-front" aria-hidden="false">
-            <div class="card-icon" aria-hidden="true">🎓</div>
-            <h3 class="card-title">Education</h3>
-            <p class="card-desc">Dedicated IT support built around how schools actually work.</p>
-            <span class="card-hint" aria-hidden="true">Click for pricing</span>
-          </div>
-          <div class="card-back" aria-hidden="true">
-            <p class="card-back-title">Education</p>
-            <p class="card-back-text">KCSiE-aware IT support on a monthly retainer. Transparent tiers, no surprises.</p>
-            <p class="card-cta">See full pricing →</p>
-          </div>
-        </div>
-      </div>
+      <a href="./networking.html" class="service-tile reveal reveal-delay-3">
+        <div class="service-tile-icon" aria-hidden="true">📡</div>
+        <h3 class="service-tile-title">Networking, WiFi &amp; Broadband</h3>
+        <p class="service-tile-desc">Audits, installs, and upgrades. From a sluggish office WiFi to a full multi-site network overhaul.</p>
+        <span class="service-tile-arrow">Find out more <span aria-hidden="true">→</span></span>
+      </a>
 
-      <!-- Web & Hosting -->
-      <div class="card-wrapper reveal reveal-delay-4"
-           role="link" tabindex="0"
-           aria-label="Web and hosting service — click for pricing"
-           data-href="./pricing.html">
-        <div class="card-inner">
-          <div class="card-front" aria-hidden="false">
-            <div class="card-icon" aria-hidden="true">🌐</div>
-            <h3 class="card-title">Web &amp; Hosting</h3>
-            <p class="card-desc">Sites built, hosted and kept running - without the agency markup.</p>
-            <span class="card-hint" aria-hidden="true">Click for pricing</span>
-          </div>
-          <div class="card-back" aria-hidden="true">
-            <p class="card-back-title">Web &amp; Hosting</p>
-            <p class="card-back-text">Custom builds, managed hosting, SSL and domain renewal — all handled. No agency rates, no hidden fees.</p>
-            <p class="card-cta">See full pricing →</p>
-          </div>
-        </div>
-      </div>
+      <a href="./education.html" class="service-tile reveal reveal-delay-4">
+        <div class="service-tile-icon" aria-hidden="true">🎓</div>
+        <h3 class="service-tile-title">Education IT</h3>
+        <p class="service-tile-desc">KCSiE-aware IT support built around how schools actually work. Monthly retainer, no surprises.</p>
+        <span class="service-tile-arrow">Find out more <span aria-hidden="true">→</span></span>
+      </a>
+
+      <a href="./consultancy.html" class="service-tile reveal reveal-delay-4">
+        <div class="service-tile-icon" aria-hidden="true">💬</div>
+        <h3 class="service-tile-title">Consultancy</h3>
+        <p class="service-tile-desc">Not sure where to start with AI, cloud, or a supplier problem? Let's have a brew and work it out.</p>
+        <span class="service-tile-arrow">Find out more <span aria-hidden="true">→</span></span>
+      </a>
 
     </div>
 

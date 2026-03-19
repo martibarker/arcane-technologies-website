@@ -159,16 +159,28 @@
       border-bottom: 1px solid var(--border-subtle);
     }
 
+    /* ── Post grid ── */
+    .post-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .post-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── Post card ── */
     .post-card {
-      display: block;
+      display: flex;
+      flex-direction: column;
       text-decoration: none;
       color: inherit;
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: 14px;
       padding: 1.5rem 1.75rem;
-      margin-bottom: 1rem;
       transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
     }
 
@@ -178,20 +190,48 @@
       transform: translateY(-2px);
     }
 
+    .post-card-top {
+      flex: 1;
+    }
+
     .post-card-title {
       font-family: var(--font-heading);
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.35;
       transition: color var(--transition);
     }
 
     .post-card:hover .post-card-title { color: var(--purple); }
 
-    .post-card-meta {
-      font-size: 0.8rem;
+    .post-card-excerpt {
+      font-size: 0.875rem;
       color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+
+    .post-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: auto;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .post-card-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .post-card-read {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      white-space: nowrap;
     }
 
     .post-tag {
@@ -202,7 +242,7 @@
       border-radius: 6px;
       background: var(--purple-dim);
       color: var(--purple);
-      margin-right: 0.5rem;
+      margin-bottom: 0.6rem;
     }
 
     /* ── Footer ── */
@@ -232,7 +272,6 @@
     <div style="display:flex;align-items:center;gap:1rem;">
       <a href="./#services" class="nav-back">Services</a>
       <a href="./#about" class="nav-back">About</a>
-      <a href="./pricing.html" class="nav-back">Pricing</a>
       <a href="./blog.html" class="nav-back" style="color:var(--purple);">Blog</a>
     </div>
   </nav>
@@ -245,42 +284,60 @@
 
       <div class="blog-category">
         <p class="blog-category-title">Business Projects</p>
+        <div class="post-grid">
+          <a href="./blog-sar-begone.html" class="post-card">
+            <div class="post-card-top">
+              <span class="post-tag">Business</span>
+              <div class="post-card-title">SAR Begone! Automating Redactions with AI</div>
+              <p class="post-card-excerpt">Subject Access Requests are a pain. We built a workflow that handles the redaction work automatically — cutting a two-hour job down to minutes.</p>
+            </div>
+            <div class="post-card-footer">
+              <span class="post-card-meta">AI &middot; Automation &middot; Data Protection</span>
+              <span class="post-card-read">6 min read</span>
+            </div>
+          </a>
 
-        <a href="./blog-sar-begone.html" class="post-card">
-          <div class="post-card-title">SAR Begone! Automating Redactions with AI</div>
-          <div class="post-card-meta">
-            <span class="post-tag">Business</span>
-            AI &middot; Automation &middot; Data Protection
-          </div>
-        </a>
-
-        <a href="./blog-digitising-clerk.html" class="post-card">
-          <div class="post-card-title">From Dictaphone to Done: How We Taught an AI to Take the Minutes</div>
-          <div class="post-card-meta">
-            <span class="post-tag">Automation</span>
-            AI &middot; Transcription &middot; Governance
-          </div>
-        </a>
+          <a href="./blog-digitising-clerk.html" class="post-card">
+            <div class="post-card-top">
+              <span class="post-tag">Automation</span>
+              <div class="post-card-title">From Dictaphone to Done: How We Taught an AI to Take the Minutes</div>
+              <p class="post-card-excerpt">A practical guide for governance clerks and board secretaries who are tired of staying up until midnight turning longhand notes into a draft.</p>
+            </div>
+            <div class="post-card-footer">
+              <span class="post-card-meta">AI &middot; Transcription &middot; Governance</span>
+              <span class="post-card-read">8 min read</span>
+            </div>
+          </a>
+        </div>
       </div>
 
       <div class="blog-category">
         <p class="blog-category-title">Personal Projects</p>
+        <div class="post-grid">
+          <a href="./blog-martial-aids-hex.html" class="post-card">
+            <div class="post-card-top">
+              <span class="post-tag">Personal</span>
+              <div class="post-card-title">Martial Aids — Hex Based Digital Campaign Tracker</div>
+              <p class="post-card-excerpt">A React app for running Warhammer Fantasy Battle campaigns on a digital hex map. Territory control, army tracking, and event logging — all in the browser.</p>
+            </div>
+            <div class="post-card-footer">
+              <span class="post-card-meta">React &middot; Warhammer Fantasy</span>
+              <span class="post-card-read">5 min read</span>
+            </div>
+          </a>
 
-        <a href="./blog-martial-aids-hex.html" class="post-card">
-          <div class="post-card-title">Martial Aids - Hex Based Digital Campaign Tracker</div>
-          <div class="post-card-meta">
-            <span class="post-tag">Personal</span>
-            Web Development &middot; Warhammer Fantasy &middot; React
-          </div>
-        </a>
-
-        <a href="./blog-martial-aids-dnd.html" class="post-card">
-          <div class="post-card-title">Martial Aids - D&amp;D Virtual Spell Book</div>
-          <div class="post-card-meta">
-            <span class="post-tag">Personal</span>
-            Web Development &middot; D&amp;D &middot; Tools
-          </div>
-        </a>
+          <a href="./blog-martial-aids-dnd.html" class="post-card">
+            <div class="post-card-top">
+              <span class="post-tag">Personal</span>
+              <div class="post-card-title">Martial Aids — D&amp;D Virtual Spell Book</div>
+              <p class="post-card-excerpt">A searchable, filterable digital spell book for D&amp;D 5e. Built to replace a stack of index cards and a very worn Player's Handbook.</p>
+            </div>
+            <div class="post-card-footer">
+              <span class="post-card-meta">Web Dev &middot; D&amp;D &middot; Tools</span>
+              <span class="post-card-read">4 min read</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </main>

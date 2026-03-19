@@ -5,8 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>From Dictaphone to Done - Arcane Technologies Blog</title>
   <meta name="description" content="How we taught an AI to take the minutes — and why it's better at it than any of us ever were. A practical guide for governance clerks, board secretaries, and anyone who's stayed up until midnight on a Tuesday." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://arcanetechnologies.co.uk/blog-digitising-clerk.html" />
-
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="From Dictaphone to Done: How We Taught an AI to Take the Minutes" />
+  <meta property="og:description" content="A practical guide for governance clerks, board secretaries, and anyone who produces meeting minutes. How AI handles the transcription and first draft." />
+  <meta property="og:url" content="https://arcanetechnologies.co.uk/blog-digitising-clerk.html" />
+  <meta property="og:image" content="https://arcanetechnologies.co.uk/assets/logo-rounded.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "From Dictaphone to Done: How We Taught an AI to Take the Minutes",
+    "description": "A practical guide for governance clerks and board secretaries on using AI to transcribe meetings and produce draft minutes.",
+    "url": "https://arcanetechnologies.co.uk/blog-digitising-clerk.html",
+    "author": { "@type": "Organization", "name": "Arcane Technologies" },
+    "publisher": { "@type": "Organization", "name": "Arcane Technologies", "url": "https://arcanetechnologies.co.uk" },
+    "datePublished": "2026-03-19",
+    "image": "https://arcanetechnologies.co.uk/assets/logo-rounded.png",
+    "keywords": ["AI", "transcription", "governance", "meeting minutes", "automation", "school governors"]
+  }
+  </script>
   <link rel="icon" type="image/png" href="./assets/logo-rounded.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -144,11 +163,43 @@
       border-bottom: 1px solid var(--border-subtle);
     }
 
+    .post-body {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+    }
+
     .post-body h2 {
       font-family: var(--font-heading);
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin: 2.5rem 0 0.75rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 3rem 0 0.75rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+    }
+
+    /* Step headings — visually numbered */
+    .post-body h2[data-step] {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .post-body h2[data-step]::before {
+      content: attr(data-step);
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--purple);
+      background: var(--purple-dim);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 0.15rem 0.5rem;
+      flex-shrink: 0;
     }
 
     .post-body p {
@@ -156,12 +207,35 @@
       color: var(--text-primary);
     }
 
+    /* Lead paragraph — slightly larger */
+    .post-body p.lead {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Pull quote */
+    .post-body blockquote {
+      margin: 2rem 0;
+      padding: 1.25rem 1.5rem;
+      background: var(--purple-dim);
+      border-left: 4px solid var(--purple);
+      border-radius: 0 10px 10px 0;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text-primary);
+    }
+
     .post-body ul {
       margin: 0 0 1.25rem 1.5rem;
     }
 
+    .post-body ol {
+      margin: 0 0 1.25rem 1.5rem;
+    }
+
     .post-body li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary);
     }
 
@@ -173,12 +247,13 @@
       font-style: italic;
     }
 
+    /* Info/aside callout */
     .post-body .aside {
       border-left: 3px solid var(--purple);
-      padding: 0.75rem 1.25rem;
+      padding: 0.9rem 1.25rem;
       margin: 1.75rem 0;
       background: var(--purple-dim);
-      border-radius: 0 6px 6px 0;
+      border-radius: 0 8px 8px 0;
       font-size: 0.9rem;
       color: var(--text-muted);
     }
@@ -246,7 +321,6 @@
     <div style="display:flex;align-items:center;gap:1rem;">
       <a href="./#services" class="nav-back">Services</a>
       <a href="./#about" class="nav-back">About</a>
-      <a href="./pricing.html" class="nav-back">Pricing</a>
       <a href="./blog.html" class="nav-back" style="color:var(--purple);">Blog</a>
     </div>
   </nav>
@@ -256,11 +330,11 @@
       <p class="post-breadcrumb"><a href="./blog.html">Blog</a> &rsaquo; Workflow &amp; Automation</p>
       <span class="post-tag">Automation</span>
       <h1>From Dictaphone to Done: How We Taught an AI to Take the Minutes</h1>
-      <p class="post-meta">AI &middot; Transcription &middot; Governance &middot; Workflow</p>
+      <p class="post-meta">AI &middot; Transcription &middot; Governance &middot; Workflow &middot; <strong>8 min read</strong></p>
 
       <div class="post-body">
 
-        <p><em>A practical guide for anyone who has ever arrived home still carrying nine hours of other people's decisions.</em></p>
+        <p class="lead">A practical guide for anyone who has ever arrived home still carrying nine hours of other people's decisions.</p>
 
         <p>There is a particular kind of person who volunteers to take the minutes at a governance meeting. They are patient. They are conscientious. They have very neat handwriting. And by about item four on the agenda, when the chair is mid-sentence about something structural and someone else has just interjected about a subcommittee and the note-taker is writing "strategic review framework" for the fourteenth time, they are quietly wondering whether they made some terrible choices earlier in life.</p>
 
@@ -272,7 +346,7 @@
 
         <p>Anyone, in short, who is responsible for producing an accurate, formal record of a meeting they were also required to attend, follow, and occasionally participate in. Which is, when you think about it, a slightly absurd job description. And yet here we all are.</p>
 
-        <h2>Step One: Get the Thing Recorded</h2>
+        <h2 data-step="Step 1">Get the Thing Recorded</h2>
 
         <p>It started, as many good ideas do, with a small piece of hardware that nobody fully understood.</p>
 
@@ -282,7 +356,7 @@
 
         <p>The school governors clerk who used to write longhand through a three-hour evening meeting, and then stay up until midnight turning those notes into a draft, now walks out with an audio record of the entire thing and a much more manageable evening ahead of them.</p>
 
-        <h2>Step Two: Turn Speech Into Text</h2>
+        <h2 data-step="Step 2">Turn Speech Into Text</h2>
 
         <p>Here is where it gets interesting.</p>
 
@@ -294,7 +368,7 @@
 
         <p>The output either way is a long, glorious, slightly chaotic wall of text. Every digression is in there. Every "as I mentioned earlier." Every moment where two people spoke at once and the model produced something philosophically interesting but syntactically impossible. This is fine. This is raw material. The next step is where it becomes useful.</p>
 
-        <h2>Step Three: A Note on Safeguarding Calls</h2>
+        <h2 data-step="Step 3">A Note on Safeguarding Calls</h2>
 
         <p>Before we get to the minutes themselves, a specific and important use case deserves its own section.</p>
 
@@ -310,7 +384,7 @@
           <p><strong>A note of caution:</strong> recording phone calls requires consent from all parties in most jurisdictions, and any records produced must be handled in accordance with applicable data protection legislation. This is not an obstacle to the approach; it is simply a design requirement. The transcript is then a formal record, stored accordingly — not a casual note. Used properly, this approach strengthens safeguarding practice. Used carelessly, it creates its own risks. Know your organisation's policy. If there isn't one, this is a good moment to write one.</p>
         </div>
 
-        <h2>Step Four: Hand It to Claude</h2>
+        <h2 data-step="Step 4">Hand It to Claude</h2>
 
         <p>Back to the minutes.</p>
 
@@ -326,7 +400,7 @@
 
         <p>For the governors clerk, this means the resolution about the new SEND policy, the approval of the financial report, the decision to defer the estates item until the next full governing body meeting: all captured clearly, in one place, without having to be extracted from four pages of prose after the fact.</p>
 
-        <h2>Step Five: The Human Bit (This Part Still Matters)</h2>
+        <h2 data-step="Step 5">The Human Bit (This Part Still Matters)</h2>
 
         <p>The minutes Claude produces are a first draft, not a final product. A competent human still reads them. Checks that sensitive content has been handled correctly. Verifies that nothing has been attributed wrongly. Confirms that the tone reflects the gravity — or occasional levity — of what actually happened in the room.</p>
 

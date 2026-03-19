@@ -1,0 +1,24 @@
+# Arcane Technologies
+
+> IT support, web design and consultancy based in Cumbria. Honest advice, plain English — for businesses, schools and the third sector.
+
+## Services
+
+- [SME IT Support](https://arcanetechnologies.co.uk/sme-support.html): Day-to-day IT for growing businesses. Remote help when you need it, on-site when you don't.
+- [Web Design & Ecommerce](https://arcanetechnologies.co.uk/web-design.html): Custom websites and online stores. Built fast, hosted reliably, no agency rates.
+- [Non-profit & Charities](https://arcanetechnologies.co.uk/non-profit.html): IT support for the third sector. Tight budgets respected, high standards maintained.
+- [Networking, WiFi & Broadband](https://arcanetechnologies.co.uk/networking.html): Network audits, WiFi installs, and broadband upgrades.
+- [Education IT](https://arcanetechnologies.co.uk/education.html): KCSiE-aware IT support for schools. Monthly retainer, no surprises.
+- [Consultancy](https://arcanetechnologies.co.uk/consultancy.html): Honest, independent advice on AI, cloud, and supplier challenges.
+
+## Company
+
+- [About](https://arcanetechnologies.co.uk/#about): Cumbria-based IT consultancy. Experience across education, government, defence and the third sector.
+- [Blog](https://arcanetechnologies.co.uk/blog.html): Practical articles on IT, automation and workflow.
+- [Contact](https://arcanetechnologies.co.uk/#contact): contact@arcanetechnologies.co.uk
+
+## Details
+
+- Location: Penrith, Cumbria, England
+- Serving: Penrith, Eden Valley, Lake District, Carlisle, Kendal, and beyond
+- Website: https://arcanetechnologies.co.uk

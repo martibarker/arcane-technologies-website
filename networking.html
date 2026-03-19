@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="light-theme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Networking, WiFi &amp; Broadband — Arcane Technologies, Penrith &amp; Cumbria</title>
+  <meta name="description" content="Network audits, WiFi installs and broadband upgrades for businesses in Penrith, Cumbria and across the Lake District." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://arcanetechnologies.co.uk/networking.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Networking, WiFi &amp; Broadband — Arcane Technologies" />
+  <meta property="og:description" content="Network audits, WiFi installs and broadband upgrades for businesses in Penrith, Cumbria and across the Lake District." />
+  <meta property="og:url" content="https://arcanetechnologies.co.uk/networking.html" />
+  <meta property="og:image" content="https://arcanetechnologies.co.uk/assets/logo-rounded.png" />
+  <link rel="icon" type="image/png" href="./assets/logo-rounded.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-base:         #0a0a0f;
+      --purple:          #8b5cf6;
+      --purple-dim:      rgba(139, 92, 246, 0.15);
+      --text-primary:    #f0eeff;
+      --text-muted:      #9997b8;
+      --border-subtle:   rgba(139, 92, 246, 0.12);
+      --border-hover:    rgba(139, 92, 246, 0.45);
+      --nav-scrolled-bg: rgba(10, 10, 15, 0.78);
+      --font-heading:    'Space Grotesk', sans-serif;
+      --font-body:       'Inter', sans-serif;
+      --transition:      0.22s ease;
+    }
+
+    html.light-theme {
+      --bg-base:         #f8f8ff;
+      --purple:          #6d28d9;
+      --purple-dim:      rgba(109, 40, 217, 0.08);
+      --text-primary:    #0a0a1a;
+      --text-muted:      #666677;
+      --border-subtle:   rgba(109, 40, 217, 0.18);
+      --border-hover:    rgba(109, 40, 217, 0.45);
+      --nav-scrolled-bg: rgba(248, 248, 255, 0.92);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.75;
+      min-height: 100vh;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .nav-logo-badge {
+      width: 32px; height: 32px;
+      background: var(--purple-dim);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--purple);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover { color: var(--purple); }
+
+    .nav-link.active { color: var(--purple); }
+
+    .nav-cta {
+      font-family: var(--font-heading);
+      font-weight: 500;
+      font-size: 0.88rem;
+      color: var(--purple);
+      text-decoration: none;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border-hover);
+      border-radius: 8px;
+      background: var(--purple-dim);
+      transition: background var(--transition), box-shadow var(--transition), color var(--transition);
+      white-space: nowrap;
+      margin-left: 0.5rem;
+    }
+
+    .nav-cta:hover {
+      background: rgba(109, 40, 217, 0.18);
+      box-shadow: 0 0 18px rgba(109, 40, 217, 0.25);
+    }
+
+    /* ── SERVICE PAGE LAYOUT ── */
+    .service-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 7rem 2rem 5rem;
+    }
+
+    .service-breadcrumb {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .service-breadcrumb a {
+      color: var(--purple);
+      text-decoration: none;
+    }
+
+    .service-breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── HERO ── */
+    .service-hero {
+      margin-bottom: 3.5rem;
+    }
+
+    .service-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      background: var(--purple-dim);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-label {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      background: var(--purple-dim);
+      color: var(--purple);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .service-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .service-hero .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    /* ── SECTIONS ── */
+    .service-section {
+      margin-bottom: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .service-section h2 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    /* ── FEATURES GRID ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      padding: 0.9rem 1rem;
+      background: var(--purple-dim);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      font-size: 0.92rem;
+      line-height: 1.4;
+      color: var(--text-primary);
+      transition: border-color var(--transition);
+    }
+
+    .feature-item:hover {
+      border-color: var(--border-hover);
+    }
+
+    .feature-tick {
+      color: var(--purple);
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 0.05em;
+    }
+
+    /* ── WHO IT'S FOR ── */
+    .who-text {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-primary);
+    }
+
+    /* ── CTA SECTION ── */
+    .service-cta {
+      margin-top: 3.5rem;
+      padding: 2.5rem;
+      background: var(--purple-dim);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .service-cta h2 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-cta p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.97rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #fff;
+      background: var(--purple);
+      text-decoration: none;
+      padding: 0.75rem 1.75rem;
+      border-radius: 10px;
+      transition: opacity var(--transition), box-shadow var(--transition);
+    }
+
+    .cta-btn:hover {
+      opacity: 0.88;
+      box-shadow: 0 4px 20px rgba(109, 40, 217, 0.35);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--purple); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .service-cta { padding: 1.75rem 1.25rem; }
+      nav { padding: 0.875rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar" aria-label="Main navigation">
+    <a href="./index.html" class="nav-logo">
+      <img src="./assets/logo-rounded.png" class="nav-logo-badge" alt="Arcane Technologies" style="object-fit:contain;padding:3px;background:#fff;">
+      <span>Arcane Technologies</span>
+    </a>
+    <div class="nav-links">
+      <a href="./#services" class="nav-link">Services</a>
+      <a href="./#about" class="nav-link">About</a>
+      <a href="./blog.html" class="nav-link">Blog</a>
+      <a href="./#contact" class="nav-cta">Let's Talk</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="service-wrap">
+
+      <p class="service-breadcrumb"><a href="./#services">Services</a> &rsaquo; Networking, WiFi &amp; Broadband</p>
+
+      <div class="service-hero">
+        <div class="service-icon">📡</div>
+        <span class="service-label">Service</span>
+        <h1>Networking, WiFi &amp; Broadband</h1>
+        <p class="subtitle">Audits, installs, and upgrades. From a sluggish office WiFi to a full multi-site network overhaul.</p>
+      </div>
+
+      <div class="service-section">
+        <h2>What's included</h2>
+        <div class="features-grid">
+          <div class="feature-item">
+            <span class="feature-tick">✓</span>
+            <span>Network audits and health checks</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-tick">✓</span>
+            <span>WiFi surveys, installs and optimisation</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-tick">✓</span>
+            <span>Broadband and leased line advice</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-tick">✓</span>
+            <span>Wired network infrastructure (switches, cabling)</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-tick">✓</span>
+            <span>VPN and remote access setup</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-tick">✓</span>
+            <span>Multi-site networking</span>
+          </div>
+          <div class="feature-item" style="grid-column: 1 / -1; max-width: 50%;">
+            <span class="feature-tick">✓</span>
+            <span>Firewall and network security</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-section">
+        <h2>Who it's for</h2>
+        <p class="who-text">Businesses, schools, and organisations whose network is letting them down. Whether it's a single-site WiFi job or a multi-building infrastructure project, we scope it properly and fix it properly.</p>
+      </div>
+
+      <div class="service-cta">
+        <h2>Ready to get started?</h2>
+        <p>We'll start with a proper audit so you know exactly what you're dealing with before any work begins.</p>
+        <a href="./index.html#contact" class="cta-btn">Get in touch</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2026 Arcane Technologies. All rights reserved. &nbsp;&middot;&nbsp; <a href="./privacy-policy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="./terms.html">Terms &amp; Conditions</a></p>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
+</body>
+</html>

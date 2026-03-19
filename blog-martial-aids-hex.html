@@ -144,9 +144,30 @@
       border-bottom: 1px solid var(--border-subtle);
     }
 
+    .post-body {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+    }
+
+    .post-body h2 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 3rem 0 0.75rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+    }
+
     .post-body p {
       margin-bottom: 1.25rem;
       color: var(--text-primary);
+    }
+
+    .post-body p.lead {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      line-height: 1.7;
     }
 
     .post-body p.placeholder {
@@ -156,12 +177,24 @@
       padding-left: 1rem;
     }
 
-    .post-body ul {
+    .post-body blockquote {
+      margin: 2rem 0;
+      padding: 1.25rem 1.5rem;
+      background: var(--purple-dim);
+      border-left: 4px solid var(--purple);
+      border-radius: 0 10px 10px 0;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text-primary);
+    }
+
+    .post-body ul, .post-body ol {
       margin: 0 0 1.25rem 1.5rem;
     }
 
-    .post-body ul li {
+    .post-body li {
       margin-bottom: 0.5rem;
+      color: var(--text-primary);
     }
 
     .post-body strong {
@@ -206,7 +239,6 @@
     <div style="display:flex;align-items:center;gap:1rem;">
       <a href="./#services" class="nav-back">Services</a>
       <a href="./#about" class="nav-back">About</a>
-      <a href="./pricing.html" class="nav-back">Pricing</a>
       <a href="./blog.html" class="nav-back" style="color:var(--purple);">Blog</a>
     </div>
   </nav>
