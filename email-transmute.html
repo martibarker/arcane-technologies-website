@@ -969,14 +969,18 @@
         </p>
 
         <div class="how-it-works-callout">
-          <p class="callout-label">Without Email Transmute — 4+ steps every time</p>
+          <p class="callout-label">Without Email Transmute — up to 8 steps per email, per attachment</p>
           <ol class="how-it-works">
             <li><span class="step-num">1</span><span>Open the email in Outlook</span></li>
-            <li><span class="step-num">2</span><span>File → Print → Save as PDF → choose a location on your machine</span></li>
-            <li><span class="step-num">3</span><span>Open SharePoint in a browser tab, navigate to the right folder</span></li>
-            <li><span class="step-num">4</span><span>Upload the PDF</span></li>
-            <li><span class="step-num">5</span><span>Repeat individually for each attachment</span></li>
+            <li><span class="step-num">2</span><span>File → Print → change the printer to "Save as PDF"</span></li>
+            <li><span class="step-num">3</span><span>Click Print → navigate to a folder → type a filename → Save</span></li>
+            <li><span class="step-num">4</span><span>Switch to a browser tab, open SharePoint, navigate to the right folder</span></li>
+            <li><span class="step-num">5</span><span>Upload the PDF</span></li>
+            <li><span class="step-num">6</span><span>Go back to Outlook → find each attachment → download it individually</span></li>
+            <li><span class="step-num">7</span><span>Choose a save location for each file</span></li>
+            <li><span class="step-num">8</span><span>Return to SharePoint and upload each attachment separately</span></li>
           </ol>
+          <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-muted);">At ~20 seconds per email with one attachment, 100 emails takes <strong style="color:var(--text-primary);">~30 minutes of manual work</strong>. Email Transmute does it in 3 steps.</p>
         </div>
 
         <div class="table-scroll">
@@ -984,53 +988,68 @@
             <thead>
               <tr>
                 <th>Solution</th>
-                <th>Steps to SharePoint</th>
-                <th>Handles attachments</th>
+                <th>Steps to save</th>
+                <th>Attachments → PDF</th>
+                <th>Save to SharePoint</th>
                 <th>Bulk archive</th>
-                <th>M365 native</th>
+                <th>Download locally</th>
                 <th>Cost</th>
               </tr>
             </thead>
             <tbody>
               <tr class="highlight-row">
                 <td><strong>Email Transmute</strong></td>
-                <td><span class="check">✓</span> 1 click</td>
+                <td><span class="check">✓</span> 3 steps</td>
                 <td><span class="check">✓</span> Merge or separate</td>
+                <td><span class="check">✓</span> Direct from Outlook</td>
                 <td><span class="check">✓</span> Whole folders</td>
-                <td><span class="check">✓</span> Yes</td>
+                <td><span class="check">✓</span> ZIP to device</td>
                 <td>Contact us</td>
               </tr>
               <tr>
                 <td>Manual (Print to PDF)</td>
-                <td>4–5 steps</td>
-                <td><span class="cross">✗</span> Manual per file</td>
-                <td><span class="cross">✗</span> No</td>
+                <td>8 steps per email + each attachment</td>
+                <td><span class="cross">✗</span> Each file separately</td>
+                <td><span class="cross">✗</span> Manual upload</td>
+                <td><span class="cross">✗</span> One at a time</td>
                 <td>—</td>
-                <td>Free (your time)</td>
+                <td>~30 min per 100 emails</td>
               </tr>
               <tr>
-                <td>Adobe Acrobat DC</td>
-                <td>3–4 steps</td>
-                <td><span class="check">✓</span> Yes</td>
-                <td><span class="cross">✗</span> No</td>
-                <td><span class="cross">✗</span> No</td>
-                <td>~£15–25/user/month</td>
-              </tr>
-              <tr>
-                <td>Other Outlook PDF add-ins</td>
+                <td>MessageExport (Encryptomatic)</td>
                 <td>2–3 steps</td>
-                <td><span class="cross">✗</span> Usually not</td>
-                <td><span class="cross">✗</span> No</td>
-                <td><span class="cross">✗</span> No</td>
-                <td>Varies</td>
+                <td><span class="check">✓</span> Yes</td>
+                <td><span class="cross">✗</span> No direct SharePoint</td>
+                <td><span class="check">✓</span> Bulk export</td>
+                <td><span class="check">✓</span> To local folder</td>
+                <td>~$80 one-time per user</td>
               </tr>
               <tr>
-                <td>Power Automate flow</td>
-                <td>Automatic only</td>
+                <td>Foxit PDF Editor (Outlook add-in)</td>
+                <td>2–3 steps</td>
                 <td><span class="check">✓</span> Yes</td>
-                <td><span class="cross">✗</span> No manual trigger</td>
+                <td><span class="cross">✗</span> No</td>
+                <td><span class="cross">✗</span> No</td>
+                <td><span class="check">✓</span> Local / Foxit Cloud</td>
+                <td>~£11/user/month</td>
+              </tr>
+              <tr>
+                <td>OnePlaceMail / Axpoint</td>
+                <td>2–3 steps</td>
+                <td><span class="cross">✗</span> Files as original</td>
                 <td><span class="check">✓</span> Yes</td>
-                <td>M365 licence + setup time</td>
+                <td><span class="cross">✗</span> Limited</td>
+                <td><span class="cross">✗</span> No</td>
+                <td>From $4/user/month (10 user min)</td>
+              </tr>
+              <tr>
+                <td>Power Automate + Encodian</td>
+                <td>Automatic only — requires IT setup</td>
+                <td><span class="check">✓</span> Yes</td>
+                <td><span class="check">✓</span> Yes</td>
+                <td><span class="check">✓</span> Yes (flow-based)</td>
+                <td><span class="cross">✗</span> No</td>
+                <td>From ~£999/yr + M365 licence</td>
               </tr>
             </tbody>
           </table>
