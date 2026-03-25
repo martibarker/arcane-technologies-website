@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Design &amp; Ecommerce — Arcane Technologies, Penrith &amp; Cumbria</title>
-  <meta name="description" content="Custom websites and online stores built for businesses in Penrith, Cumbria. Fast, hosted reliably — no agency rates, no lock-in." />
+  <title>Wizardly Web Design — Arcane Technologies, Penrith &amp; Cumbria</title>
+  <meta name="description" content="Custom websites and online stores built for businesses in Penrith, Cumbria. Fast turnaround, no agency rates, no lock-in." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://arcanetechnologies.co.uk/web-design.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Web Design &amp; Ecommerce — Arcane Technologies" />
-  <meta property="og:description" content="Custom websites and online stores built for businesses in Penrith, Cumbria. Fast, hosted reliably — no agency rates, no lock-in." />
+  <meta property="og:title" content="Wizardly Web Design — Arcane Technologies" />
+  <meta property="og:description" content="Custom websites and online stores built for businesses in Penrith, Cumbria. Fast turnaround, no agency rates, no lock-in." />
   <meta property="og:url" content="https://arcanetechnologies.co.uk/web-design.html" />
   <meta property="og:image" content="https://arcanetechnologies.co.uk/assets/logo-rounded.png" />
   <link rel="icon" type="image/png" href="./assets/logo-rounded.png" />
@@ -19,12 +19,15 @@
   <style>
     :root {
       --bg-base:         #0a0a0f;
+      --bg-card:         #1a1a2e;
+      --blue:            #3b82f6;
+      --blue-dim:        rgba(59, 130, 246, 0.12);
       --purple:          #8b5cf6;
       --purple-dim:      rgba(139, 92, 246, 0.15);
       --text-primary:    #f0eeff;
       --text-muted:      #9997b8;
-      --border-subtle:   rgba(139, 92, 246, 0.12);
-      --border-hover:    rgba(139, 92, 246, 0.45);
+      --border-subtle:   rgba(59, 130, 246, 0.15);
+      --border-hover:    rgba(59, 130, 246, 0.55);
       --nav-scrolled-bg: rgba(10, 10, 15, 0.78);
       --font-heading:    'Space Grotesk', sans-serif;
       --font-body:       'Inter', sans-serif;
@@ -33,12 +36,15 @@
 
     html.light-theme {
       --bg-base:         #f8f8ff;
+      --bg-card:         #ffffff;
+      --blue:            #2563eb;
+      --blue-dim:        rgba(37, 99, 235, 0.08);
       --purple:          #6d28d9;
       --purple-dim:      rgba(109, 40, 217, 0.08);
       --text-primary:    #0a0a1a;
       --text-muted:      #666677;
-      --border-subtle:   rgba(109, 40, 217, 0.18);
-      --border-hover:    rgba(109, 40, 217, 0.45);
+      --border-subtle:   rgba(37, 99, 235, 0.18);
+      --border-hover:    rgba(37, 99, 235, 0.5);
       --nav-scrolled-bg: rgba(248, 248, 255, 0.92);
     }
 
@@ -86,13 +92,10 @@
 
     .nav-logo-badge {
       width: 32px; height: 32px;
-      background: var(--purple-dim);
-      border: 1px solid var(--border-subtle);
       border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--purple);
+      object-fit: contain;
+      padding: 3px;
+      background: #fff;
     }
 
     .nav-links {
@@ -108,9 +111,8 @@
       transition: color 0.2s ease;
     }
 
-    .nav-link:hover { color: var(--purple); }
-
-    .nav-link.active { color: var(--purple); }
+    .nav-link:hover { color: var(--blue); }
+    .nav-link.active { color: var(--blue); font-weight: 600; }
 
     .nav-cta {
       font-family: var(--font-heading);
@@ -119,10 +121,10 @@
       color: var(--purple);
       text-decoration: none;
       padding: 0.45rem 1rem;
-      border: 1px solid var(--border-hover);
+      border: 1px solid rgba(139,92,246,0.45);
       border-radius: 8px;
       background: var(--purple-dim);
-      transition: background var(--transition), box-shadow var(--transition), color var(--transition);
+      transition: background var(--transition), box-shadow var(--transition);
       white-space: nowrap;
       margin-left: 0.5rem;
     }
@@ -132,9 +134,9 @@
       box-shadow: 0 0 18px rgba(109, 40, 217, 0.25);
     }
 
-    /* ── SERVICE PAGE LAYOUT ── */
+    /* ── PAGE ── */
     .service-wrap {
-      max-width: 820px;
+      max-width: 960px;
       margin: 0 auto;
       padding: 7rem 2rem 5rem;
     }
@@ -146,26 +148,22 @@
     }
 
     .service-breadcrumb a {
-      color: var(--purple);
+      color: var(--blue);
       text-decoration: none;
     }
 
     .service-breadcrumb a:hover { text-decoration: underline; }
 
-    /* ── HERO ── */
-    .service-hero {
-      margin-bottom: 3.5rem;
-    }
+    .service-hero { margin-bottom: 3.5rem; }
 
     .service-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 72px;
-      height: 72px;
-      background: var(--purple-dim);
+      width: 72px; height: 72px;
+      background: var(--blue-dim);
       border: 1px solid var(--border-subtle);
-      border-radius: 18px;
+      border-radius: 12px;
       font-size: 2rem;
       margin-bottom: 1.5rem;
     }
@@ -177,8 +175,8 @@
       font-weight: 600;
       padding: 0.2rem 0.55rem;
       border-radius: 6px;
-      background: var(--purple-dim);
-      color: var(--purple);
+      background: var(--blue-dim);
+      color: var(--blue);
       margin-bottom: 1rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -196,10 +194,288 @@
       font-size: 1.1rem;
       color: var(--text-muted);
       line-height: 1.7;
-      max-width: 640px;
+      max-width: 600px;
     }
 
-    /* ── SECTIONS ── */
+    /* ── SHOWCASE ── */
+    .showcase-label {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--blue);
+      margin-bottom: 0.6rem;
+    }
+
+    .showcase-heading {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ── BASE DEMO CARD ── */
+    .demo-card {
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 1.75rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .demo-card-label {
+      font-family: var(--font-heading);
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.6rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .demo-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .demo-card-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ══════════════════════════════════════════════════
+       CARD 1: ECOMMERCE — gold coins fall, pile fills up
+    ══════════════════════════════════════════════════ */
+    .card-ecommerce {
+      background:
+        radial-gradient(ellipse 80% 45% at 50% 108%, rgba(245,166,35,0.08) 0%, transparent 65%),
+        var(--bg-card);
+      cursor: default;
+    }
+
+    .card-ecommerce:hover {
+      border-color: rgba(245,166,35,0.55);
+      box-shadow: 0 0 35px rgba(245,166,35,0.25), 0 0 70px rgba(245,166,35,0.08);
+    }
+
+    .card-ecommerce .demo-card-label { color: #f5a623; }
+
+    /* Individual falling + piled coins */
+    .gold-coin {
+      position: absolute;
+      top: -14px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .gold-coin.falling {
+      animation: coin-fall var(--dur, 0.7s) cubic-bezier(0.25, 0.05, 0.88, 0.95) forwards;
+    }
+
+    .gold-coin.draining {
+      animation: coin-drain 0.35s cubic-bezier(0.4, 0, 1, 1) forwards;
+    }
+
+    @keyframes coin-fall {
+      0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+      65%  { transform: translateY(calc(var(--travel) * 0.9)) rotate(var(--spin)); }
+      78%  { transform: translateY(calc(var(--travel) * 1.05)) rotate(calc(var(--spin) + 12deg)) scaleY(0.72) scaleX(1.18); }
+      89%  { transform: translateY(calc(var(--travel) * 0.99)) rotate(calc(var(--spin) + 20deg)) scaleY(1.05); }
+      100% { transform: translateY(var(--travel)) rotate(calc(var(--spin) + 24deg)); opacity: 1; }
+    }
+
+    @keyframes coin-drain {
+      0%   { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(80px); opacity: 0; }
+    }
+
+    /* ══════════════════════════════════════════════════
+       CARD 2: SEO — magnifying glass sweeps whole card
+    ══════════════════════════════════════════════════ */
+    .card-seo {
+      background:
+        radial-gradient(ellipse 80% 45% at 50% 108%, rgba(139,92,246,0.1) 0%, transparent 65%),
+        var(--bg-card);
+    }
+
+    .card-seo:hover {
+      border-color: rgba(139,92,246,0.5);
+      box-shadow: 0 0 30px rgba(139,92,246,0.2), 0 0 60px rgba(139,92,246,0.07);
+    }
+
+    .card-seo .demo-card-label { color: var(--purple); }
+
+    .seo-sweep-area {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 3;
+      overflow: hidden;
+    }
+
+    .seo-glass-icon {
+      position: absolute;
+      top: 0; left: 0;
+      font-size: 3.2rem;
+      line-height: 1;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      transform: translate(20px, 20px);
+    }
+
+    .card-seo:hover .seo-glass-icon {
+      opacity: 1;
+      animation: glass-full-sweep 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 10px rgba(139,92,246,0.9));
+    }
+
+    .seo-lens-glow {
+      position: absolute;
+      top: 0; left: 0;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139,92,246,0.18) 0%, transparent 70%);
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-16px, -16px);
+    }
+
+    .card-seo:hover .seo-lens-glow {
+      opacity: 1;
+      animation: glass-full-sweep 3s ease-in-out infinite;
+      mix-blend-mode: screen;
+    }
+
+    @keyframes glass-full-sweep {
+      0%   { transform: translate(12px, 18px); }
+      18%  { transform: translate(170px, 12px); }
+      33%  { transform: translate(180px, 95px); }
+      50%  { transform: translate(14px, 100px); }
+      65%  { transform: translate(20px, 180px); }
+      82%  { transform: translate(165px, 175px); }
+      100% { transform: translate(12px, 18px); }
+    }
+
+    /* ══════════════════════════════════════════════════
+       CARD 3: FAST TURNAROUND — whole card folds + flies
+       Animations applied to body-level clone elements.
+    ══════════════════════════════════════════════════ */
+    .card-turnaround {
+      background:
+        radial-gradient(ellipse 80% 45% at 50% 108%, rgba(59,130,246,0.1) 0%, transparent 65%),
+        var(--bg-card);
+    }
+
+    .card-turnaround:hover {
+      border-color: rgba(59,130,246,0.5);
+      box-shadow: 0 0 30px rgba(59,130,246,0.2), 0 0 60px rgba(59,130,246,0.07);
+    }
+
+    .card-turnaround .demo-card-label { color: var(--blue); }
+
+    /* ── Clone outer: handles flight trajectory ── */
+    #plane-outer {
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      transform-origin: center center;
+      will-change: transform, opacity, filter;
+    }
+
+    /* ── Clone inner: handles the 3D fold ── */
+    #plane-inner {
+      position: absolute;
+      inset: 0;
+      transform-origin: center center;
+      will-change: transform;
+    }
+
+    /* Fold: card crumples/folds — glows as it charges */
+    @keyframes card-fold {
+      0%   { transform: perspective(480px) rotateX(0deg) scaleY(1) scaleX(1);
+             box-shadow: 0 0 0 rgba(59,130,246,0); border-color: rgba(59,130,246,0.5); }
+      18%  { box-shadow: 0 0 18px rgba(59,130,246,0.55), 0 0 36px rgba(59,130,246,0.22);
+             border-color: rgba(59,130,246,0.85); }
+      25%  { transform: perspective(480px) rotateX(-35deg) scaleY(0.65) scaleX(1.04); }
+      55%  { transform: perspective(480px) rotateX(-65deg) scaleY(0.22) scaleX(1.11);
+             box-shadow: 0 0 40px rgba(59,130,246,0.75), 0 0 80px rgba(59,130,246,0.32); }
+      80%  { transform: perspective(480px) rotateX(-76deg) scaleY(0.09) scaleX(1.16); }
+      100% { transform: perspective(480px) rotateX(-80deg) scaleY(0.055) scaleX(1.20);
+             box-shadow: 0 0 60px rgba(59,130,246,0.95), 0 0 120px rgba(59,130,246,0.45);
+             border-color: #60a5fa; }
+    }
+
+    /* Unfold: springs back open */
+    @keyframes card-unfold {
+      0%   { transform: perspective(480px) rotateX(-80deg) scaleY(0.055) scaleX(1.20);
+             box-shadow: 0 0 60px rgba(59,130,246,0.95); }
+      20%  { transform: perspective(480px) rotateX(-65deg) scaleY(0.18) scaleX(1.12);
+             box-shadow: 0 0 35px rgba(59,130,246,0.6); }
+      50%  { transform: perspective(480px) rotateX(-30deg) scaleY(0.6) scaleX(1.04);
+             box-shadow: 0 0 15px rgba(59,130,246,0.3); }
+      72%  { transform: perspective(480px) rotateX(6deg) scaleY(1.04) scaleX(1); }
+      85%  { transform: perspective(480px) rotateX(-3deg) scaleY(0.98) scaleX(1); }
+      100% { transform: perspective(480px) rotateX(0deg) scaleY(1) scaleX(1);
+             box-shadow: 0 0 0 rgba(59,130,246,0); }
+    }
+
+    /* Fly out to the right — speed trail streaks left behind the card */
+    @keyframes plane-fly-out {
+      0%   { transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+             filter: blur(0) drop-shadow(0 0 0 rgba(59,130,246,0)); opacity: 1; }
+      6%   { transform: translateX(-6px) translateY(6px) rotate(2deg) scale(1);
+             filter: drop-shadow(-3px 0 6px rgba(59,130,246,0.5)); }
+      18%  { transform: translateX(50px) translateY(-14px) rotate(-5deg) scale(0.96);
+             filter: drop-shadow(-12px 2px 22px rgba(59,130,246,0.7))
+                     drop-shadow(-28px 4px 48px rgba(59,130,246,0.35)); }
+      55%  { filter: blur(0.5px)
+                     drop-shadow(-35px 6px 55px rgba(59,130,246,0.85))
+                     drop-shadow(-70px 12px 100px rgba(59,130,246,0.4))
+                     drop-shadow(-110px 18px 140px rgba(59,130,246,0.18)); }
+      100% { transform: translateX(calc(100vw + 300px)) translateY(-80px) rotate(-18deg) scale(0.28);
+             filter: blur(7px) drop-shadow(-50px 8px 70px rgba(59,130,246,0.5)); opacity: 0; }
+    }
+
+    /* Fly in from the left — speed trail now streaks left (same direction) */
+    @keyframes plane-fly-in {
+      0%   { transform: translateX(calc(-100vw - 300px)) translateY(-90px) rotate(22deg) scale(0.28);
+             filter: blur(7px) drop-shadow(-50px -8px 70px rgba(59,130,246,0.5)); opacity: 0; }
+      18%  { filter: blur(2px)
+                     drop-shadow(-30px -4px 50px rgba(59,130,246,0.8))
+                     drop-shadow(-60px -8px 90px rgba(59,130,246,0.4)); opacity: 1; }
+      40%  { filter: blur(0)
+                     drop-shadow(-15px -2px 28px rgba(59,130,246,0.65))
+                     drop-shadow(-35px -4px 60px rgba(59,130,246,0.3)); }
+      65%  { filter: drop-shadow(-5px 0 12px rgba(59,130,246,0.4)); }
+      72%  { transform: translateX(12px) translateY(5px) rotate(-3deg) scale(1.02); }
+      86%  { transform: translateX(-5px) translateY(-2px) rotate(1deg) scale(0.99); }
+      100% { transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+             filter: blur(0) drop-shadow(0 0 0 rgba(59,130,246,0)); opacity: 1; }
+    }
+
+    /* ── FEATURE TILES ── */
     .service-section {
       margin-bottom: 3rem;
       padding-top: 2.5rem;
@@ -210,41 +486,46 @@
       font-family: var(--font-heading);
       font-size: 1.15rem;
       font-weight: 700;
-      margin-bottom: 1.5rem;
-      color: var(--text-primary);
+      margin-bottom: 1.25rem;
     }
 
-    /* ── FEATURES GRID ── */
     .features-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
     }
 
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.65rem;
-      padding: 0.9rem 1rem;
-      background: var(--purple-dim);
+    .feature-tile {
+      padding: 1.25rem 1.2rem;
+      background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      font-size: 0.92rem;
-      line-height: 1.4;
-      color: var(--text-primary);
-      transition: border-color var(--transition);
+      border-radius: 6px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .feature-item:hover {
+    .feature-tile:hover {
       border-color: var(--border-hover);
+      box-shadow: 0 0 20px rgba(59,130,246,0.12);
     }
 
-    .feature-tick {
-      color: var(--purple);
+    .feature-tile-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .feature-tile-name {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
       font-weight: 700;
-      font-size: 1rem;
-      flex-shrink: 0;
-      margin-top: 0.05em;
+      margin-bottom: 0.35rem;
+      color: var(--text-primary);
+    }
+
+    .feature-tile-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.55;
     }
 
     /* ── WHO IT'S FOR ── */
@@ -254,13 +535,13 @@
       color: var(--text-primary);
     }
 
-    /* ── CTA SECTION ── */
+    /* ── CTA ── */
     .service-cta {
       margin-top: 3.5rem;
       padding: 2.5rem;
-      background: var(--purple-dim);
+      background: var(--blue-dim);
       border: 1px solid var(--border-subtle);
-      border-radius: 16px;
+      border-radius: 6px;
       text-align: center;
     }
 
@@ -283,16 +564,16 @@
       font-weight: 600;
       font-size: 0.95rem;
       color: #fff;
-      background: var(--purple);
+      background: var(--blue);
       text-decoration: none;
       padding: 0.75rem 1.75rem;
-      border-radius: 10px;
+      border-radius: 8px;
       transition: opacity var(--transition), box-shadow var(--transition);
     }
 
     .cta-btn:hover {
       opacity: 0.88;
-      box-shadow: 0 4px 20px rgba(109, 40, 217, 0.35);
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
     }
 
     /* ── FOOTER ── */
@@ -305,13 +586,16 @@
     }
 
     footer a { color: var(--text-muted); text-decoration: none; }
-    footer a:hover { color: var(--purple); }
+    footer a:hover { color: var(--blue); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .features-grid { grid-template-columns: 1fr; }
-      .service-cta { padding: 1.75rem 1.25rem; }
+    @media (max-width: 700px) {
+      .showcase-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
       nav { padding: 0.875rem 1.25rem; }
+    }
+    @media (max-width: 420px) {
+      .features-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -319,12 +603,14 @@
 
   <nav id="navbar" aria-label="Main navigation">
     <a href="./index.html" class="nav-logo">
-      <img src="./assets/logo-rounded.png" class="nav-logo-badge" alt="Arcane Technologies" style="object-fit:contain;padding:3px;background:#fff;">
+      <img src="./assets/logo-rounded.png" class="nav-logo-badge" alt="Arcane Technologies">
       <span>Arcane Technologies</span>
     </a>
     <div class="nav-links">
-      <a href="./#services" class="nav-link">Services</a>
-      <a href="./#about" class="nav-link">About</a>
+      <a href="./index.html" class="nav-link">Home</a>
+      <a href="./consultancy.html" class="nav-link">IT Support</a>
+      <a href="./web-design.html" class="nav-link active">Web Design</a>
+      <a href="./apps.html" class="nav-link">Apps</a>
       <a href="./blog.html" class="nav-link">Blog</a>
       <a href="./#contact" class="nav-cta">Let's Talk</a>
     </div>
@@ -333,53 +619,101 @@
   <main>
     <div class="service-wrap">
 
-      <p class="service-breadcrumb"><a href="./#services">Services</a> &rsaquo; Web Design &amp; Ecommerce</p>
+      <p class="service-breadcrumb"><a href="./">Home</a> &rsaquo; Wizardly Web Design</p>
 
       <div class="service-hero">
-        <div class="service-icon">🌐</div>
-        <span class="service-label">Service</span>
-        <h1>Web Design &amp; Ecommerce</h1>
-        <p class="subtitle">Custom websites and online stores that actually work. Built fast, hosted reliably, no agency rates.</p>
+        <div class="service-icon" aria-hidden="true">✨</div>
+        <span class="service-label">Web &amp; Ecommerce</span>
+        <h1>Wizardly Web Design</h1>
+        <p class="subtitle">Sites that actually do something. Custom-built, fast to launch, and designed to stand out.</p>
       </div>
 
+      <!-- ── SHOWCASE ── -->
+      <p class="showcase-label">What we build</p>
+      <h2 class="showcase-heading">Three things we do especially well</h2>
+
+      <div class="showcase-grid">
+
+        <!-- Card 1: Ecommerce — treasure fills up -->
+        <div class="demo-card card-ecommerce" id="card-ecommerce">
+          <span class="demo-card-label">Ecommerce</span>
+          <h3 class="demo-card-title">Online Stores</h3>
+          <p class="demo-card-desc">Product listings, payment processing, inventory, and fulfilment — built to sell from day one.</p>
+        </div>
+
+        <!-- Card 2: SEO — magnifying glass sweeps -->
+        <div class="demo-card card-seo" id="card-seo">
+          <div class="seo-sweep-area" aria-hidden="true">
+            <div class="seo-lens-glow"></div>
+            <div class="seo-glass-icon">🔍</div>
+          </div>
+          <span class="demo-card-label">SEO</span>
+          <h3 class="demo-card-title">Found First</h3>
+          <p class="demo-card-desc">Clean HTML, fast load times, structured data, and the right words in the right places. SEO baked in, not bolted on.</p>
+        </div>
+
+        <!-- Card 3: Fast turnaround — whole card folds + flies -->
+        <div class="demo-card card-turnaround" id="card-turnaround">
+          <span class="demo-card-label">Fast Turnaround</span>
+          <h3 class="demo-card-title">Live in Weeks</h3>
+          <p class="demo-card-desc">No multi-month discovery phases. No agency timelines. You get a site that's ready to use, fast.</p>
+        </div>
+
+      </div>
+
+      <!-- ── FEATURES ── -->
       <div class="service-section">
-        <h2>What's included</h2>
+        <h2>Everything included</h2>
         <div class="features-grid">
-          <div class="feature-item">
-            <span class="feature-tick">✓</span>
-            <span>Custom website design and build</span>
+
+          <div class="feature-tile">
+            <span class="feature-tile-icon">🎨</span>
+            <p class="feature-tile-name">Bespoke Design</p>
+            <p class="feature-tile-desc">Every site is built from scratch. No page builders, no recycled templates — yours looks like yours.</p>
           </div>
-          <div class="feature-item">
-            <span class="feature-tick">✓</span>
-            <span>Ecommerce stores (product listings, payments, fulfilment)</span>
+
+          <div class="feature-tile">
+            <span class="feature-tile-icon">🛒</span>
+            <p class="feature-tile-name">Ecommerce Ready</p>
+            <p class="feature-tile-desc">Sell products, take bookings, or handle subscriptions — whichever fits your business model.</p>
           </div>
-          <div class="feature-item">
-            <span class="feature-tick">✓</span>
-            <span>Managed hosting, SSL, and domain management</span>
+
+          <div class="feature-tile">
+            <span class="feature-tile-icon">📱</span>
+            <p class="feature-tile-name">Mobile First</p>
+            <p class="feature-tile-desc">Designed for phones first, then scaled up. Your site works perfectly on every screen size.</p>
           </div>
-          <div class="feature-item">
-            <span class="feature-tick">✓</span>
-            <span>SEO basics baked in from the start</span>
+
+          <div class="feature-tile">
+            <span class="feature-tile-icon">⚡</span>
+            <p class="feature-tile-name">Built Fast, Loads Fast</p>
+            <p class="feature-tile-desc">Lean code, optimised images, and strong Core Web Vitals scores. No bloat, no waiting.</p>
           </div>
-          <div class="feature-item">
-            <span class="feature-tick">✓</span>
-            <span>Ongoing updates and maintenance</span>
+
+          <div class="feature-tile">
+            <span class="feature-tile-icon">🔒</span>
+            <p class="feature-tile-name">Secure &amp; Reliable</p>
+            <p class="feature-tile-desc">SSL, secure hosting, and no unnecessary dependencies. Your site stays up and your visitors stay safe.</p>
           </div>
-          <div class="feature-item">
-            <span class="feature-tick">✓</span>
-            <span>Fast turnaround — no multi-month project timelines</span>
+
+          <div class="feature-tile">
+            <span class="feature-tile-icon">🔧</span>
+            <p class="feature-tile-name">Ongoing Care</p>
+            <p class="feature-tile-desc">Updates, changes, and support when you need it. We don't disappear after go-live.</p>
           </div>
+
         </div>
       </div>
 
+      <!-- ── WHO IT'S FOR ── -->
       <div class="service-section">
         <h2>Who it's for</h2>
-        <p class="who-text">Businesses and sole traders who need a professional online presence without paying agency rates or waiting six months to go live.</p>
+        <p class="who-text">Businesses and sole traders who need a professional online presence without paying agency rates or waiting six months to go live. If you've been quoted thousands for something that should take weeks, talk to us.</p>
       </div>
 
       <div class="service-cta">
         <h2>Ready to get started?</h2>
-        <p>Tell us what you need and we'll come back with a straightforward proposal — no jargon, no lengthy discovery process.</p>
+        <p>Tell us what you need. We'll come back with a straightforward proposal — no jargon, no lengthy discovery process.</p>
         <a href="./index.html#contact" class="cta-btn">Get in touch</a>
       </div>
 
@@ -391,10 +725,226 @@
   </footer>
 
   <script>
+    /* ── Navbar scroll ── */
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
+
+
+    /* ══════════════════════════════════════════════════
+       CARD 1: COINS FALL AND STACK — bucket column system
+    ══════════════════════════════════════════════════ */
+    (function () {
+      const card = document.getElementById('card-ecommerce');
+
+      const NUM_COLS   = 36;   // horizontal column buckets — more cols = tighter packing
+      const COIN_D     = 14;   // coin diameter px (larger than col width → horizontal overlap)
+      const BOTTOM_PAD = 5;
+      const PEAK_RATIO = 0.25; // tallest point of mound = 25% of card height
+      const CENTER     = (NUM_COLS - 1) / 2;
+      const SIGMA      = 8.5;  // mound spread — larger = flatter/wider pile
+
+      /* Per-column pile heights */
+      let cols = new Array(NUM_COLS).fill(0);
+      let active = false;
+      let timer  = null;
+
+      /* Mound curve: bell-shaped max height for each column */
+      function moundMax(col, cardH) {
+        return cardH * PEAK_RATIO * Math.exp(-0.5 * Math.pow((col - CENTER) / SIGMA, 2));
+      }
+
+      /* Pick a column weighted by remaining space — fills center first, then spreads */
+      function pickCol(cardH) {
+        const weights = cols.map((h, i) => Math.max(0, moundMax(i, cardH) - h));
+        const total = weights.reduce((a, b) => a + b, 0);
+        if (total <= 0) return -1;
+        let r = Math.random() * total;
+        for (let i = 0; i < NUM_COLS; i++) { r -= weights[i]; if (r <= 0) return i; }
+        return -1;
+      }
+
+      const PALETTES = [
+        ['#fff7a0','#f5c030','#9a5f00'],
+        ['#ffe555','#f0a820','#8c4f00'],
+        ['#ffd030','#e8920a','#7a3d00'],
+        ['#ffec80','#f5b020','#a06000'],
+      ];
+
+      function spawnCoin() {
+        if (!active) return;
+        const cardH = card.offsetHeight;
+        const col = pickCol(cardH);
+        if (col === -1) { timer = setTimeout(spawnCoin, 400); return; }
+
+        const colW    = 100 / NUM_COLS;
+        const xPct    = Math.max(1, Math.min(99,
+                          (col + 0.5) * colW + (Math.random() - 0.5) * colW * 0.25));
+        const size    = COIN_D - 0.5 + Math.random() * 1.5;
+        const half    = size / 2;
+        const pileH   = cols[col];
+        const restTop = cardH - BOTTOM_PAD - size - pileH;
+        if (restTop < 6) { cols[col] = moundMax(col, cardH); timer = setTimeout(spawnCoin, 30); return; }
+
+        const travel  = restTop + size;
+        const dur     = 0.30 + Math.random() * 0.22;
+        const spin    = 90 + Math.random() * 540;
+        const [hi, mid, lo] = PALETTES[Math.floor(Math.random() * PALETTES.length)];
+
+        const coin = document.createElement('div');
+        coin.className = 'gold-coin falling';
+        coin.style.cssText = [
+          `left:calc(${xPct}% - ${half}px)`,
+          `width:${size}px`, `height:${size}px`,
+          `--travel:${travel}px`, `--dur:${dur}s`, `--spin:${spin}deg`,
+          `background:radial-gradient(circle at 32% 28%, ${hi} 0%, ${mid} 45%, ${lo} 100%)`,
+          `border:1px solid rgba(255,200,50,0.5)`,
+          `box-shadow:0 0 ${(size*0.45).toFixed(1)}px rgba(245,166,35,0.9),` +
+            `inset 0 1px 1px rgba(255,255,200,0.5),inset 0 -1px 1px rgba(0,0,0,0.25)`,
+        ].join(';');
+
+        card.appendChild(coin);
+        cols[col] += size - 1; /* reserve space — slight overlap for dense stacking */
+
+        coin.addEventListener('animationend', () => {
+          coin.classList.remove('falling');
+          coin.style.animation = 'none';
+          coin.style.transform = 'none';
+          coin.style.top  = restTop + 'px';
+          coin.style.left = `calc(${xPct}% - ${half}px)`;
+        }, { once: true });
+
+        timer = setTimeout(spawnCoin, 18 + Math.random() * 25);
+      }
+
+      card.addEventListener('mouseenter', () => {
+        active = true;
+        spawnCoin(); setTimeout(spawnCoin, 55); setTimeout(spawnCoin, 115);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        active = false;
+        clearTimeout(timer);
+        cols.fill(0);
+
+        /* Stop all in-flight and clear piled coins */
+        card.querySelectorAll('.gold-coin').forEach(c => {
+          c.style.animation = 'none'; /* kill fall animation immediately */
+          c.style.transform = 'none';
+          c.offsetHeight;  /* force reflow so next animation starts fresh */
+          const delay = Math.random() * 100;
+          c.style.animation = `coin-drain 0.28s cubic-bezier(0.4,0,1,1) ${delay}ms forwards`;
+          c.addEventListener('animationend', () => c.remove(), { once: true });
+        });
+      });
+    })();
+
+
+    /* ══════════════════════════════════════════════════
+       CARD 3: WHOLE CARD FOLDS + FLIES OFF SCREEN
+    ══════════════════════════════════════════════════ */
+    (function () {
+      const card = document.getElementById('card-turnaround');
+      let busy = false;
+
+      card.addEventListener('mouseenter', () => {
+        if (busy) return;
+        busy = true;
+
+        /* Snapshot the card's position in the viewport */
+        const rect = card.getBoundingClientRect();
+        const cs   = getComputedStyle(card);
+
+        /* ── Build fixed-position clone ──
+           Outer: handles the flight trajectory (translateX/Y, rotate, scale)
+           Inner: handles the 3D fold (perspective rotateX + scaleY)          */
+        const outer = document.createElement('div');
+        outer.id = 'plane-outer';
+        outer.style.cssText = [
+          `top:${rect.top}px`,
+          `left:${rect.left}px`,
+          `width:${rect.width}px`,
+          `height:${rect.height}px`,
+        ].join(';');
+
+        const inner = document.createElement('div');
+        inner.id = 'plane-inner';
+        /* Copy visual styling so the clone looks identical */
+        inner.style.cssText = [
+          'background:' + cs.background,
+          'border:' + cs.border,
+          'border-radius:' + cs.borderRadius,
+          'padding:' + cs.padding,
+          'display:flex',
+          'flex-direction:column',
+          'overflow:hidden',
+        ].join(';');
+        inner.innerHTML = card.innerHTML;
+
+        outer.appendChild(inner);
+        document.body.appendChild(outer);
+
+        /* Hide the real card (keeps grid space) */
+        card.style.visibility = 'hidden';
+
+        /* ─── PHASE 1: Fold the inner card ─── */
+        inner.style.animation = 'card-fold 0.52s cubic-bezier(0.4, 0, 0.8, 0.5) forwards';
+
+        inner.addEventListener('animationend', function onFolded(e) {
+          if (e.animationName !== 'card-fold') return;
+          inner.removeEventListener('animationend', onFolded);
+
+          /* Lock inner in folded state */
+          inner.style.animation = 'none';
+          inner.style.transform = 'perspective(480px) rotateX(-80deg) scaleY(0.055) scaleX(1.20)';
+
+          /* Brief pause — the plane is "on the runway" — then launch */
+          setTimeout(() => {
+
+            /* ─── PHASE 2: Fly outer off screen (right) ─── */
+            outer.style.animation = 'plane-fly-out 0.46s cubic-bezier(0.4, 0, 1, 1) forwards';
+
+            outer.addEventListener('animationend', function onGone(e2) {
+              if (e2.animationName !== 'plane-fly-out') return;
+              outer.removeEventListener('animationend', onGone);
+
+              /* Kill the out-animation fill so we can freely set transform */
+              outer.style.animation = 'none';
+              outer.style.transform = '';
+              /* Force reflow before adding fly-in so 0% keyframe is the start */
+              outer.offsetHeight;
+
+              /* ─── PHASE 3: Fly in from the left ─── */
+              outer.style.animation = 'plane-fly-in 0.62s cubic-bezier(0.0, 0.0, 0.2, 1.0) forwards';
+
+              outer.addEventListener('animationend', function onBack(e3) {
+                if (e3.animationName !== 'plane-fly-in') return;
+                outer.removeEventListener('animationend', onBack);
+
+                outer.style.animation = 'none';
+                outer.style.transform = '';
+
+                /* ─── PHASE 4: Unfold ─── */
+                inner.style.transform = ''; /* clear locked fold state */
+                inner.style.animation = 'card-unfold 0.6s cubic-bezier(0.34, 1.3, 0.64, 1) forwards';
+
+                inner.addEventListener('animationend', function onUnfolded(e4) {
+                  if (e4.animationName !== 'card-unfold') return;
+                  inner.removeEventListener('animationend', onUnfolded);
+
+                  /* Clean up: remove clone, restore real card */
+                  outer.remove();
+                  card.style.visibility = '';
+                  setTimeout(() => { busy = false; }, 10000);
+                });
+              });
+            });
+
+          }, 80); /* pause before launch */
+        });
+      });
+    })();
   </script>
 </body>
 </html>

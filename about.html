@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="light-theme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Arcane Technologies, Penrith &amp; Cumbria</title>
+  <meta name="description" content="Rooted in Cumbria. Arcane Technologies is the IT consultancy that doesn't hide behind jargon, helpdesk tickets, or a suit. Honest advice, plain English." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://arcanetechnologies.co.uk/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About — Arcane Technologies" />
+  <meta property="og:description" content="Rooted in Cumbria. Honest advice, plain English, and actually getting it done." />
+  <meta property="og:url" content="https://arcanetechnologies.co.uk/about.html" />
+  <meta property="og:image" content="https://arcanetechnologies.co.uk/assets/logo-rounded.png" />
+  <link rel="icon" type="image/png" href="./assets/logo-rounded.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-base:         #0a0a0f;
+      --bg-card:         #1a1a2e;
+      --purple:          #8b5cf6;
+      --purple-dim:      rgba(139, 92, 246, 0.15);
+      --purple-glow:     rgba(139, 92, 246, 0.4);
+      --blue:            #3b82f6;
+      --text-primary:    #f0eeff;
+      --text-muted:      #9997b8;
+      --border-subtle:   rgba(139, 92, 246, 0.12);
+      --border-hover:    rgba(139, 92, 246, 0.6);
+      --nav-scrolled-bg: rgba(10, 10, 15, 0.78);
+      --font-heading:    'Space Grotesk', sans-serif;
+      --font-body:       'Inter', sans-serif;
+      --transition:      0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html.light-theme {
+      --bg-base:         #f8f8ff;
+      --bg-card:         #ffffff;
+      --purple:          #6d28d9;
+      --purple-dim:      rgba(109, 40, 217, 0.08);
+      --purple-glow:     rgba(109, 40, 217, 0.25);
+      --blue:            #2563eb;
+      --text-primary:    #0a0a1a;
+      --text-muted:      #666677;
+      --border-subtle:   rgba(109, 40, 217, 0.18);
+      --border-hover:    rgba(109, 40, 217, 0.5);
+      --nav-scrolled-bg: rgba(248, 248, 255, 0.92);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.75;
+      min-height: 100vh;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .nav-logo-badge {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      object-fit: contain;
+      padding: 3px;
+      background: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover { color: var(--purple); }
+    .nav-link.active { color: var(--purple); font-weight: 600; }
+
+    .nav-cta {
+      font-family: var(--font-heading);
+      font-weight: 500;
+      font-size: 0.88rem;
+      color: var(--purple);
+      text-decoration: none;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border-hover);
+      border-radius: 8px;
+      background: var(--purple-dim);
+      transition: background var(--transition), box-shadow var(--transition);
+      white-space: nowrap;
+      margin-left: 0.5rem;
+    }
+
+    .nav-cta:hover {
+      background: rgba(109, 40, 217, 0.18);
+      box-shadow: 0 0 18px rgba(109, 40, 217, 0.25);
+    }
+
+    /* ── PAGE ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 8rem 2.5rem 6rem;
+    }
+
+    .page-label {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--purple);
+      margin-bottom: 0.75rem;
+    }
+
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ── TWO-COL LAYOUT ── */
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .about-body p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .about-body p strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .about-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      padding: 0.45rem 0.9rem;
+      background: var(--purple-dim);
+      border: 1px solid var(--border-subtle);
+      border-radius: 100px;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--purple);
+      letter-spacing: 0.04em;
+      width: fit-content;
+    }
+
+    .about-location svg {
+      width: 13px; height: 13px;
+      fill: var(--purple);
+      flex-shrink: 0;
+    }
+
+    .about-sectors {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .sector-tag {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      background: rgba(139, 92, 246, 0.05);
+      letter-spacing: 0.02em;
+      transition: border-color var(--transition), color var(--transition);
+    }
+
+    .sector-tag:hover {
+      border-color: rgba(139, 92, 246, 0.35);
+      color: var(--text-primary);
+    }
+
+    /* ── ART PANEL ── */
+    .about-art {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 2rem;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-12px); }
+    }
+
+    .about-vid-circle {
+      width: min(420px, 100%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #f9fafa;
+      border: 3px solid var(--purple);
+      box-shadow: 0 0 40px var(--purple-glow);
+      overflow: hidden;
+    }
+
+    .about-vid {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      -webkit-mask-image: radial-gradient(circle, black 60%, transparent 86%);
+      mask-image: radial-gradient(circle, black 60%, transparent 86%);
+    }
+
+    /* ── CTA ── */
+    .about-cta {
+      margin-top: 4rem;
+      padding: 2.5rem;
+      background: var(--purple-dim);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .about-cta h2 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-cta p {
+      color: var(--text-muted);
+      font-size: 0.97rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #fff;
+      background: var(--purple);
+      text-decoration: none;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      transition: opacity 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      opacity: 0.88;
+      box-shadow: 0 4px 20px rgba(109, 40, 217, 0.35);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--purple); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-art { margin-top: 0; }
+      nav { padding: 0.875rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar" aria-label="Main navigation">
+    <a href="./index.html" class="nav-logo">
+      <img src="./assets/logo-rounded.png" class="nav-logo-badge" alt="Arcane Technologies">
+      <span>Arcane Technologies</span>
+    </a>
+    <div class="nav-links">
+      <a href="./index.html" class="nav-link">Home</a>
+      <a href="./consultancy.html" class="nav-link">IT Support</a>
+      <a href="./web-design.html" class="nav-link">Web Design</a>
+      <a href="./apps.html" class="nav-link">Apps</a>
+      <a href="./blog.html" class="nav-link">Blog</a>
+      <a href="./#contact" class="nav-cta">Let's Talk</a>
+    </div>
+  </nav>
+
+  <main>
+    <p class="page-label">Who we are</p>
+    <h1 class="page-title">About Arcane Technologies</h1>
+
+    <div class="about-inner">
+      <div>
+        <div class="about-body">
+          <p>
+            Rooted in <strong>Cumbria</strong>, Arcane Technologies is the IT consultancy
+            that doesn't hide behind jargon, helpdesk tickets, or a suit. We tell you
+            what's wrong, what it'll cost, and what we'd actually recommend — even if that
+            means telling you to spend less.
+          </p>
+          <p>
+            We've worked across the <strong>education sector, local government, civil
+            service, defence, and the third sector</strong>, in the UK, Germany, Africa,
+            and the Middle East.
+          </p>
+          <p>
+            We've seen creaking infrastructure, decade-old servers holding entire
+            organisations hostage, software that predates smartphones still somehow running
+            payroll; and more cursed printers than any human being should have to deal with.
+          </p>
+          <p>
+            The fix is always the same: <strong>honest advice, plain English, and actually
+            getting it done.</strong> No call centres. No scripts. No holding music. Just
+            experienced IT support and a bit of Northern common sense.
+          </p>
+        </div>
+
+        <div class="about-location" style="margin-top:1.5rem;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+          </svg>
+          Cumbria, England
+        </div>
+
+        <div class="about-sectors">
+          <span class="sector-tag">Education</span>
+          <span class="sector-tag">Local Government</span>
+          <span class="sector-tag">Third Sector</span>
+          <span class="sector-tag">SMEs</span>
+          <span class="sector-tag">Healthcare</span>
+          <span class="sector-tag">Hospitality</span>
+          <span class="sector-tag">Defence</span>
+          <span class="sector-tag">Civil Service</span>
+        </div>
+      </div>
+
+      <div class="about-art">
+        <div class="about-vid-circle">
+          <video
+            class="about-vid"
+            src="./assets/char sitting new.mp4"
+            autoplay loop muted playsinline
+            aria-hidden="true"
+          ></video>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-cta">
+      <h2>Ready to work with us?</h2>
+      <p>The first call is always free. Let's work out whether we're the right fit.</p>
+      <a href="./index.html#contact" class="cta-btn">Get in touch</a>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2026 Arcane Technologies. All rights reserved. &nbsp;&middot;&nbsp; <a href="./privacy-policy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="./terms.html">Terms &amp; Conditions</a></p>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
+</body>
+</html>

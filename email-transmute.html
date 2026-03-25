@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="light-theme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Transmute — Save Emails to SharePoint from Outlook | Arcane Apps</title>
+  <meta name="description" content="Email Transmute saves emails and attachments as PDF directly to SharePoint from Outlook — one click, no data leaves your Microsoft 365 tenant." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://arcanetechnologies.co.uk/email-transmute.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Email Transmute — Save Emails to SharePoint in One Click" />
+  <meta property="og:description" content="An Outlook add-in that saves emails and attachments as PDF directly to SharePoint. One click. No data leaves your tenant." />
+  <meta property="og:url" content="https://arcanetechnologies.co.uk/email-transmute.html" />
+  <meta property="og:image" content="https://arcanetechnologies.co.uk/assets/logo-rounded.png" />
+  <link rel="icon" type="image/png" href="./assets/logo-rounded.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-base:         #0a0a0f;
+      --bg-section:      #111118;
+      --bg-card:         #1a1a2e;
+      --bg-card-back:    #16162a;
+      --purple:          #8b5cf6;
+      --purple-dim:      rgba(139, 92, 246, 0.15);
+      --purple-glow:     rgba(139, 92, 246, 0.4);
+      --blue:            #3b82f6;
+      --green:           #10b981;
+      --green-dim:       rgba(16, 185, 129, 0.12);
+      --text-primary:    #f0eeff;
+      --text-muted:      #9997b8;
+      --border-subtle:   rgba(139, 92, 246, 0.12);
+      --border-hover:    rgba(139, 92, 246, 0.6);
+      --nav-scrolled-bg: rgba(10, 10, 15, 0.78);
+      --font-heading:    'Space Grotesk', sans-serif;
+      --font-body:       'Inter', sans-serif;
+      --transition:      0.22s ease;
+    }
+
+    html.light-theme {
+      --bg-base:         #f8f8ff;
+      --bg-section:      #eeeef8;
+      --bg-card:         #ffffff;
+      --bg-card-back:    #f0f0fb;
+      --purple:          #6d28d9;
+      --purple-dim:      rgba(109, 40, 217, 0.08);
+      --purple-glow:     rgba(109, 40, 217, 0.25);
+      --blue:            #2563eb;
+      --green:           #059669;
+      --green-dim:       rgba(5, 150, 105, 0.08);
+      --text-primary:    #0a0a1a;
+      --text-muted:      #666677;
+      --border-subtle:   rgba(109, 40, 217, 0.18);
+      --border-hover:    rgba(109, 40, 217, 0.5);
+      --nav-scrolled-bg: rgba(248, 248, 255, 0.92);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.75;
+      min-height: 100vh;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: var(--nav-scrolled-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .nav-logo-badge {
+      width: 32px; height: 32px;
+      background: var(--purple-dim);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      object-fit: contain;
+      padding: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover { color: var(--purple); }
+    .nav-link.active { color: var(--green); font-weight: 600; }
+
+    .nav-cta {
+      font-family: var(--font-heading);
+      font-weight: 500;
+      font-size: 0.88rem;
+      color: var(--purple);
+      text-decoration: none;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border-hover);
+      border-radius: 8px;
+      background: var(--purple-dim);
+      transition: background var(--transition), box-shadow var(--transition);
+      white-space: nowrap;
+      margin-left: 0.5rem;
+    }
+
+    .nav-cta:hover {
+      background: rgba(109, 40, 217, 0.18);
+      box-shadow: 0 0 18px rgba(109, 40, 217, 0.25);
+    }
+
+    /* ── PAGE LAYOUT ── */
+    .service-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 7rem 2rem 5rem;
+    }
+
+    .service-breadcrumb {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .service-breadcrumb a {
+      color: var(--purple);
+      text-decoration: none;
+    }
+
+    .service-breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── HERO ── */
+    .service-hero {
+      margin-bottom: 3.5rem;
+    }
+
+    .service-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      background: var(--green-dim);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 18px;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-label {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      background: var(--green-dim);
+      color: var(--green);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .service-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .service-hero .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    .apps-badge {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--green);
+      background: var(--green-dim);
+      border: 1px solid var(--green);
+      border-radius: 20px;
+      padding: 0.18rem 0.65rem;
+      vertical-align: middle;
+      margin-left: 0.6rem;
+    }
+
+    /* ── SECTIONS ── */
+    .service-section {
+      margin-bottom: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .service-section h2 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: var(--text-primary);
+    }
+
+    /* ── FEATURES GRID ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      padding: 0.9rem 1rem;
+      background: var(--green-dim);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 10px;
+      font-size: 0.92rem;
+      line-height: 1.4;
+      color: var(--text-primary);
+      transition: border-color var(--transition);
+    }
+
+    .feature-item:hover {
+      border-color: var(--green);
+    }
+
+    .feature-tick {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 0.05em;
+    }
+
+    /* ── DEMO SLOTS ── */
+    .demo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .demo-slot {
+      aspect-ratio: 16 / 9;
+      border: 2px dashed rgba(16, 185, 129, 0.3);
+      border-radius: 12px;
+      background: var(--bg-card);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem;
+    }
+
+    .demo-slot-icon {
+      font-size: 1.75rem;
+      opacity: 0.45;
+    }
+
+    .demo-slot-label {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-it-works-callout {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .how-it-works-callout p.callout-label {
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.85rem;
+    }
+
+    .how-it-works {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .how-it-works li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .step-num {
+      width: 1.8rem;
+      height: 1.8rem;
+      background: var(--purple-dim);
+      color: var(--purple);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.78rem;
+      flex-shrink: 0;
+    }
+
+    /* ── COMPARISON TABLE ── */
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      min-width: 540px;
+    }
+
+    .comparison-table th {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--purple);
+      text-align: left;
+      padding: 0 0.75rem 0.75rem;
+      border-bottom: 1px solid var(--border-hover);
+      white-space: nowrap;
+    }
+
+    .comparison-table td {
+      padding: 0.85rem 0.75rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table .highlight-row td {
+      color: var(--text-primary);
+      background: var(--green-dim);
+      border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    .comparison-table .highlight-row td:first-child {
+      border-left: 3px solid var(--green);
+    }
+
+    .check { color: var(--green); font-weight: 700; }
+    .cross { color: #ef4444; font-weight: 700; }
+
+    /* ── CTA SECTION ── */
+    .service-cta {
+      margin-top: 3.5rem;
+      padding: 2.5rem;
+      background: var(--green-dim);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .service-cta h2 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-cta p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.97rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #fff;
+      background: var(--green);
+      text-decoration: none;
+      padding: 0.75rem 1.75rem;
+      border-radius: 10px;
+      transition: opacity var(--transition), box-shadow var(--transition);
+    }
+
+    .cta-btn:hover {
+      opacity: 0.88;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--purple); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .demo-grid { grid-template-columns: 1fr; }
+      .service-cta { padding: 1.75rem 1.25rem; }
+      nav { padding: 0.875rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar" aria-label="Main navigation">
+    <a href="./index.html" class="nav-logo">
+      <img src="./assets/logo-rounded.png" class="nav-logo-badge" alt="Arcane Technologies">
+      <span>Arcane Technologies</span>
+    </a>
+    <div class="nav-links">
+      <a href="./index.html" class="nav-link">Home</a>
+      <a href="./consultancy.html" class="nav-link">IT Support</a>
+      <a href="./web-design.html" class="nav-link">Web Design</a>
+      <a href="./apps.html" class="nav-link active">Apps</a>
+      <a href="./blog.html" class="nav-link">Blog</a>
+      <a href="./#contact" class="nav-cta">Let's Talk</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="service-wrap">
+
+      <p class="service-breadcrumb">
+        <a href="./">Home</a> &rsaquo; <a href="./apps.html">Arcane Apps</a> &rsaquo; Email Transmute
+      </p>
+
+      <!-- ── HERO ── -->
+      <div class="service-hero">
+        <img src="./assets/atemaillogo.png" alt="Email Transmute" class="service-icon" style="background:none;border:none;padding:0;object-fit:contain;">
+        <span class="service-label">Arcane Apps</span>
+        <h1>Email Transmute <span class="apps-badge">Available Now</span></h1>
+        <p class="subtitle">An Outlook add-in that saves emails and their attachments as PDF directly to a SharePoint folder — in one click, without leaving Outlook. Works on Windows, Mac, and Outlook on the web.</p>
+      </div>
+
+      <!-- ── FEATURES ── -->
+      <div class="service-section">
+        <h2>What it does</h2>
+        <div class="features-grid">
+          <div class="feature-item">
+            <span class="feature-tick">✓</span>
+            <span>One click from the Outlook reading pane</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-tick">✓</span>
+            <span>Email body and attachments saved as a single PDF</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-tick">✓</span>
+            <span>Saves directly to a SharePoint folder you choose</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-tick">✓</span>
+            <span>Works in Outlook for Windows, Mac, and web</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-tick">✓</span>
+            <span>100% M365 native — no data leaves your tenant</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-tick">✓</span>
+            <span>Deploy org-wide from Microsoft 365 Admin Center</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── DEMO PLACEHOLDERS ── -->
+      <div class="service-section">
+        <h2>See it in action</h2>
+        <p style="color:var(--text-muted);margin-bottom:1.25rem;font-size:0.93rem;">
+          Demo walkthroughs coming soon — GIFs below will show the add-in in use inside Outlook.
+        </p>
+        <div class="demo-grid">
+          <div class="demo-slot">
+            <span class="demo-slot-icon">📧</span>
+            <span class="demo-slot-label">Demo: Opening the Email Transmute panel in the Outlook ribbon</span>
+          </div>
+          <div class="demo-slot">
+            <span class="demo-slot-icon">📁</span>
+            <span class="demo-slot-label">Demo: Selecting a destination SharePoint folder</span>
+          </div>
+          <div class="demo-slot">
+            <span class="demo-slot-icon">📄</span>
+            <span class="demo-slot-label">Demo: One-click save — email and attachments to PDF</span>
+          </div>
+          <div class="demo-slot">
+            <span class="demo-slot-icon">✅</span>
+            <span class="demo-slot-label">Demo: Confirmation and file visible in SharePoint</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── WHY EMAIL TRANSMUTE ── -->
+      <div class="service-section">
+        <h2>Why Email Transmute?</h2>
+        <p style="color:var(--text-muted);margin-bottom:1.5rem;font-size:0.93rem;">
+          Saving an email to SharePoint sounds simple. Here is what it actually looks like without Email Transmute:
+        </p>
+
+        <div class="how-it-works-callout">
+          <p class="callout-label">Without Email Transmute — 4+ steps every time</p>
+          <ol class="how-it-works">
+            <li><span class="step-num">1</span><span>Open the email in Outlook</span></li>
+            <li><span class="step-num">2</span><span>File → Print → Save as PDF → choose a location</span></li>
+            <li><span class="step-num">3</span><span>Open SharePoint in a browser tab, navigate to the right folder</span></li>
+            <li><span class="step-num">4</span><span>Upload the PDF file</span></li>
+            <li><span class="step-num">5</span><span>Repeat for each attachment separately</span></li>
+          </ol>
+        </div>
+
+        <div class="table-scroll">
+          <table class="comparison-table" aria-label="Email Transmute comparison with alternatives">
+            <thead>
+              <tr>
+                <th>Solution</th>
+                <th>Steps to SharePoint</th>
+                <th>Handles attachments</th>
+                <th>Stays in Outlook</th>
+                <th>M365 native</th>
+                <th>Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight-row">
+                <td><strong>Email Transmute</strong></td>
+                <td><span class="check">✓</span> 1 click</td>
+                <td><span class="check">✓</span> Yes</td>
+                <td><span class="check">✓</span> Yes</td>
+                <td><span class="check">✓</span> Yes</td>
+                <td>Contact us</td>
+              </tr>
+              <tr>
+                <td>Manual (Print to PDF)</td>
+                <td>4–5 steps</td>
+                <td><span class="cross">✗</span> Manual per file</td>
+                <td><span class="cross">✗</span> No</td>
+                <td>—</td>
+                <td>Free (your time)</td>
+              </tr>
+              <tr>
+                <td>Adobe Acrobat DC</td>
+                <td>3–4 steps</td>
+                <td><span class="check">✓</span> Yes</td>
+                <td><span class="cross">✗</span> Separate app</td>
+                <td><span class="cross">✗</span> No</td>
+                <td>~£15–25/user/month</td>
+              </tr>
+              <tr>
+                <td>Other Outlook PDF add-ins</td>
+                <td>2–3 steps</td>
+                <td><span class="cross">✗</span> Usually not</td>
+                <td><span class="check">✓</span> Yes</td>
+                <td><span class="cross">✗</span> No</td>
+                <td>Varies</td>
+              </tr>
+              <tr>
+                <td>Power Automate flow</td>
+                <td>Automatic (no manual trigger)</td>
+                <td><span class="check">✓</span> Yes</td>
+                <td><span class="cross">✗</span> No manual trigger</td>
+                <td><span class="check">✓</span> Yes</td>
+                <td>M365 licence + setup time</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ── CTA ── -->
+      <div class="service-cta">
+        <h2>Get Email Transmute for your organisation</h2>
+        <p>We handle deployment via the Microsoft 365 Admin Center. One conversation, then your whole team has it in Outlook.</p>
+        <a href="./index.html#contact" class="cta-btn">Talk to us about Email Transmute</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2026 Arcane Technologies. All rights reserved. &nbsp;&middot;&nbsp; <a href="./privacy-policy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="./terms.html">Terms &amp; Conditions</a></p>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
+</body>
+</html>
